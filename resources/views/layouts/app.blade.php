@@ -491,11 +491,11 @@
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
                                 </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                             </li>
-                        </ul>
+                    </ul>
                     </div>
                 </div>
             </div>
@@ -509,6 +509,7 @@
 
     <!-- Modals -->
     @include('layouts.modals')
+    @include('layouts.notification-modals')
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -624,8 +625,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="alert alert-info">
-                        <i class="fas fa-info-circle"></i>
+                    <div class="alert alert-light border-0" style="background: rgba(59, 130, 246, 0.1);">
+                        <i class="fas fa-lightbulb text-primary me-2"></i>
                         <strong>Tip:</strong> Completa todas las lecciones de un módulo para marcarlo como completado.
                     </div>
                 `;
@@ -642,14 +643,25 @@
             // Simular búsqueda (en una implementación real, harías una petición AJAX)
             setTimeout(() => {
                 resultsDiv.innerHTML = `
-                    <div class="alert alert-info">
-                        <i class="fas fa-info-circle"></i>
+                    <div class="alert alert-light border-0 mb-3" style="background: rgba(59, 130, 246, 0.1);">
+                        <i class="fas fa-info-circle text-primary me-2"></i>
                         <strong>Búsqueda simulada:</strong> ${resourceType} con query "${searchQuery}"
                     </div>
-                    <div class="card">
+                    <div class="card border-0 shadow-sm">
                         <div class="card-body">
-                            <h6 class="card-title">Resultado de ejemplo</h6>
+                            <h6 class="card-title">
+                                <i class="fas fa-file-medical text-primary me-2"></i>
+                                Resultado de ejemplo
+                            </h6>
                             <p class="card-text">Aquí se mostrarían los resultados de la búsqueda FHIR.</p>
+                            <div class="mt-3">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-eye me-1"></i> Ver Detalles
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary ms-2">
+                                    <i class="fas fa-download me-1"></i> Descargar
+                                </button>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -662,7 +674,12 @@
             const resultsDiv = document.getElementById('validationResults');
             
             if (!resourceJson.trim()) {
-                resultsDiv.innerHTML = '<div class="alert alert-warning"><i class="fas fa-exclamation-triangle"></i> Por favor, ingresa un JSON válido.</div>';
+                resultsDiv.innerHTML = `
+                    <div class="alert alert-light border-0" style="background: rgba(245, 158, 11, 0.1);">
+                        <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                        Por favor, ingresa un JSON válido para validar.
+                    </div>
+                `;
                 return;
             }
             
@@ -671,18 +688,35 @@
             // Simular validación (en una implementación real, harías una petición AJAX)
             setTimeout(() => {
                 resultsDiv.innerHTML = `
-                    <div class="alert alert-success">
-                        <i class="fas fa-check-circle"></i>
+                    <div class="alert alert-light border-0 mb-3" style="background: rgba(16, 185, 129, 0.1);">
+                        <i class="fas fa-check-circle text-success me-2"></i>
                         <strong>Validación exitosa:</strong> El recurso ${resourceType} es válido según el Core Chileno.
                     </div>
-                    <div class="card">
+                    <div class="card border-0 shadow-sm">
                         <div class="card-body">
-                            <h6 class="card-title">Detalles de validación</h6>
+                            <h6 class="card-title">
+                                <i class="fas fa-clipboard-check text-success me-2"></i>
+                                Detalles de validación
+                            </h6>
                             <ul class="list-unstyled">
-                                <li><i class="fas fa-check text-success"></i> Estructura JSON válida</li>
-                                <li><i class="fas fa-check text-success"></i> Campos requeridos presentes</li>
-                                <li><i class="fas fa-check text-success"></i> Cumple con el Core Chileno</li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i> 
+                                    Estructura JSON válida
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i> 
+                                    Campos requeridos presentes
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-check text-success me-2"></i> 
+                                    Cumple con el Core Chileno
+                                </li>
                             </ul>
+                            <div class="mt-3">
+                                <button class="btn btn-sm btn-success">
+                                    <i class="fas fa-download me-1"></i> Descargar Validación
+                                </button>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -698,6 +732,90 @@
                 }
             });
         });
+
+        // Funciones para mostrar modales de notificación
+        function showSuccessModal(title, message) {
+            document.getElementById('successModalTitle').textContent = title || '¡Éxito!';
+            document.getElementById('successModalMessage').textContent = message || 'Operación completada exitosamente.';
+            var modal = new bootstrap.Modal(document.getElementById('successModal'));
+            modal.show();
+        }
+
+        function showErrorModal(title, message) {
+            document.getElementById('errorModalTitle').textContent = title || 'Error';
+            document.getElementById('errorModalMessage').textContent = message || 'Ha ocurrido un error inesperado.';
+            var modal = new bootstrap.Modal(document.getElementById('errorModal'));
+            modal.show();
+        }
+
+        function showWarningModal(title, message) {
+            document.getElementById('warningModalTitle').textContent = title || 'Advertencia';
+            document.getElementById('warningModalMessage').textContent = message || 'Por favor, revisa la información.';
+            var modal = new bootstrap.Modal(document.getElementById('warningModal'));
+            modal.show();
+        }
+
+        function showInfoModal(title, message) {
+            document.getElementById('infoModalTitle').textContent = title || 'Información';
+            document.getElementById('infoModalMessage').textContent = message || 'Información importante para ti.';
+            var modal = new bootstrap.Modal(document.getElementById('infoModal'));
+            modal.show();
+        }
+
+        function showConfirmModal(title, message, onConfirm) {
+            document.getElementById('confirmModalTitle').textContent = title || 'Confirmar Acción';
+            document.getElementById('confirmModalMessage').textContent = message || '¿Estás seguro de que deseas continuar?';
+            
+            // Remover event listeners anteriores
+            const confirmButton = document.getElementById('confirmModalButton');
+            const newConfirmButton = confirmButton.cloneNode(true);
+            confirmButton.parentNode.replaceChild(newConfirmButton, confirmButton);
+            
+            // Agregar nuevo event listener
+            newConfirmButton.addEventListener('click', function() {
+                if (onConfirm && typeof onConfirm === 'function') {
+                    onConfirm();
+                }
+                bootstrap.Modal.getInstance(document.getElementById('confirmModal')).hide();
+            });
+            
+            var modal = new bootstrap.Modal(document.getElementById('confirmModal'));
+            modal.show();
+        }
+
+        function showLessonCompletedModal() {
+            var modal = new bootstrap.Modal(document.getElementById('lessonCompletedModal'));
+            modal.show();
+        }
+
+        function showCorrectAnswerModal(message) {
+            document.getElementById('correctAnswerMessage').textContent = message || 'Tu respuesta es correcta.';
+            var modal = new bootstrap.Modal(document.getElementById('correctAnswerModal'));
+            modal.show();
+        }
+
+        function showIncorrectAnswerModal(message) {
+            document.getElementById('incorrectAnswerMessage').textContent = message || 'Tu respuesta no es correcta. Revisa la explicación.';
+            var modal = new bootstrap.Modal(document.getElementById('incorrectAnswerModal'));
+            modal.show();
+        }
+
+        // Función para mostrar notificaciones de sesión
+        @if (session('status'))
+            showSuccessModal('Éxito', '{{ session('status') }}');
+        @endif
+
+        @if (session('error'))
+            showErrorModal('Error', '{{ session('error') }}');
+        @endif
+
+        @if (session('warning'))
+            showWarningModal('Advertencia', '{{ session('warning') }}');
+        @endif
+
+        @if (session('info'))
+            showInfoModal('Información', '{{ session('info') }}');
+        @endif
     </script>
     
     <!-- Stack para scripts adicionales de las vistas -->

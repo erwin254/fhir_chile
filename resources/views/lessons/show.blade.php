@@ -195,36 +195,49 @@ function checkAnswer(questionIndex, correctAnswer) {
     const explanation = document.querySelector(`.quiz-explanation`);
     
     if (!selectedAnswer) {
-        alert('Por favor selecciona una respuesta');
+        showWarningModal('Selecciona una respuesta', 'Por favor selecciona una respuesta antes de continuar.');
         return;
     }
     
     if (parseInt(selectedAnswer.value) === correctAnswer) {
-        alert('¡Correcto!');
+        showCorrectAnswerModal('¡Excelente! Tu respuesta es correcta.');
     } else {
-        alert('Incorrecto. Revisa la explicación.');
+        showIncorrectAnswerModal('Tu respuesta no es correcta. Revisa la explicación para entender mejor.');
     }
     
     explanation.style.display = 'block';
 }
 
 function markAsCompleted() {
-    if (!confirm('¿Estás seguro de que has completado esta lección?')) {
-        return;
-    }
-    
-    axios.post('{{ route("lessons.progress", $lesson->slug) }}', {
-        progress_percentage: 100,
-        time_spent: {{ $userProgress ? $userProgress->time_spent + 1 : 1 }}
-    })
-    .then(response => {
-        alert('¡Lección completada! Tu progreso ha sido actualizado.');
-        location.reload();
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        alert('Error al actualizar el progreso. Inténtalo de nuevo.');
-    });
+    showConfirmModal(
+        'Completar Lección', 
+        '¿Estás seguro de que has completado esta lección? Tu progreso será actualizado.',
+        function() {
+            // Mostrar loading
+            const button = document.querySelector('[onclick="markAsCompleted()"]');
+            const originalText = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Actualizando...';
+            button.disabled = true;
+            
+            axios.post('{{ route("lessons.progress", $lesson->slug) }}', {
+                progress_percentage: 100,
+                time_spent: {{ $userProgress ? $userProgress->time_spent + 1 : 1 }}
+            })
+            .then(response => {
+                showLessonCompletedModal();
+                setTimeout(() => {
+                    location.reload();
+                }, 2000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showErrorModal('Error al actualizar', 'Error al actualizar el progreso. Inténtalo de nuevo.');
+                // Restaurar botón
+                button.innerHTML = originalText;
+                button.disabled = false;
+            });
+        }
+    );
 }
 </script>
 @endpush
