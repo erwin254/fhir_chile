@@ -1,0 +1,26 @@
+User-agent: *
+Disallow: /app/
+Disallow: /bootstrap/
+Disallow: /config/
+Disallow: /database/
+Disallow: /resources/
+Disallow: /routes/
+Disallow: /storage/
+Disallow: /tests/
+Disallow: /vendor/
+Disallow: /.env
+Disallow: /composer.json
+Disallow: /composer.lock
+Disallow: /package.json
+Disallow: /webpack.mix.js
+Disallow: /*.log
+Disallow: /*.sql
+Disallow: /*.bak
+Disallow: /*.backup
+Disallow: /*.old
+Disallow: /*.tmp
+
+# Permitir acceso solo al directorio public
+Allow: /public/
+
+Sitemap: http://fhir.mk/public/sitemap.xml
