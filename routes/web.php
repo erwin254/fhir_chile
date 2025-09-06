@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\ModuleController;
@@ -19,7 +20,8 @@ use App\Http\Controllers\FhirController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
 
 // Rutas de autenticación
 Auth::routes();

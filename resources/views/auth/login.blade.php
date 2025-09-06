@@ -45,7 +45,8 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            overflow: hidden;
+            overflow-y: auto;
+            padding: 4rem 2rem;
         }
 
         body::before {
@@ -70,6 +71,7 @@
             width: 100%;
             max-width: 450px;
             border: 1px solid rgba(255,255,255,0.2);
+            margin: 2rem auto;
         }
 
         .login-header {
@@ -225,8 +227,8 @@
 
         .back-home {
             position: absolute;
-            top: 2rem;
-            left: 2rem;
+            top: 3rem;
+            left: 3rem;
             color: white;
             text-decoration: none;
             font-weight: 500;
@@ -234,6 +236,7 @@
             align-items: center;
             gap: 0.5rem;
             transition: all 0.3s ease;
+            z-index: 10;
         }
 
         .back-home:hover {
@@ -253,8 +256,12 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 3rem 1rem;
+            }
+            
             .login-container {
-                margin: 1rem;
+                margin: 1rem auto;
                 padding: 2rem;
             }
             
