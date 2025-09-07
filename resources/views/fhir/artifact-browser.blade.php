@@ -471,52 +471,8 @@ function createArtifactRow(artifact) {
 }
 
 function showArtifactDetails(artifactId) {
-    const artifact = currentArtifacts.find(a => a.id === artifactId);
-    if (!artifact) return;
-    
-    currentArtifact = artifact;
-    
-    document.getElementById('artifactModalTitle').innerHTML = `
-        <i class="${artifact.icon} me-2" style="color: ${artifact.color};"></i>
-        ${artifact.name}
-    `;
-    
-    document.getElementById('artifactModalBody').innerHTML = `
-        <div class="row">
-            <div class="col-md-6">
-                <h6>Información General</h6>
-                <table class="table table-sm">
-                    <tr><td><strong>Tipo:</strong></td><td>${artifact.type}</td></tr>
-                    <tr><td><strong>Nombre:</strong></td><td>${artifact.name}</td></tr>
-                    <tr><td><strong>Título:</strong></td><td>${artifact.title}</td></tr>
-                    <tr><td><strong>Versión:</strong></td><td>v${artifact.version}</td></tr>
-                    <tr><td><strong>Estado:</strong></td><td><span class="badge bg-${getStatusColor(artifact.status)}">${artifact.status}</span></td></tr>
-                    <tr><td><strong>Editor:</strong></td><td>${artifact.publisher}</td></tr>
-                    ${artifact.date ? `<tr><td><strong>Fecha:</strong></td><td>${new Date(artifact.date).toLocaleDateString()}</td></tr>` : ''}
-                </table>
-            </div>
-            <div class="col-md-6">
-                <h6>URLs</h6>
-                <div class="mb-2">
-                    <strong>URL:</strong><br>
-                    <a href="${artifact.url}" target="_blank" class="text-break">${artifact.url}</a>
-                </div>
-                <div class="mb-2">
-                    <strong>Ver en fhir.mk:</strong><br>
-                    <a href="http://fhir.mk/public/fhir/artifacts/${artifact.id}" target="_blank" class="text-break">http://fhir.mk/public/fhir/artifacts/${artifact.id}</a>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-12">
-                <h6>Descripción</h6>
-                <p>${artifact.description || 'Sin descripción disponible'}</p>
-            </div>
-        </div>
-    `;
-    
-    const modal = new bootstrap.Modal(document.getElementById('artifactModal'));
-    modal.show();
+    // Redirect directly to the artifact detail page
+    window.location.href = `/fhir/artifacts/${artifactId}`;
 }
 
 function viewFullArtifact() {

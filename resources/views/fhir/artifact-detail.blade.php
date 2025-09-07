@@ -82,6 +82,11 @@
                         </li>
                         @endif
                         <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="json-tab" data-bs-toggle="tab" data-bs-target="#json" type="button" role="tab">
+                                <i class="fas fa-code me-2"></i>JSON
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
                             <button class="nav-link" id="urls-tab" data-bs-toggle="tab" data-bs-target="#urls" type="button" role="tab">
                                 <i class="fas fa-link me-2"></i>URLs
                             </button>
@@ -126,6 +131,19 @@
                             </div>
                         </div>
                         @endif
+
+                        <!-- JSON Tab -->
+                        <div class="tab-pane fade" id="json" role="tabpanel">
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h6 class="mb-0">Contenido JSON del Artefacto</h6>
+                                    <button class="btn btn-sm btn-outline-primary" onclick="copyJsonToClipboard()">
+                                        <i class="fas fa-copy me-1"></i>Copiar JSON
+                                    </button>
+                                </div>
+                                <pre id="jsonContent" class="bg-light p-3 rounded" style="max-height: 500px; overflow-y: auto; font-size: 12px;"><code><!-- JSON content will be loaded by JavaScript --></code></pre>
+                            </div>
+                        </div>
 
                         <!-- URLs Tab -->
                         <div class="tab-pane fade" id="urls" role="tabpanel">
@@ -188,7 +206,12 @@ function translateElementDescription(definition) {
 
 // Load overview content
 function loadOverview() {
-    let overview = '<ul class="list-unstyled">';
+    let overview = '<div class="row">';
+    
+    // Basic Information
+    overview += '<div class="col-md-6">';
+    overview += '<h6>Información Básica</h6>';
+    overview += '<ul class="list-unstyled">';
     
     if (artifact.name) {
         overview += `<li><strong>Nombre:</strong> ${artifact.name}</li>`;
@@ -203,15 +226,29 @@ function loadOverview() {
     }
     
     if (artifact.type) {
-        overview += `<li><strong>Tipo:</strong> ${artifact.type}</li>`;
+        overview += `<li><strong>Tipo:</strong> <span class="badge bg-primary">${artifact.type}</span></li>`;
     }
+    
+    if (artifact.id) {
+        overview += `<li><strong>ID:</strong> <code>${artifact.id}</code></li>`;
+    }
+    
+    overview += '</ul>';
+    overview += '</div>';
+    
+    // Version and Status
+    overview += '<div class="col-md-6">';
+    overview += '<h6>Versión y Estado</h6>';
+    overview += '<ul class="list-unstyled">';
     
     if (artifact.version) {
         overview += `<li><strong>Versión:</strong> ${artifact.version}</li>`;
     }
     
     if (artifact.status) {
-        overview += `<li><strong>Estado:</strong> ${artifact.status}</li>`;
+        const statusClass = artifact.status === 'active' ? 'bg-success' : 
+                           artifact.status === 'draft' ? 'bg-warning' : 'bg-secondary';
+        overview += `<li><strong>Estado:</strong> <span class="badge ${statusClass}">${artifact.status}</span></li>`;
     }
     
     if (artifact.publisher) {
@@ -226,11 +263,82 @@ function loadOverview() {
         overview += `<li><strong>URL:</strong> <a href="${artifact.url}" target="_blank" class="text-break small">${artifact.url}</a></li>`;
     }
     
-    overview += `<li><strong>Ver en fhir.mk:</strong> <a href="http://fhir.mk/public/fhir/artifacts/${artifact.id}" target="_blank">http://fhir.mk/public/fhir/artifacts/${artifact.id}</a></li>`;
-    
     overview += '</ul>';
+    overview += '</div>';
+    
+    overview += '</div>';
+    
+    // Additional Information
+    if (artifact.content) {
+        overview += '<div class="mt-4">';
+        overview += '<h6>Información Adicional</h6>';
+        
+        if (artifact.content.profile) {
+            overview += '<div class="mb-2">';
+            overview += '<strong>Perfiles:</strong><br>';
+            artifact.content.profile.forEach(profile => {
+                overview += `<span class="badge bg-info me-1">${profile}</span>`;
+            });
+            overview += '</div>';
+        }
+        
+        if (artifact.content.fhirVersion) {
+            overview += `<div class="mb-2"><strong>Versión FHIR:</strong> ${artifact.content.fhirVersion}</div>`;
+        }
+        
+        if (artifact.content.kind) {
+            overview += `<div class="mb-2"><strong>Tipo de Definición:</strong> ${artifact.content.kind}</div>`;
+        }
+        
+        if (artifact.content.abstract !== undefined) {
+            overview += `<div class="mb-2"><strong>Abstracto:</strong> ${artifact.content.abstract ? 'Sí' : 'No'}</div>`;
+        }
+        
+        overview += '</div>';
+    }
+    
+    // Links
+    overview += '<div class="mt-4">';
+    overview += '<h6>Enlaces</h6>';
+    overview += '<ul class="list-unstyled">';
+    overview += `<li><strong>Ver en fhir.mk:</strong> <a href="http://fhir.mk/public/fhir/artifacts/${artifact.id}" target="_blank">http://fhir.mk/public/fhir/artifacts/${artifact.id}</a></li>`;
+    if (artifact.url) {
+        overview += `<li><strong>URL Original:</strong> <a href="${artifact.url}" target="_blank">${artifact.url}</a></li>`;
+    }
+    overview += '</ul>';
+    overview += '</div>';
     
     document.getElementById('overviewContent').innerHTML = overview;
+}
+
+// Load JSON content
+function loadJson() {
+    const jsonContent = JSON.stringify(artifact.content || artifact, null, 2);
+    // Use textContent instead of innerHTML to avoid HTML parsing issues
+    const codeElement = document.querySelector('#jsonContent code');
+    codeElement.textContent = jsonContent;
+}
+
+// Copy JSON to clipboard
+function copyJsonToClipboard() {
+    const jsonContent = JSON.stringify(artifact.content || artifact, null, 2);
+    navigator.clipboard.writeText(jsonContent).then(() => {
+        // Show success message
+        const button = event.target.closest('button');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check me-1"></i>Copiado!';
+        button.classList.remove('btn-outline-primary');
+        button.classList.add('btn-success');
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.classList.remove('btn-success');
+            button.classList.add('btn-outline-primary');
+        }, 2000);
+    }).catch(err => {
+        console.error('Error copying to clipboard:', err);
+        alert('Error al copiar al portapapeles');
+    });
 }
 
 @if($artifact['type'] === 'StructureDefinition')
@@ -368,6 +476,7 @@ function loadCapabilities() {
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
     loadOverview();
+    loadJson();
     
     @if($artifact['type'] === 'StructureDefinition')
     loadElements();
