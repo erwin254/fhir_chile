@@ -306,6 +306,7 @@ class ArtifactBrowserController extends Controller
         ]);
     }
 
+
     /**
      * Obtener estadísticas de artefactos
      */
