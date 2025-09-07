@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
 
 class ArtifactBrowserController extends Controller
 {
+    protected $artifactsBaseUrl;
     protected $artifactsPath;
-    protected $canonicalsPath;
+    protected $useLocalFallback;
 
     public function __construct()
     {
-        $this->artifactsPath = base_path('temp-ig/site');
-        $this->canonicalsPath = base_path('temp-ig/site/canonicals.json');
+        $this->artifactsBaseUrl = config('fhir.artifacts_url', 'http://fhir.mk/public/fhir/artifacts');
+        $this->artifactsPath = base_path('node_modules/hl7.fhir.cl.clcore');
+        $this->useLocalFallback = config('fhir.use_local_fallback', true);
     }
 
     /**
@@ -95,7 +98,10 @@ class ArtifactBrowserController extends Controller
             abort(404, 'Artefacto no encontrado');
         }
         
-        return view('fhir.artifact-detail', compact('artifact'));
+        // Get FHIR translations for the current locale
+        $translations = trans('fhir');
+        
+        return view('fhir.artifact-detail', compact('artifact', 'translations'));
     }
 
     /**
@@ -103,26 +109,49 @@ class ArtifactBrowserController extends Controller
      */
     private function getAllArtifacts()
     {
-        return Cache::remember('fhir_artifacts', 3600, function () {
+        return Cache::remember('fhir_artifacts_remote', 3600, function () {
             $artifacts = collect();
             
+            // Try remote endpoint first
             try {
-                if (File::exists($this->canonicalsPath)) {
-                    $canonicals = json_decode(File::get($this->canonicalsPath), true);
+                $response = Http::timeout(10)->get($this->artifactsBaseUrl);
+                
+                if ($response->successful()) {
+                    $data = $response->json();
                     
-                    if (is_array($canonicals)) {
-                        foreach ($canonicals as $canonical) {
-                            if (is_array($canonical) && isset($canonical['id'], $canonical['type'])) {
-                                $artifact = $this->loadArtifactDetails($canonical);
-                                if ($artifact) {
-                                    $artifacts->push($artifact);
-                                }
+                    // Handle different response formats
+                    if (isset($data['artifacts']) && is_array($data['artifacts'])) {
+                        // Response format: { "artifacts": [...] }
+                        foreach ($data['artifacts'] as $artifactData) {
+                            $artifact = $this->processArtifactData($artifactData);
+                            if ($artifact) {
+                                $artifacts->push($artifact);
+                            }
+                        }
+                    } elseif (is_array($data)) {
+                        // Response format: direct array of artifacts
+                        foreach ($data as $artifactData) {
+                            $artifact = $this->processArtifactData($artifactData);
+                            if ($artifact) {
+                                $artifacts->push($artifact);
                             }
                         }
                     }
+                    
+                    // If we got artifacts from remote, return them
+                    if ($artifacts->isNotEmpty()) {
+                        \Log::info('Successfully loaded ' . $artifacts->count() . ' artifacts from remote endpoint');
+                        return $artifacts;
+                    }
                 }
             } catch (\Exception $e) {
-                \Log::error('Error loading artifacts: ' . $e->getMessage());
+                \Log::warning('Remote endpoint failed, trying local fallback: ' . $e->getMessage());
+            }
+            
+            // Fallback to local files if remote fails or returns empty
+            if ($this->useLocalFallback && File::exists($this->artifactsPath)) {
+                \Log::info('Using local fallback for artifacts');
+                $artifacts = $this->loadArtifactsFromLocal();
             }
             
             return $artifacts;
@@ -130,7 +159,128 @@ class ArtifactBrowserController extends Controller
     }
 
     /**
-     * Cargar detalles de un artefacto
+     * Cargar artefactos desde archivos locales (fallback)
+     */
+    private function loadArtifactsFromLocal()
+    {
+        $artifacts = collect();
+        
+        try {
+            if (File::exists($this->artifactsPath)) {
+                // Leer todos los archivos JSON del directorio del paquete npm
+                $files = File::glob($this->artifactsPath . '/*.json');
+                
+                foreach ($files as $file) {
+                    $filename = basename($file);
+                    
+                    // Saltar package.json y otros archivos no relevantes
+                    if (in_array($filename, ['package.json'])) {
+                        continue;
+                    }
+                    
+                    $artifact = $this->loadArtifactFromFile($file, $filename);
+                    if ($artifact) {
+                        $artifacts->push($artifact);
+                    }
+                }
+                
+                \Log::info('Loaded ' . $artifacts->count() . ' artifacts from local files');
+            }
+        } catch (\Exception $e) {
+            \Log::error('Error loading artifacts from local files: ' . $e->getMessage());
+        }
+        
+        return $artifacts;
+    }
+
+    /**
+     * Procesar datos de artefacto desde la respuesta remota
+     */
+    private function processArtifactData($artifactData)
+    {
+        try {
+            // Si ya viene procesado desde el endpoint remoto
+            if (isset($artifactData['id']) && isset($artifactData['type'])) {
+                return $artifactData;
+            }
+            
+            // Si viene como contenido FHIR crudo, procesarlo
+            if (isset($artifactData['resourceType'])) {
+                return $this->loadArtifactFromContent($artifactData);
+            }
+            
+            return null;
+        } catch (\Exception $e) {
+            \Log::error("Error processing artifact data: " . $e->getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * Cargar artefacto desde contenido FHIR
+     */
+    private function loadArtifactFromContent($content)
+    {
+        try {
+            if (!$content || !isset($content['resourceType'])) {
+                return null;
+            }
+            
+            $type = $content['resourceType'];
+            $id = $content['id'] ?? 'unknown';
+            $name = $content['name'] ?? $id;
+            $title = $content['title'] ?? $name;
+            $description = $content['description'] ?? '';
+            $status = $content['status'] ?? 'unknown';
+            $date = $content['date'] ?? null;
+            $publisher = $content['publisher'] ?? 'HL7 Chile';
+            $url = $content['url'] ?? '';
+            $version = $content['version'] ?? '1.9.3';
+            
+            return [
+                'id' => $id,
+                'type' => $type,
+                'name' => $name,
+                'url' => $url,
+                'version' => $version,
+                'title' => $title,
+                'description' => $description,
+                'status' => $status,
+                'date' => $date,
+                'publisher' => $publisher,
+                'content' => $content,
+                'category' => $this->getArtifactCategory(['type' => $type, 'name' => $name]),
+                'icon' => $this->getArtifactIcon($type),
+                'color' => $this->getArtifactColor($type)
+            ];
+        } catch (\Exception $e) {
+            \Log::error("Error loading artifact from content: " . $e->getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * Cargar artefacto desde archivo (método legacy)
+     */
+    private function loadArtifactFromFile($filePath, $filename)
+    {
+        try {
+            $content = json_decode(File::get($filePath), true);
+            
+            if (!$content || !isset($content['resourceType'])) {
+                return null;
+            }
+            
+            // Use the new method to process the content
+            return $this->loadArtifactFromContent($content);
+        } catch (\Exception $e) {
+            \Log::error("Error loading artifact from file {$filename}: " . $e->getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * Cargar detalles de un artefacto (método legacy)
      */
     private function loadArtifactDetails($canonical)
     {
@@ -141,24 +291,7 @@ class ArtifactBrowserController extends Controller
             return null;
         }
         
-        $content = json_decode(File::get($filePath), true);
-        
-        return [
-            'id' => $canonical['id'],
-            'type' => $canonical['type'],
-            'name' => $canonical['name'],
-            'url' => $canonical['url'],
-            'version' => $canonical['version'],
-            'title' => $content['title'] ?? $canonical['name'],
-            'description' => $content['description'] ?? '',
-            'status' => $content['status'] ?? 'unknown',
-            'date' => $content['date'] ?? null,
-            'publisher' => $content['publisher'] ?? 'HL7 Chile',
-            'content' => $content,
-            'category' => $this->getArtifactCategory($canonical),
-            'icon' => $this->getArtifactIcon($canonical['type']),
-            'color' => $this->getArtifactColor($canonical['type'])
-        ];
+        return $this->loadArtifactFromFile($filePath, $filename);
     }
 
     /**
@@ -289,7 +422,23 @@ class ArtifactBrowserController extends Controller
     private function getArtifactById($id)
     {
         $artifacts = $this->getAllArtifacts();
-        return $artifacts->firstWhere('id', $id);
+        $artifact = $artifacts->firstWhere('id', $id);
+        
+        // If not found in cache, try to fetch directly from remote endpoint
+        if (!$artifact) {
+            try {
+                $response = Http::timeout(30)->get($this->artifactsBaseUrl . '/' . $id);
+                
+                if ($response->successful()) {
+                    $data = $response->json();
+                    $artifact = $this->processArtifactData($data);
+                }
+            } catch (\Exception $e) {
+                \Log::error("Error fetching artifact {$id} from remote endpoint: " . $e->getMessage());
+            }
+        }
+        
+        return $artifact;
     }
 
     /**

@@ -1,439 +1,381 @@
 @extends('layouts.app')
 
-@section('title', $artifact['name'] . ' - Detalles del Artefacto')
+@section('title', 'Detalle del Artefacto FHIR')
 
 @section('content')
-<div class="hero mb-6">
-    <div class="card">
-        <div class="card-body">
-            <div class="d-flex align-items-center mb-4">
-                <a href="{{ route('fhir.artifacts.browser') }}" class="btn btn-secondary me-3">
-                    <i class="fas fa-arrow-left"></i> Volver al Buscador
-                </a>
-                <div class="flex-grow-1">
-                    <div class="d-flex align-items-center mb-2">
-                        <div class="me-3" style="color: {{ $artifact['color'] }}; font-size: 2rem;">
-                            <i class="{{ $artifact['icon'] }}"></i>
-                        </div>
-                        <div>
-                            <h1 class="mb-1" style="color: {{ $artifact['color'] }};">{{ $artifact['name'] }}</h1>
-                            <span class="badge fs-6" style="background-color: {{ $artifact['color'] }}; color: white;">
-                                {{ $artifact['type'] }}
-                            </span>
-                        </div>
-                    </div>
-                    <h2 class="mb-0">{{ $artifact['title'] }}</h2>
-                </div>
-            </div>
-            
-            @if($artifact['description'])
-                <div class="alert alert-light border-0" style="background: rgba(59, 130, 246, 0.1);">
-                    <p class="mb-0">{{ $artifact['description'] }}</p>
-                </div>
-            @endif
-        </div>
+<!-- Language Selector -->
+<div class="d-flex justify-content-end mb-3">
+    <div class="btn-group" role="group">
+        <a href="{{ request()->fullUrlWithQuery(['lang' => 'es']) }}" 
+           class="btn btn-sm {{ app()->getLocale() === 'es' ? 'btn-primary' : 'btn-outline-primary' }}">
+            <i class="fas fa-flag me-1"></i>Español
+        </a>
+        <a href="{{ request()->fullUrlWithQuery(['lang' => 'en']) }}" 
+           class="btn btn-sm {{ app()->getLocale() === 'en' ? 'btn-primary' : 'btn-outline-primary' }}">
+            <i class="fas fa-flag me-1"></i>English
+        </a>
     </div>
 </div>
 
-<div class="row">
-    <!-- Información General -->
-    <div class="col-md-4">
-        <div class="card mb-4">
-            <div class="card-header">
-                <h5 class="mb-0">
-                    <i class="fas fa-info-circle me-2"></i>Información General
-                </h5>
-            </div>
-            <div class="card-body">
-                <table class="table table-sm">
-                    <tr>
-                        <td><strong>Tipo:</strong></td>
-                        <td>{{ $artifact['type'] }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Nombre:</strong></td>
-                        <td>{{ $artifact['name'] }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Versión:</strong></td>
-                        <td>v{{ $artifact['version'] }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Estado:</strong></td>
-                        <td>
-                            <span class="badge bg-{{ $artifact['status'] === 'active' ? 'success' : ($artifact['status'] === 'draft' ? 'warning' : 'secondary') }}">
-                                {{ $artifact['status'] }}
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Editor:</strong></td>
-                        <td>{{ $artifact['publisher'] }}</td>
-                    </tr>
-                    @if($artifact['date'])
-                    <tr>
-                        <td><strong>Fecha:</strong></td>
-                        <td>{{ \Carbon\Carbon::parse($artifact['date'])->format('d/m/Y') }}</td>
-                    </tr>
-                    @endif
-                </table>
-            </div>
-        </div>
-
-        <!-- URLs -->
-        <div class="card mb-4">
-            <div class="card-header">
-                <h5 class="mb-0">
-                    <i class="fas fa-link me-2"></i>URLs
-                </h5>
-            </div>
-            <div class="card-body">
-                <div class="mb-3">
-                    <strong>URL Canonical:</strong><br>
-                    <a href="{{ $artifact['url'] }}" target="_blank" class="text-break small">
-                        {{ $artifact['url'] }}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="h3 mb-0">
+                    <i class="fas fa-file-medical me-2"></i>
+                    {{ $artifact['name'] ?? $artifact['id'] }}
+                </h1>
+                <div>
+                    <a href="{{ route('fhir.artifacts.browser') }}" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left me-2"></i>Volver al Buscador
                     </a>
                 </div>
             </div>
-        </div>
 
-        <!-- Acciones -->
-        <div class="card">
-            <div class="card-header">
-                <h5 class="mb-0">
-                    <i class="fas fa-tools me-2"></i>Acciones
-                </h5>
-            </div>
-            <div class="card-body">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-primary" onclick="copyToClipboard('{{ $artifact['url'] }}')">
-                        <i class="fas fa-copy me-2"></i>Copiar URL
-                    </button>
-                    <button class="btn btn-outline-primary" onclick="downloadArtifact()">
-                        <i class="fas fa-download me-2"></i>Descargar JSON
-                    </button>
-                    <button class="btn btn-outline-secondary" onclick="validateArtifact()">
-                        <i class="fas fa-check-circle me-2"></i>Validar
-                    </button>
+            <!-- Overview Card -->
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">
+                        <i class="fas fa-info-circle me-2"></i>Resumen
+                    </h5>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contenido del Artefacto -->
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="mb-0">
-                    <i class="fas fa-code me-2"></i>Contenido del Artefacto
-                </h5>
-            </div>
-            <div class="card-body">
-                <!-- Navegación por pestañas -->
-                <ul class="nav nav-tabs mb-3" id="artifactTabs" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">
-                            <i class="fas fa-eye me-2"></i>Resumen
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="json-tab" data-bs-toggle="tab" data-bs-target="#json" type="button" role="tab">
-                            <i class="fas fa-code me-2"></i>JSON
-                        </button>
-                    </li>
-                    @if($artifact['type'] === 'StructureDefinition')
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="elements-tab" data-bs-toggle="tab" data-bs-target="#elements" type="button" role="tab">
-                            <i class="fas fa-sitemap me-2"></i>Elementos
-                        </button>
-                    </li>
-                    @endif
-                    @if($artifact['type'] === 'CodeSystem' || $artifact['type'] === 'ValueSet')
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="codes-tab" data-bs-toggle="tab" data-bs-target="#codes" type="button" role="tab">
-                            <i class="fas fa-list me-2"></i>Códigos
-                        </button>
-                    </li>
-                    @endif
-                </ul>
-
-                <div class="tab-content" id="artifactTabContent">
-                    <!-- Resumen -->
-                    <div class="tab-pane fade show active" id="overview" role="tabpanel">
-                        <div id="overviewContent">
-                            <!-- El contenido se cargará dinámicamente -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled" id="overviewContent">
+                                <!-- Content will be loaded by JavaScript -->
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <strong>Ver en fhir.mk:</strong><br>
+                                <a href="http://fhir.mk/public/fhir/artifacts/{{ $artifact['id'] }}" target="_blank" class="text-break small">
+                                    http://fhir.mk/public/fhir/artifacts/{{ $artifact['id'] }}
+                                </a>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- JSON -->
-                    <div class="tab-pane fade" id="json" role="tabpanel">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h6>Representación JSON</h6>
-                            <button class="btn btn-sm btn-outline-primary" onclick="copyJson()">
-                                <i class="fas fa-copy me-1"></i>Copiar JSON
+            <!-- Tabs -->
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" id="artifactTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">
+                                <i class="fas fa-info-circle me-2"></i>Resumen
                             </button>
+                        </li>
+                        @if($artifact['type'] === 'StructureDefinition')
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="elements-tab" data-bs-toggle="tab" data-bs-target="#elements" type="button" role="tab">
+                                <i class="fas fa-list me-2"></i>Elementos
+                            </button>
+                        </li>
+                        @endif
+                        @if($artifact['type'] === 'CapabilityStatement')
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="capabilities-tab" data-bs-toggle="tab" data-bs-target="#capabilities" type="button" role="tab">
+                                <i class="fas fa-server me-2"></i>Capacidades
+                            </button>
+                        </li>
+                        @endif
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="urls-tab" data-bs-toggle="tab" data-bs-target="#urls" type="button" role="tab">
+                                <i class="fas fa-link me-2"></i>URLs
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="artifactTabsContent">
+                        <!-- Overview Tab -->
+                        <div class="tab-pane fade show active" id="overview" role="tabpanel">
+                            <div id="overviewContent">
+                                <!-- Content will be loaded by JavaScript -->
+                            </div>
                         </div>
-                        <pre class="bg-dark text-light p-3 rounded" style="max-height: 500px; overflow-y: auto;"><code id="jsonContent">{{ json_encode($artifact['content'], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) }}</code></pre>
-                    </div>
 
-                    @if($artifact['type'] === 'StructureDefinition')
-                    <!-- Elementos -->
-                    <div class="tab-pane fade" id="elements" role="tabpanel">
-                        <div id="elementsContent">
-                            <!-- Los elementos se cargarán dinámicamente -->
+                        @if($artifact['type'] === 'StructureDefinition')
+                        <!-- Elements Tab -->
+                        <div class="tab-pane fade" id="elements" role="tabpanel">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Path</th>
+                                            <th>Cardinalidad</th>
+                                            <th>Tipo</th>
+                                            <th>Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="elementsContent">
+                                        <!-- Content will be loaded by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                    @endif
+                        @endif
 
-                    @if($artifact['type'] === 'CodeSystem' || $artifact['type'] === 'ValueSet')
-                    <!-- Códigos -->
-                    <div class="tab-pane fade" id="codes" role="tabpanel">
-                        <div id="codesContent">
-                            <!-- Los códigos se cargarán dinámicamente -->
+                        @if($artifact['type'] === 'CapabilityStatement')
+                        <!-- Capabilities Tab -->
+                        <div class="tab-pane fade" id="capabilities" role="tabpanel">
+                            <div id="capabilitiesContent">
+                                <!-- Content will be loaded by JavaScript -->
+                            </div>
+                        </div>
+                        @endif
+
+                        <!-- URLs Tab -->
+                        <div class="tab-pane fade" id="urls" role="tabpanel">
+                            <div class="mb-3">
+                                <strong>Ver en fhir.mk:</strong><br>
+                                <a href="http://fhir.mk/public/fhir/artifacts/{{ $artifact['id'] }}" target="_blank" class="text-break small">
+                                    http://fhir.mk/public/fhir/artifacts/{{ $artifact['id'] }}
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    @endif
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Modal para validación -->
-<div class="modal fade" id="validationModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">
-                    <i class="fas fa-check-circle me-2"></i>Validación del Artefacto
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body" id="validationResult">
-                <!-- Resultado de validación se cargará aquí -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
-
-@push('scripts')
 <script>
+// Store artifact data globally
 const artifact = @json($artifact);
+const translations = @json($translations);
 
-document.addEventListener('DOMContentLoaded', function() {
-    loadOverview();
-    @if($artifact['type'] === 'StructureDefinition')
-    loadElements();
-    @endif
-    @if($artifact['type'] === 'CodeSystem' || $artifact['type'] === 'ValueSet')
-    loadCodes();
-    @endif
-});
+// Translation function using Laravel translations
+function translateElementDescription(definition) {
+    if (!definition) return '';
+    
+    // Try exact match first
+    if (translations[definition]) {
+        return translations[definition];
+    }
+    
+    // Try partial matches for common patterns, prioritizing longer matches
+    const sortedTranslations = Object.entries(translations).sort((a, b) => b[0].length - a[0].length);
+    
+    for (const [english, spanish] of sortedTranslations) {
+        if (definition.includes(english)) {
+            // Check if this is a complete sentence match or just a partial match
+            const beforeMatch = definition.substring(0, definition.indexOf(english));
+            const afterMatch = definition.substring(definition.indexOf(english) + english.length);
+            
+            // If the match is at the beginning or end, or surrounded by sentence boundaries, it's likely a complete match
+            const isCompleteMatch = (
+                beforeMatch === '' || 
+                beforeMatch.endsWith('. ') || 
+                beforeMatch.endsWith(' ') ||
+                afterMatch === '' || 
+                afterMatch.startsWith('. ') || 
+                afterMatch.startsWith(' ')
+            );
+            
+            if (isCompleteMatch) {
+                return definition.replace(english, spanish);
+            }
+        }
+    }
+    
+    // If no translation found, return original
+    return definition;
+}
 
+// Load overview content
 function loadOverview() {
-    const content = artifact.content;
-    let overview = '<div class="row">';
+    let overview = '<ul class="list-unstyled">';
     
-    // Información básica
-    overview += '<div class="col-md-6">';
-    overview += '<h6>Propiedades</h6>';
-    overview += '<ul class="list-unstyled">';
-    
-    if (content.resourceType) {
-        overview += `<li><strong>Tipo de Recurso:</strong> ${content.resourceType}</li>`;
-    }
-    if (content.id) {
-        overview += `<li><strong>ID:</strong> ${content.id}</li>`;
-    }
-    if (content.url) {
-        overview += `<li><strong>URL:</strong> <a href="${content.url}" target="_blank">${content.url}</a></li>`;
-    }
-    if (content.version) {
-        overview += `<li><strong>Versión:</strong> ${content.version}</li>`;
-    }
-    if (content.status) {
-        overview += `<li><strong>Estado:</strong> <span class="badge bg-${getStatusColor(content.status)}">${content.status}</span></li>`;
+    if (artifact.name) {
+        overview += `<li><strong>Nombre:</strong> ${artifact.name}</li>`;
     }
     
-    overview += '</ul>';
-    overview += '</div>';
-    
-    // Información específica por tipo
-    overview += '<div class="col-md-6">';
-    overview += '<h6>Información Específica</h6>';
-    overview += '<ul class="list-unstyled">';
-    
-    if (artifact.type === 'StructureDefinition') {
-        if (content.type) {
-            overview += `<li><strong>Tipo Base:</strong> ${content.type}</li>`;
-        }
-        if (content.derivation) {
-            overview += `<li><strong>Derivación:</strong> ${content.derivation}</li>`;
-        }
-        if (content.kind) {
-            overview += `<li><strong>Tipo:</strong> ${content.kind}</li>`;
-        }
-    } else if (artifact.type === 'CodeSystem') {
-        if (content.content) {
-            overview += `<li><strong>Contenido:</strong> ${content.content}</li>`;
-        }
-        if (content.count) {
-            overview += `<li><strong>Cantidad de Códigos:</strong> ${content.count}</li>`;
-        }
-    } else if (artifact.type === 'ValueSet') {
-        if (content.compose) {
-            overview += `<li><strong>Composición:</strong> Definida</li>`;
-        }
-        if (content.expansion) {
-            overview += `<li><strong>Expansión:</strong> Incluida</li>`;
-        }
+    if (artifact.title) {
+        overview += `<li><strong>Título:</strong> ${artifact.title}</li>`;
     }
+    
+    if (artifact.description) {
+        overview += `<li><strong>Descripción:</strong> ${artifact.description}</li>`;
+    }
+    
+    if (artifact.type) {
+        overview += `<li><strong>Tipo:</strong> ${artifact.type}</li>`;
+    }
+    
+    if (artifact.version) {
+        overview += `<li><strong>Versión:</strong> ${artifact.version}</li>`;
+    }
+    
+    if (artifact.status) {
+        overview += `<li><strong>Estado:</strong> ${artifact.status}</li>`;
+    }
+    
+    if (artifact.publisher) {
+        overview += `<li><strong>Editor:</strong> ${artifact.publisher}</li>`;
+    }
+    
+    if (artifact.date) {
+        overview += `<li><strong>Fecha:</strong> ${artifact.date}</li>`;
+    }
+    
+    if (artifact.url) {
+        overview += `<li><strong>URL:</strong> <a href="${artifact.url}" target="_blank" class="text-break small">${artifact.url}</a></li>`;
+    }
+    
+    overview += `<li><strong>Ver en fhir.mk:</strong> <a href="http://fhir.mk/public/fhir/artifacts/${artifact.id}" target="_blank">http://fhir.mk/public/fhir/artifacts/${artifact.id}</a></li>`;
     
     overview += '</ul>';
-    overview += '</div>';
-    overview += '</div>';
-    
-    // Descripción
-    if (content.description) {
-        overview += '<div class="mt-3">';
-        overview += '<h6>Descripción</h6>';
-        overview += `<p>${content.description}</p>`;
-        overview += '</div>';
-    }
     
     document.getElementById('overviewContent').innerHTML = overview;
 }
 
 @if($artifact['type'] === 'StructureDefinition')
+// Load elements content
 function loadElements() {
     const content = artifact.content;
-    let elements = '<div class="table-responsive">';
-    elements += '<table class="table table-sm">';
-    elements += '<thead><tr><th>Path</th><th>Nombre</th><th>Tipo</th><th>Cardinalidad</th><th>Descripción</th></tr></thead>';
-    elements += '<tbody>';
+    let elements = '';
     
-    if (content.snapshot && content.snapshot.element) {
+    if (content && content.snapshot && content.snapshot.element) {
         content.snapshot.element.forEach(element => {
-            elements += '<tr>';
-            elements += `<td><code>${element.path || ''}</code></td>`;
-            elements += `<td>${element.short || ''}</td>`;
-            elements += `<td>${element.type ? element.type.map(t => t.code).join(', ') : ''}</td>`;
-            elements += `<td>${element.min || ''}..${element.max || ''}</td>`;
-            elements += `<td>${element.definition || ''}</td>`;
-            elements += '</tr>';
+            const cardinality = element.min !== undefined && element.max !== undefined 
+                ? `${element.min}..${element.max}` 
+                : '';
+            
+            const type = element.type ? element.type.map(t => t.code).join(', ') : '';
+            
+            elements += `
+                <tr>
+                    <td><code>${element.path || ''}</code></td>
+                    <td>${cardinality}</td>
+                    <td>${type}</td>
+                    <td>${translateElementDescription(element.definition || '')}</td>
+                </tr>
+            `;
         });
     }
-    
-    elements += '</tbody>';
-    elements += '</table>';
-    elements += '</div>';
     
     document.getElementById('elementsContent').innerHTML = elements;
 }
 @endif
 
-@if($artifact['type'] === 'CodeSystem' || $artifact['type'] === 'ValueSet')
-function loadCodes() {
+@if($artifact['type'] === 'CapabilityStatement')
+// Load capabilities content
+function loadCapabilities() {
     const content = artifact.content;
-    let codes = '<div class="table-responsive">';
-    codes += '<table class="table table-sm">';
-    codes += '<thead><tr><th>Código</th><th>Display</th><th>Definición</th></tr></thead>';
-    codes += '<tbody>';
+    let capabilities = '<div class="row">';
     
-    if (artifact.type === 'CodeSystem' && content.concept) {
-        content.concept.forEach(concept => {
-            codes += '<tr>';
-            codes += `<td><code>${concept.code || ''}</code></td>`;
-            codes += `<td>${concept.display || ''}</td>`;
-            codes += `<td>${concept.definition || ''}</td>`;
-            codes += '</tr>';
-        });
-    } else if (artifact.type === 'ValueSet' && content.expansion && content.expansion.contains) {
-        content.expansion.contains.forEach(concept => {
-            codes += '<tr>';
-            codes += `<td><code>${concept.code || ''}</code></td>`;
-            codes += `<td>${concept.display || ''}</td>`;
-            codes += `<td>${concept.definition || ''}</td>`;
-            codes += '</tr>';
+    // General info
+    capabilities += '<div class="col-md-6">';
+    capabilities += '<h6>Información General</h6>';
+    capabilities += '<ul class="list-unstyled">';
+    
+    if (content.publisher) {
+        capabilities += `<li><strong>Editor:</strong> ${content.publisher}</li>`;
+    }
+    
+    if (content.description) {
+        capabilities += `<li><strong>Descripción:</strong> ${content.description}</li>`;
+    }
+    
+    if (content.status) {
+        capabilities += `<li><strong>Estado:</strong> ${content.status}</li>`;
+    }
+    
+    if (content.version) {
+        capabilities += `<li><strong>Versión:</strong> ${content.version}</li>`;
+    }
+    
+    capabilities += '</ul>';
+    capabilities += '</div>';
+    
+    // Supported formats
+    capabilities += '<div class="col-md-6">';
+    capabilities += '<h6>Formatos Soportados</h6>';
+    capabilities += '<ul class="list-unstyled">';
+    
+    if (content.format) {
+        content.format.forEach(format => {
+            capabilities += `<li><span class="badge bg-primary">${format}</span></li>`;
         });
     }
     
-    codes += '</tbody>';
-    codes += '</table>';
-    codes += '</div>';
+    capabilities += '</ul>';
+    capabilities += '</div>';
     
-    document.getElementById('codesContent').innerHTML = codes;
+    capabilities += '</div>';
+    
+    // REST capabilities
+    if (content.rest && content.rest.length > 0) {
+        capabilities += '<div class="mt-4">';
+        capabilities += '<h6>Capacidades REST</h6>';
+        
+        content.rest.forEach(rest => {
+            if (rest.resource) {
+                capabilities += '<div class="table-responsive">';
+                capabilities += '<table class="table table-sm">';
+                capabilities += '<thead><tr><th>Recurso</th><th>Operaciones</th><th>Versiones</th></tr></thead>';
+                capabilities += '<tbody>';
+                
+                rest.resource.forEach(resource => {
+                    const operations = resource.interaction ? 
+                        resource.interaction.map(i => i.code).join(', ') : '';
+                    const versions = resource.versioning || '';
+                    
+                    capabilities += `
+                        <tr>
+                            <td><code>${resource.type}</code></td>
+                            <td>${operations}</td>
+                            <td>${versions}</td>
+                        </tr>
+                    `;
+                });
+                
+                capabilities += '</tbody>';
+                capabilities += '</table>';
+                capabilities += '</div>';
+            }
+        });
+        
+        capabilities += '</div>';
+    }
+    
+    // Messaging capabilities
+    if (content.messaging && content.messaging.length > 0) {
+        capabilities += '<div class="mt-4">';
+        capabilities += '<h6>Capacidades de Mensajería</h6>';
+        capabilities += '<ul class="list-unstyled">';
+        
+        content.messaging.forEach(messaging => {
+            if (messaging.endpoint) {
+                messaging.endpoint.forEach(endpoint => {
+                    capabilities += `<li><strong>Endpoint:</strong> <code>${endpoint.address}</code></li>`;
+                });
+            }
+        });
+        
+        capabilities += '</ul>';
+        capabilities += '</div>';
+    }
+    
+    document.getElementById('capabilitiesContent').innerHTML = capabilities;
 }
 @endif
 
-function copyToClipboard(text) {
-    navigator.clipboard.writeText(text).then(function() {
-        showSuccessModal('Copiado', 'URL copiada al portapapeles');
-    });
-}
-
-function copyJson() {
-    const jsonText = document.getElementById('jsonContent').textContent;
-    navigator.clipboard.writeText(jsonText).then(function() {
-        showSuccessModal('Copiado', 'JSON copiado al portapapeles');
-    });
-}
-
-function downloadArtifact() {
-    const jsonText = JSON.stringify(artifact.content, null, 2);
-    const blob = new Blob([jsonText], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${artifact.name}.json`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-}
-
-function validateArtifact() {
-    const modal = new bootstrap.Modal(document.getElementById('validationModal'));
-    document.getElementById('validationResult').innerHTML = `
-        <div class="text-center">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Validando...</span>
-            </div>
-            <p class="mt-3">Validando artefacto...</p>
-        </div>
-    `;
-    modal.show();
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', function() {
+    loadOverview();
     
-    // Simular validación
-    setTimeout(() => {
-        document.getElementById('validationResult').innerHTML = `
-            <div class="alert alert-success">
-                <h6><i class="fas fa-check-circle me-2"></i>Validación Exitosa</h6>
-                <p class="mb-0">El artefacto ${artifact.name} es válido según las especificaciones FHIR.</p>
-            </div>
-            <div class="mt-3">
-                <h6>Detalles de Validación:</h6>
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-check text-success me-2"></i> Estructura JSON válida</li>
-                    <li><i class="fas fa-check text-success me-2"></i> Campos requeridos presentes</li>
-                    <li><i class="fas fa-check text-success me-2"></i> Cumple con el Core Chileno</li>
-                </ul>
-            </div>
-        `;
-    }, 2000);
-}
-
-function getStatusColor(status) {
-    switch (status) {
-        case 'active': return 'success';
-        case 'draft': return 'warning';
-        case 'retired': return 'danger';
-        default: return 'secondary';
-    }
-}
+    @if($artifact['type'] === 'StructureDefinition')
+    loadElements();
+    @endif
+    
+    @if($artifact['type'] === 'CapabilityStatement')
+    loadCapabilities();
+    @endif
+});
 </script>
-@endpush
+@endsection

@@ -3,6 +3,20 @@
 @section('title', 'Buscador de Artefactos FHIR - Core Chileno')
 
 @section('content')
+<!-- Language Selector -->
+<div class="d-flex justify-content-end mb-3">
+    <div class="btn-group" role="group">
+        <a href="{{ request()->fullUrlWithQuery(['lang' => 'es']) }}" 
+           class="btn btn-sm {{ app()->getLocale() === 'es' ? 'btn-primary' : 'btn-outline-primary' }}">
+            <i class="fas fa-flag me-1"></i>Español
+        </a>
+        <a href="{{ request()->fullUrlWithQuery(['lang' => 'en']) }}" 
+           class="btn btn-sm {{ app()->getLocale() === 'en' ? 'btn-primary' : 'btn-outline-primary' }}">
+            <i class="fas fa-flag me-1"></i>English
+        </a>
+    </div>
+</div>
+
 <div class="hero mb-6">
     <div class="card">
         <div class="card-body text-center">
@@ -486,6 +500,10 @@ function showArtifactDetails(artifactId) {
                 <div class="mb-2">
                     <strong>URL:</strong><br>
                     <a href="${artifact.url}" target="_blank" class="text-break">${artifact.url}</a>
+                </div>
+                <div class="mb-2">
+                    <strong>Ver en fhir.mk:</strong><br>
+                    <a href="http://fhir.mk/public/fhir/artifacts/${artifact.id}" target="_blank" class="text-break">http://fhir.mk/public/fhir/artifacts/${artifact.id}</a>
                 </div>
             </div>
         </div>
