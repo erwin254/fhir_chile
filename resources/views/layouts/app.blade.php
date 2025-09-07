@@ -228,7 +228,7 @@
 
         /* Content Area */
         .content-area {
-            padding: 2rem;
+            padding: 2.5rem;
             background: var(--light-color);
             min-height: calc(100vh - var(--header-height));
         }
@@ -248,14 +248,198 @@
         }
 
         .card-header-modern {
-            padding: 1.5rem;
+            padding: 2rem;
             border-bottom: 1px solid #E5E7EB;
             background: #F9FAFB;
             border-radius: 16px 16px 0 0;
         }
 
         .card-body-modern {
-            padding: 1.5rem;
+            padding: 2rem;
+        }
+
+        /* Spacing utilities */
+        .mb-6 { margin-bottom: 3rem !important; }
+        .mb-7 { margin-bottom: 4rem !important; }
+        .mb-8 { margin-bottom: 5rem !important; }
+        .mt-6 { margin-top: 3rem !important; }
+        .mt-7 { margin-top: 4rem !important; }
+        .mt-8 { margin-top: 5rem !important; }
+        .py-6 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+        .py-7 { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+        .py-8 { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+
+        /* Grid layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        /* Card improvements */
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-body {
+            padding: 2rem;
+        }
+
+        .card-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #E5E7EB;
+            background: #F9FAFB;
+        }
+
+        /* Hero section */
+        .hero {
+            margin-bottom: 3rem;
+        }
+
+        /* Button improvements */
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-secondary {
+            background: #6B7280;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #4B5563;
+            color: white;
+        }
+
+        .btn-success {
+            background: var(--gradient-secondary);
+            color: white;
+        }
+
+        .btn-success:hover {
+            color: white;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Progress bar improvements */
+        .progress {
+            height: 12px;
+            background: #E5E7EB;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        /* Typography improvements */
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        /* List improvements */
+        ul, ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        /* Form improvements */
+        .form-control, .form-select {
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid #D1D5DB;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Alert improvements */
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            border: none;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .content-area {
+                padding: 1.5rem;
+            }
+
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .card-body {
+                padding: 1.5rem;
+            }
+
+            .card-header {
+                padding: 1rem 1.5rem;
+            }
+
+            .hero {
+                margin-bottom: 2rem;
+            }
         }
 
         /* Progress Bars */
@@ -435,8 +619,14 @@
                         </a>
                     </div>
                     <div class="nav-item">
-                        <a href="#" class="nav-link ps-5" onclick="showFhirSearch()">
+                        <a href="{{ route('fhir.artifacts.browser') }}" class="nav-link ps-5">
                             <i class="fas fa-search text-primary"></i>
+                            Buscador de Artefactos
+                        </a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="nav-link ps-5" onclick="showFhirSearch()">
+                            <i class="fas fa-database text-warning"></i>
                             Buscar Recursos
                         </a>
                     </div>

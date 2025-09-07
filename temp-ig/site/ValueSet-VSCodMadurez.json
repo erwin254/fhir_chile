@@ -1,0 +1,42 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "VSCodMadurez",
+  "language" : "es",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"es\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet VSCodMadurez</b></p><a name=\"VSCodMadurez\"> </a><a name=\"hcVSCodMadurez\"> </a><a name=\"VSCodMadurez-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: es</p></div><ul><li>Include all codes defined in <a href=\"CodeSystem-CSCodMadurez.html\"><code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodMadurez</code></a></li></ul></div>"
+  },
+  "url" : "https://hl7chile.cl/fhir/ig/clcore/ValueSet/VSCodMadurez",
+  "version" : "1.9.3",
+  "name" : "VSCodMadurez",
+  "title" : "Códigos de grado de madurez del artefacto",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2022-07-25T00:00:00-03:00",
+  "publisher" : "HL7 Chile",
+  "contact" : [{
+    "name" : "HL7 Chile",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://hl7chile.cl"
+    },
+    {
+      "system" : "email",
+      "value" : "chair@hl7chile.cl"
+    }]
+  }],
+  "description" : "Códigos de grado de madurez del artefacto",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CL",
+      "display" : "Chile"
+    }]
+  }],
+  "copyright" : "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement",
+  "compose" : {
+    "include" : [{
+      "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodMadurez"
+    }]
+  }
+}

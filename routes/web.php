@@ -40,3 +40,10 @@ Route::post('/fhir/search', [FhirController::class, 'searchResources'])->name('f
 Route::get('/fhir/{resourceType}/{id}', [FhirController::class, 'getResource'])->name('fhir.get');
 Route::post('/fhir/create', [FhirController::class, 'createResource'])->name('fhir.create');
 
+// Rutas del Buscador de Artefactos
+Route::get('/fhir/artifacts', [App\Http\Controllers\ArtifactBrowserController::class, 'index'])->name('fhir.artifacts.browser');
+Route::get('/fhir/artifacts/search', [App\Http\Controllers\ArtifactBrowserController::class, 'search'])->name('fhir.artifacts.search');
+Route::get('/fhir/artifacts/{id}', [App\Http\Controllers\ArtifactBrowserController::class, 'show'])->name('fhir.artifacts.show');
+Route::get('/fhir/artifacts/type/{type}', [App\Http\Controllers\ArtifactBrowserController::class, 'getByType'])->name('fhir.artifacts.by-type');
+Route::get('/fhir/artifacts/stats', [App\Http\Controllers\ArtifactBrowserController::class, 'getStats'])->name('fhir.artifacts.stats');
+

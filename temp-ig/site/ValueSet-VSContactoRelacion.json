@@ -1,0 +1,45 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "VSContactoRelacion",
+  "language" : "es",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"es\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet VSContactoRelacion</b></p><a name=\"VSContactoRelacion\"> </a><a name=\"hcVSContactoRelacion\"> </a><a name=\"VSContactoRelacion-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: es</p></div><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href=\"http://terminology.hl7.org/6.4.0/CodeSystem-v2-0131.html\"><code>http://terminology.hl7.org/CodeSystem/v2-0131</code></a></li><li>Include all codes defined in <a href=\"CodeSystem-CSOtrosContactos.html\"><code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSOtrosContactos</code></a></li></ul></div>"
+  },
+  "url" : "https://hl7chile.cl/fhir/ig/clcore/ValueSet/VSContactoRelacion",
+  "version" : "1.9.3",
+  "name" : "VSContactoRelacion",
+  "title" : "Códigos de relación del contacto con el paciente",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2022-07-25T00:00:00-03:00",
+  "publisher" : "HL7 Chile",
+  "contact" : [{
+    "name" : "HL7 Chile",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://hl7chile.cl"
+    },
+    {
+      "system" : "email",
+      "value" : "chair@hl7chile.cl"
+    }]
+  }],
+  "description" : "Códigos de relación del contacto con el paciente",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CL",
+      "display" : "Chile"
+    }]
+  }],
+  "copyright" : "Usado con el permiso de HL7 International, todos los derechos resevados en los Licencias de HL7 Internacional.",
+  "compose" : {
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0131"
+    },
+    {
+      "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSOtrosContactos"
+    }]
+  }
+}

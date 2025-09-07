@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="DiagnosticoEj"/>
+  <meta>
+    <profile value="https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CoreDiagnosticoCl"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Condition DiagnosticoEj</b></p><a name="DiagnosticoEj"> </a><a name="hcDiagnosticoEj"> </a><a name="DiagnosticoEj-es-CL"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-CoreDiagnosticoCl.html">CL Condición-Diagnóstico</a></p></div><p><b>clinicalStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical active}">Activo</span></p><p><b>verificationStatus</b>: <span title="Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}">Confirmado</span></p><p><b>code</b>: <span title="Codes:{http://snomed.info/sct 38341003}">Diagnóstico de Hipertensión Confirmada</span></p><p><b>subject</b>: <a href="Patient-PacienteCL.html">Xime  Female, DoB: 1983-03-24 ( Chile: 15.236.327-k (use: official, ))</a></p><p><b>onset</b>: 2022-08-07</p></div>
+  </text>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      <code value="active"/>
+      <display value="Active"/>
+    </coding>
+    <text value="Activo"/>
+  </clinicalStatus>
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+      <code value="confirmed"/>
+      <display value="Confirmed"/>
+    </coding>
+    <text value="Confirmado"/>
+  </verificationStatus>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="38341003"/>
+      <display value="High blood pressure"/>
+    </coding>
+    <text value="Diagnóstico de Hipertensión Confirmada"/>
+  </code>
+  <subject>
+    <reference value="Patient/PacienteCL"/>
+  </subject>
+  <onsetDateTime value="2022-08-07"/>
+</Condition>

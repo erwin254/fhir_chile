@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="VSEspecialidadesCL"/>
+  <language value="es"/>
+  <text>
+    <status value="generated"/><div xml:lang="es" xmlns="http://www.w3.org/1999/xhtml" lang="es"><p class="res-header-id"><b>Generated Narrative: ValueSet VSEspecialidadesCL</b></p><a name="VSEspecialidadesCL"> </a><a name="hcVSEspecialidadesCL"> </a><a name="VSEspecialidadesCL-es-CL"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: es</p></div><p>This value set includes codes based on the following rules:</p><ul><li>Include all codes defined in <a href="CodeSystem-CSEspecialidadesDeisCL.html"><code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadesDeisCL</code></a></li><li>Include all codes defined in <a href="CodeSystem-CSEspecialidadOdontologica.html"><code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadOdontologica</code></a></li><li>Include all codes defined in <a href="CodeSystem-CSEspecialidadFarma.html"><code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadFarma</code></a></li><li>Include all codes defined in <a href="CodeSystem-EspecialidadesConacemConaceoCS.html"><code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/EspecialidadesConacemConaceoCS</code></a></li></ul></div>
+  </text>
+  <url value="https://hl7chile.cl/fhir/ig/clcore/ValueSet/VSEspecialidadesCL"/>
+  <version value="1.9.3"/>
+  <name value="VSEspecialidadesCL"/>
+  <title value="Códigos de Especialidades"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2022-01-18T00:00:00-03:00"/>
+  <publisher value="HL7 Chile"/>
+  <contact>
+    <name value="HL7 Chile"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7chile.cl"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="chair@hl7chile.cl"/>
+    </telecom>
+  </contact>
+  <description value="Códigos de especialidades médicas descritas según DEIS, la CONACEM y CONACEO"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="CL"/>
+      <display value="Chile"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="Usado con el permiso de HL7 International, todos los derechos resevados en los Licencias de HL7 Internacional."/>
+  <compose>
+    <include>
+      <system value="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadesDeisCL"/>
+    </include>
+    <include>
+      <system value="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadOdontologica"/>
+    </include>
+    <include>
+      <system value="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadFarma"/>
+    </include>
+    <include>
+      <system value="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/EspecialidadesConacemConaceoCS"/>
+    </include>
+  </compose>
+</ValueSet>

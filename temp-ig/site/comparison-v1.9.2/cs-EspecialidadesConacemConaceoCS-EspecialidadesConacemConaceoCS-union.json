@@ -1,0 +1,112 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "9520447a-14d7-47f0-ad76-2cc7928e8e90-53",
+  "url" : "http://hl7.org/fhir/comparison/CodeSystem/9520447a-14d7-47f0-ad76-2cc7928e8e90-53",
+  "name" : "UnionEspecialidadesConacemConaceoCSAndEspecialidadesConacemConaceoCS",
+  "title" : "Union of Códigos de Especialidades de CONACEM y CONACEO And Códigos de Especialidades de CONACEM y CONACEO",
+  "status" : "active",
+  "date" : "2025-06-02T16:45:11-04:00",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CL",
+      "display" : "Chile"
+    }]
+  }],
+  "concept" : [{
+    "code" : "1",
+    "display" : "Adolescencia"
+  },
+  {
+    "code" : "14",
+    "display" : "Dermatología y Venerología"
+  },
+  {
+    "code" : "16",
+    "display" : "Endocrinología"
+  },
+  {
+    "code" : "18",
+    "display" : "Enfermedades Respiratorias"
+  },
+  {
+    "code" : "19",
+    "display" : "Enfermedades Respiratorias Pediátricas"
+  },
+  {
+    "code" : "20",
+    "display" : "Gastroenterología"
+  },
+  {
+    "code" : "24",
+    "display" : "Ginecología Oncológica"
+  },
+  {
+    "code" : "30",
+    "display" : "Inmunología Clínica"
+  },
+  {
+    "code" : "32",
+    "display" : "Mastología"
+  },
+  {
+    "code" : "34",
+    "display" : "Medicina Física y Rehabilitación"
+  },
+  {
+    "code" : "35",
+    "display" : "Medicina Intensiva"
+  },
+  {
+    "code" : "39",
+    "display" : "Medicina Materno Fetal"
+  },
+  {
+    "code" : "41",
+    "display" : "Medicina Paliativa Del Adulto"
+  },
+  {
+    "code" : "42",
+    "display" : "Medicina Reproductiva"
+  },
+  {
+    "code" : "43",
+    "display" : "Nefrología"
+  },
+  {
+    "code" : "44",
+    "display" : "Nefrología Pediátrica"
+  },
+  {
+    "code" : "47",
+    "display" : "Neurología"
+  },
+  {
+    "code" : "49",
+    "display" : "Neurorradiología"
+  },
+  {
+    "code" : "50",
+    "display" : "Nutrición Clínica del Adulto"
+  },
+  {
+    "code" : "51",
+    "display" : "Nutrición Clínica Pediátrica"
+  },
+  {
+    "code" : "58",
+    "display" : "Psiquiatría"
+  },
+  {
+    "code" : "59",
+    "display" : "Psiquiatría Infantil y de la Adolescencia"
+  },
+  {
+    "code" : "3",
+    "display" : "Imagenología Maxilofacial"
+  },
+  {
+    "code" : "8",
+    "display" : "Patología Oral y Maxilofacial"
+  }]
+}

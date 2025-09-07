@@ -1,0 +1,332 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "9520447a-14d7-47f0-ad76-2cc7928e8e90-24",
+  "url" : "http://hl7.org/fhir/comparison/CodeSystem/9520447a-14d7-47f0-ad76-2cc7928e8e90-24",
+  "name" : "IntersectionCSTiposVacunaCLAndCSTiposVacunaCL",
+  "title" : "Intersection of Códigos de Vacunas RNI And Códigos de Vacunas RNI",
+  "status" : "active",
+  "date" : "2025-06-02T16:45:11-04:00",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CL",
+      "display" : "Chile"
+    }]
+  }],
+  "concept" : [{
+    "code" : "actacelPriv",
+    "display" : "Actacel (sector privado)"
+  },
+  {
+    "code" : "antirr",
+    "display" : "Antirrábica"
+  },
+  {
+    "code" : "antirrPriv",
+    "display" : "Antirrábica (sector privado)"
+  },
+  {
+    "code" : "antitifoInyPriv",
+    "display" : "Antitifoidea inyectable (sector privado)"
+  },
+  {
+    "code" : "bcgMat",
+    "display" : "BCG MATERNIDAD"
+  },
+  {
+    "code" : "bcg_mat",
+    "display" : "BCG_maternidad"
+  },
+  {
+    "code" : "fiebreAmar",
+    "display" : "Fiebre Amarilla"
+  },
+  {
+    "code" : "hep_A",
+    "display" : "Hepatítis A"
+  },
+  {
+    "code" : "hep_A_adult",
+    "display" : "Hepatitis A adulto"
+  },
+  {
+    "code" : "hep_A_adultPriv",
+    "display" : "Hepatitis A adulto (sector privado)"
+  },
+  {
+    "code" : "hep_A_ped",
+    "display" : "Hepatitis A pediátrica"
+  },
+  {
+    "code" : "hep_A_pedPriv",
+    "display" : "Hepatitis A pediátrica (sector privado)"
+  },
+  {
+    "code" : "hep_A-B_adultPriv",
+    "display" : "Hepatitis A-B adulto (sector privado)"
+  },
+  {
+    "code" : "hep_A-B_pedPriv",
+    "display" : "Hepatitis A-B pediátrica (sector privado)"
+  },
+  {
+    "code" : "hep_B_adult",
+    "display" : "Hepatitis B adulto"
+  },
+  {
+    "code" : "hep_B_adultPriv",
+    "display" : "Hepatitis B adulto (sector privado)"
+  },
+  {
+    "code" : "hep_B_dializAdult",
+    "display" : "Hepatitis B dializados adulto"
+  },
+  {
+    "code" : "hep_B_dializPed",
+    "display" : "Hepatitis B dializados pediátrica"
+  },
+  {
+    "code" : "hep_B_ped",
+    "display" : "Hepatitis B pediátrica"
+  },
+  {
+    "code" : "hep_B_pedPriv",
+    "display" : "Hepatitis B pediátrica (sector privado)"
+  },
+  {
+    "code" : "hep_B_maternidad",
+    "display" : "Hepatitis B_maternidad"
+  },
+  {
+    "code" : "herpesZPriv",
+    "display" : "Herpes Zoster (sector privado)"
+  },
+  {
+    "code" : "hexavalent",
+    "display" : "Hexavalente"
+  },
+  {
+    "code" : "hezavalentPriv",
+    "display" : "Hexavalente (sector privado)"
+  },
+  {
+    "code" : "inmAntitetanic",
+    "display" : "INMUNOGLOBULINA ANTITETANICA"
+  },
+  {
+    "code" : "inmAntiVaricela",
+    "display" : "Inmunoglobulina anti varicela"
+  },
+  {
+    "code" : "inmAntirrabica",
+    "display" : "Inmunoglobulina antirrábica"
+  },
+  {
+    "code" : "inmAntirrabicaPriv",
+    "display" : "Inmunoglobulina antirrábica (sector privado)"
+  },
+  {
+    "code" : "inmAntitetanica",
+    "display" : "Inmunoglobulina Antitetánica"
+  },
+  {
+    "code" : "inmEstandarH_A",
+    "display" : "Inmunoglobulina estandar (Hep. A)"
+  },
+  {
+    "code" : "inmEstandarSaramp",
+    "display" : "Inmunoglobulina estandar (Sarampión)"
+  },
+  {
+    "code" : "inmEstandarVaric",
+    "display" : "Inmunoglobulina estandar (Varicela)"
+  },
+  {
+    "code" : "inmHepat_B",
+    "display" : "Inmunoglobulina Hepatitis B"
+  },
+  {
+    "code" : "neumococicaConj10V",
+    "display" : "Neumocócica conjugada 10V"
+  },
+  {
+    "code" : "neomococicaConj10VPriv",
+    "display" : "Neumocócica conjugada 10V (sector privado)"
+  },
+  {
+    "code" : "neumococicaConj13V",
+    "display" : "Neumocócica conjugada 13V"
+  },
+  {
+    "code" : "neumococicaConj13VPriv",
+    "display" : "Neumocócica conjugada 13V (sector privado)"
+  },
+  {
+    "code" : "neumococicaPolisac23V",
+    "display" : "Neumocócica polisacárida 23V"
+  },
+  {
+    "code" : "neumococicaPolisac23VPriv",
+    "display" : "Neumocócica polisacárida 23V (sector privado)"
+  },
+  {
+    "code" : "pentavalente",
+    "display" : "Pentavalente"
+  },
+  {
+    "code" : "polioInactIny",
+    "display" : "Polio inactivada inyectable"
+  },
+  {
+    "code" : "polioInactInyPriv",
+    "display" : "Polio inactivada inyectable (sector privado)"
+  },
+  {
+    "code" : "polioOralBival_boPV",
+    "display" : "Polio oral bivalente (bOPV)"
+  },
+  {
+    "code" : "polioOralTrival",
+    "display" : "Polio oral trivalente"
+  },
+  {
+    "code" : "rotavirus",
+    "display" : "Rotavirus"
+  },
+  {
+    "code" : "rotavirusPriv",
+    "display" : "Rotavirus (sector privado)"
+  },
+  {
+    "code" : "saramp_rube_paper",
+    "display" : "Sarampión-Rubeóla-Paperas"
+  },
+  {
+    "code" : "toxoideDTPriv",
+    "display" : "Toxoide DT (sector privado)"
+  },
+  {
+    "code" : "toxoideDTEscol",
+    "display" : "TOXOIDE DT ESCOLAR"
+  },
+  {
+    "code" : "toxoideDTProfil",
+    "display" : "TOXOIDE DT PROFILAXIS"
+  },
+  {
+    "code" : "vacunaAntiten",
+    "display" : "VACUNA ANTITETÁNICA"
+  },
+  {
+    "code" : "vacunaAntitenPriv",
+    "display" : "Vacuna Antitetánica (sector privado)"
+  },
+  {
+    "code" : "vacunaBCG",
+    "display" : "VACUNA BCG"
+  },
+  {
+    "code" : "vacunaBexsero",
+    "display" : "VACUNA BEXSERO"
+  },
+  {
+    "code" : "vacunaBexseroPriv",
+    "display" : "VACUNA BEXSERO (Sector privado)"
+  },
+  {
+    "code" : "vacunaDPT",
+    "display" : "VACUNA DPT"
+  },
+  {
+    "code" : "vacunadpTaPriv",
+    "display" : "Vacuna dpTa (sector privado)"
+  },
+  {
+    "code" : "vacunadtPa",
+    "display" : "Vacuna dTpa"
+  },
+  {
+    "code" : "vacunaHepat_AyB",
+    "display" : "VACUNA HEPATITIS A Y B"
+  },
+  {
+    "code" : "vacunaHIB",
+    "display" : "VACUNA HIB"
+  },
+  {
+    "code" : "vacunaHIBPriv",
+    "display" : "Vacuna HIB (sector privado)"
+  },
+  {
+    "code" : "vacunaInfluTrival",
+    "display" : "VACUNA INFLUENZA TRIVALENTE"
+  },
+  {
+    "code" : "vacunaMenacPriv",
+    "display" : "VACUNA MENACTRA (Sector privado)"
+  },
+  {
+    "code" : "vacunaMenveo",
+    "display" : "VACUNA MENVEO"
+  },
+  {
+    "code" : "vacunaMenveoPriv",
+    "display" : "VACUNA MENVEO (Sector privado)"
+  },
+  {
+    "code" : "vacunaNeumoco7V",
+    "display" : "VACUNA NEUMOCOCICA 7 V"
+  },
+  {
+    "code" : "vacunaNimenrix",
+    "display" : "VACUNA NIMENRIX"
+  },
+  {
+    "code" : "vacunaNimenrixPriv",
+    "display" : "VACUNA NIMENRIX (sector privado)"
+  },
+  {
+    "code" : "vacunaPoliomielInact",
+    "display" : "VACUNA POLIOMIELITIS INACTIVADA"
+  },
+  {
+    "code" : "vacunaSRPt3VMonodos",
+    "display" : "VACUNA SRP (TRES VIRICA) MONODOSIS"
+  },
+  {
+    "code" : "vacunaSRP3VMultidos",
+    "display" : "VACUNA SRP (TRES VIRICA) MULTIDOSIS"
+  },
+  {
+    "code" : "vacunaSRPTrivMonodos",
+    "display" : "Vacuna SRP (trivirica) Monodosis"
+  },
+  {
+    "code" : "vacunaSRPTrivMultidos",
+    "display" : "Vacuna SRP (trivirica) Multidosis"
+  },
+  {
+    "code" : "varicela",
+    "display" : "Varicela"
+  },
+  {
+    "code" : "varicelaPriv",
+    "display" : "Varicela (sector privado)"
+  },
+  {
+    "code" : "VPHBivalPriv",
+    "display" : "VPH Bivalente (sector privado)"
+  },
+  {
+    "code" : "VPHNonavalPriv",
+    "display" : "VPH Nonavalente (sector privado)"
+  },
+  {
+    "code" : "VPHTetraval",
+    "display" : "VPH Tetravalente"
+  },
+  {
+    "code" : "VPHTretavalPriv",
+    "display" : "VPH Tetravalente (sector privado)"
+  }]
+}

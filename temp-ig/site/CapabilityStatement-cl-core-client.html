@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <title>HL7.FHIR.CL.CLCORE\CapabilityStatement Cliente Cl Core - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="http://hl7.org/fhir" />
+
+    <link href="fhir.css" rel="stylesheet" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet" />
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet" />
+    <link href="assets/css/pygments-manni.css" rel="stylesheet" />
+    <link href="assets/css/jquery-ui.css" rel="stylesheet" />
+    <link href="assets/css/prism.css" rel="stylesheet" /> <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/hl7chile.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-HLBNC861DJ" async>
+</script>
+
+    <script type="text/javascript" src="fhir-table-scripts.js">
+    </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png" />
+    <link rel="shortcut icon" href="assets/ico/favicon.png" />
+</head>
+
+<!-- JORGE MANSILLA -->
+<!-- Google tag (gtag.js) -->
+<!-- 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KDP1SHWXWT"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-KDP1SHWXWT');
+</script>
+-->
+<!-- Franco: Nota Para Mansilla Revisa este script genera errores al subir en Build -->
+
+
+
+<body onload="document.body.style.opacity='1'">
+    
+    <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">
+        h2 {
+            --heading-prefix:"6.1"
+        }
+        
+        h3,
+        h4,
+        h5,
+        h6 {
+            --heading-prefix:"6.1"
+        }
+    </style>
+    <div id="segment-header" class="segment">
+        <!-- segment-header -->
+        <div class="container">
+            <!-- container -->
+            <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="hl7chile-logo" no-external="true" href="http://hl7chile.cl">
+        <img height="71" alt="Visitar HL7 Chile" src="assets/images/hl7chile-logo.png" />
+    </a>
+</div>
+<div id="family-nav">
+    <a id="hl7chile-logo" no-external="true" href="https://www.hl7.org/"><img height="60" alt="Visitar HL7 FHIR Internacional" src="assets/images/LOGO_FHIR.svg" /> </a>
+</div>
+
+<!--
+<div id="hl7-search">
+  <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+</div>
+--> 
+            <div id="ig-status">
+                <p><span style="font-size:12pt;font-weight:bold">Guía de Implementación &#39;&#39;cl core&#39;&#39; FHIR R4, (Versión Evolutiva)</span>
+                    <br/>
+                    <span style="display:inline-block;">1.9.3 - trial-use
+
+
+
+  <img alt="Chile flag" src="assets/images/chl.svg" height="16" title="Chile"/>
+ 
+                    </span>
+                </p>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">
+        <!-- segment-navbar -->
+        <div id="stripe"> </div>
+        <div class="container">
+            <!-- container -->
+            <!-- HEADER CONTENT -->
+
+            <nav class="navbar navbar-inverse">
+                <!--status-bar-->
+                <div class="container">
+                    <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+                    <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+                    <div class="nav-collapse collapse navbar-inverse-collapse">
+                        <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Inicio</a>
+  </li>
+  <li>
+    <a href="Alcances-Objetivos.html">Objetivos</a>
+  </li>
+  <li>
+    <a href="Notas-MS.html">Must Support</a>
+  </li>
+  <li>
+    <a href="Aspectos-Generales.html">Generalidades</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">CapabilityStatement
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-cl-core-server.html">CapabilityStatement Servidor</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-cl-core-client.html">CapabilityStatement Cliente</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artefactos</a>
+  </li>
+  <li>
+    <a href="changes.html">Historial de cambios</a>
+  </li>
+</ul>
+                    </div>
+                    <!-- /.nav-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+            <!-- /.navbar -->
+            <!-- /HEADER CONTENT -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /segment-navbar -->
+    <!--status-bar-->
+    
+    <div id="segment-breadcrumb" class="segment">
+        <!-- segment-breadcrumb -->
+        <div class="container">
+            <!-- container -->
+            <ul class="breadcrumb">
+                <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>CapabilityStatement Cliente Cl Core</b></li> 
+            </ul>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">
+        <!-- segment-content -->
+        <div class="container">
+            <!-- container -->
+            <div class="row">
+                <div class="inner-wrapper">
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publication Build: This will be filled in by the publication tooling</p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CapabilityStatement-cl-core-client.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CapabilityStatement-cl-core-client.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+  <h2 id="root">CapabilityStatement: CapabilityStatement Cliente Cl Core
+
+  </h2>
+
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://hl7chile.cl/fhir/ig/clcore/CapabilityStatement/cl-core-client<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://hl7chile.cl/fhir/ig/clcore/CapabilityStatement/cl-core-client"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">1.9.3<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://hl7chile.cl/fhir/ig/clcore/CapabilityStatement/cl-core-client|1.9.3"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+            as of 2024-08-07
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">ClCoreClienteCapabilityStatement</span></td>
+    </tr>
+
+
+
+
+    <tr>
+      <td colspan="5"><p><em>Copyright/Legal</em>: Usado con el permiso de HL7 International, todos los derechos resevados en los Licencias de HL7 Internacional.</p>
+</td>
+    </tr>
+
+  </table>
+
+
+<p>
+<p>CapabilityStatement para definir las caracteristicas mínimas de un cliente con todas las interacciones posibles hacía un servidor</p>
+
+</p>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="CapabilityStatement-cl-core-client.xml.html">XML</a>, <a href="CapabilityStatement-cl-core-client.json.html">JSON</a>, <a href="CapabilityStatement-cl-core-client.ttl.html">Turtle</a>
+  </p>-->
+
+  
+  <p>
+      <a href="cl-core-client.openapi.json" no-download="true">Raw OpenAPI-Swagger Definition file</a> | <a href="cl-core-client.openapi.json" download>Download</a>
+  </p>
+  
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><a name="cl-core-client"> </a><a name="hccl-core-client"> </a><a name="cl-core-client-es-CL"> </a><h2 id="title">CapabilityStatement Cliente Cl Core</h2><ul><li>Implementation Guide Version: 1.9.3 </li><li>FHIR Version: 4.0.1 </li><li>Supported Formats: <strong>MAY</strong> support <code>json</code>, <strong>MAY</strong> support <code>xml</code>, <strong>MAY</strong> support <code>application/fhir+json</code>, <strong>MAY</strong> support <code>application/fhir+xml</code></li><li>Supported Patch Formats: <strong>MAY</strong> support <code>application/json-patch+json</code>, <strong>MAY</strong> support <code>application/xml-patch+xml</code>, <strong>MAY</strong> support <code>application/fhir+xml</code>, <strong>MAY</strong> support <code>application/fhir+json</code></li><li>Published on: 2024-08-07 09:44:00-0300 </li><li>Published by: HL7 Chile </li></ul><blockquote class="impl-note"><p><strong>Note to Implementers: FHIR Capabilities</strong></p><p>Any FHIR capability may be 'allowed' by the system unless explicitly marked as 'SHALL NOT'. A few items are marked as MAY in the Implementation Guide to highlight their potential relevance to the use case.</p></blockquote><h2 id="rest">FHIR RESTful Capabilities</h2><div class="panel panel-default"><div class="panel-heading"><h3 id="mode1" class="panel-title">Mode: <code>client</code></h3></div><div class="panel-body"><div><p>El Cliente de la CL Core <strong>DEBERÁ</strong>:</p>
+<ol>
+<li>Soportar la obtención y consulta de uno o más de perfiles Cl Core, utilizando las interacciones RESTful soportadas y los parámetros de búsqueda declarados en el CapabilityStatement Servidor Cl Core</li>
+<li>Seguir los requisitos documentados en las páginas de <a href="Aspectos-Generales.html">generalidades</a> y <a href="Notas-MS.html">Must Support</a>.</li>
+</ol>
+</div><div class="lead"><em>Summary of System-wide Interactions</em></div><ul><li><strong>MAY </strong>support the <code>transaction</code>interaction.</li><li><strong>MAY </strong>support the <code>batch</code>interaction.</li><li><strong>MAY </strong>support the <code>search-system</code>interaction.</li><li><strong>MAY </strong>support the <code>history-system</code>interaction.</li></ul></div></div><h3 id="resourcesCap1">Capabilities by Resource/Profile</h3><h4 id="resourcesSummary1">Summary</h4><p>The summary table lists the resources that are part of this configuration, and for each resource it lists:</p><ul><li>The relevant profiles (if any)</li><li>The interactions supported by each resource (<b><span class="bg-info">R</span></b>ead, <b><span class="bg-info">S</span></b>earch, <b><span class="bg-info">U</span></b>pdate, and <b><span class="bg-info">C</span></b>reate, are always shown, while <b><span class="bg-info">VR</span></b>ead, <b><span class="bg-info">P</span></b>atch, <b><span class="bg-info">D</span></b>elete, <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">I</span></b>nstance, or <b><span class="bg-info">H</span></b>istory on <b><span class="bg-info">T</span></b>ype are only present if at least one of the resources has support for them.</li><li><span>The required, recommended, and some optional search parameters (if any). </span></li><li>The linked resources enabled for <code>_include</code></li><li>The other resources enabled for <code>_revinclude</code></li><li>The operations on the resource (if any)</li></ul><div class="table-responsive"><table class="table table-condensed table-hover"><thead><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th class="text-center"><b title="GET a resource (read interaction)">R</b></th><th class="text-center"><b title="GET past versions of resources (vread interaction)">V-R</b></th><th class="text-center"><b title="GET all set of resources of the type (search interaction)">S</b></th><th class="text-center"><b title="PUT a new resource version (update interaction)">U</b></th><th class="text-center"><b title="PATCH a new resource version (patch interaction)">P</b></th><th class="text-center"><b title="POST a new resource (create interaction)">C</b></th><th class="text-center"><b title="DELETE a resource (delete interaction)">D</b></th><th class="text-center"><b title="GET changes to a resource (history interaction on instance)">H-I</b></th><th class="text-center"><b title="GET changes for all resources of the type (history interaction on type)">H-T</b></th><th><b title="Required and recommended search parameters">Searches</b></th><th><code><b>_include</b></code></th><th><code><b>_revinclude</b></code></th><th><b>Operations</b></th></tr></thead><tbody><tr><td><a href="#AllergyIntolerance1-1">AllergyIntolerance</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-CoreAlergiaIntCl.html">CL Alergias e Intolerancias</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>clinical-status, patient, varification-status, severity, date, manifestation, code, criticality, type, onset, _id</td><td><code>*</code>, <code>AllergyIntolerance:asserter</code>, <code>AllergyIntolerance:patient</code>, <code>AllergyIntolerance:recorder</code></td><td><code>AuditEvent:entity</code>, <code>Composition:entry</code>, <code>Composition:subject</code>, <code>Condition:evidence-detail</code>, <code>Observation:focus</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#AuditEvent1-2">AuditEvent</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-AuditEventCl.html">CL Auditoria</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>date, type, subtype, patient, action, outcome, agent, address, source, entity, _id</td><td><code>*</code>, <code>AuditEvent.agent</code>, <code/>, <code>AuditEvent.source</code>, <code>AuditEvent.patient</code>, <code>AuditEvent.entity</code></td><td><code>AuditEvent.entity</code>, <code>Composition:entry</code>, <code>Composition:subject</code>, <code>Condition:evidence-detail</code>, <code>Observation:focus</code>, <code>Provenance:entity</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Composition1-3">Composition</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-DocumentoCl.html">CL Documento</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>date, subject, type, section, title, attester, author, encounter, entry, identifier, status, _id</td><td><code>*</code>, <code>Composition:attester</code>, <code>Composition:author</code>, <code>Composition:encounter</code>, <code>Composition:entry</code>, <code>Composition:related-ref</code>, <code>Composition:subject</code></td><td><code>AuditEvent:entity</code>, <code>Composition:entry</code>, <code>Composition:related-ref</code>, <code>Composition:subject</code>, <code>Condition:evidence-detail</code>, <code>Observation:focus</code>, <code>Provenance:entity</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Condition1-4">Condition</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-CoreDiagnosticoCl.html">CL Condición-Diagnóstico</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>onset-date, subject, patient, clinical-status, verification-status, code, _id</td><td><code>*</code>, <code>Condition:asserter</code>, <code>Condition:encounter</code>, <code>Condition:evidence-detail</code>, <code>Condition:patient</code>, <code>Condition:subject</code></td><td><code>AuditEvent:entity</code>, <code>Composition:entry</code>, <code>Composition:subject</code>, <code>Condition:evidence-detail</code>, <code>Encounter:diagnosis</code>, <code>Encounter:reason-reference</code>, <code>Immunization:reason-reference</code>, <code>Observation:focus</code>, <code>Provenance:entity</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Encounter1-5">Encounter</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-EncounterCL.html">CL Encuentro Clínico</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>date, appointment, subject, patient, participant, practitioner, diagnosis, service-provider, status, class, reason-code, type, identifier, length, _id</td><td><code>*</code>, <code>Encounter:appointment</code>, <code>Encounter:diagnosis</code>, <code>Encounter:participant</code>, <code>Encounter:patient</code>, <code>Encounter:practitioner</code>, <code>Encounter:service-provider</code>, <code>Encounter:subject</code></td><td><code>AuditEvent:entity</code>, <code>Composition:encounter</code>, <code>Composition:entry</code>, <code>Composition:subject</code>, <code>Condition:encounter</code>, <code>Condition:evidence-detail</code>, <code>Encounter:part-of</code>, <code>Observation:encounter</code>, <code>Observation:focus</code>, <code>Provenance:entity</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Immunization1-6">Immunization</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ImmunizationCL.html">CL Inmunización</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>reaction-date, identifier, vaccine-code, location, status, _id</td><td><code>*</code>, <code>Immunization:location</code>, <code>Immunization:manufacturer</code>, <code>Immunization:patient</code>, <code>Immunization:performer</code>, <code>Immunization:reaction</code>, <code>Immunization:reason-reference</code></td><td><code>AuditEvent:entity</code>, <code>Composition:entry</code>, <code>Composition:subject</code>, <code>Condition:evidence-detail</code>, <code>Observation:focus</code>, <code>Observation:part-of</code>, <code>Provenance:entity</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Location1-7">Location</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-CoreLocalizacionCl.html">CL Localización</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>address-state, type, address-country, near, address-city, identifier, address, organization, address-use, name, status, _id</td><td><code>*</code>, <code>Location:endpoint</code>, <code>Location:organization</code>, <code>Location:partof</code></td><td><code>AuditEvent:entity</code>, <code>Composition:entry</code>, <code>Composition:subject</code>, <code>Condition:evidence-detail</code>, <code>Encounter:location</code>, <code>Immunization:location</code>, <code>Location:partof</code>, <code>Observation:focus</code>, <code>Observation:subject</code>, <code>PractitionerRole:location</code>, <code>Provenance:entity</code>, <code>Provenance:location</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Medication1-8">Medication</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-CoreMedicamentoCl.html">CL Medicamento</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>identifier, code, ingredient, ingredient-code, form, _id</td><td><code>*</code>, <code>Medication:ingredient</code>, <code>Medication:manufacturer</code></td><td><code>AuditEvent:entity</code>, <code>Composition:entry</code>, <code>Composition:subject</code>, <code>Condition:evidence-detail</code>, <code>Medication:ingredient</code>, <code>Observation:focus</code>, <code>Provenance:entity</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Observation1-9">Observation</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-CoreObservacionCL.html">CL Observación</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>identifier, code, _id, date, patient, performer, encounter, specimen, category, subject, has-member, code-value-concept, component-code-value-concept, combo-code-value-concept, code-value-quantity, combo-code-value-quantity, component-code-value-quantity, code-value-date, code-value-string, value-string, value-quantity, combo-value-quantity, component-value-quantity, value-date, combo-code, component-code, combo-value-concept, component-value-concept, value-concept, status</td><td><code>*</code>, <code>Observation:based-on</code>, <code>Observation:derived-from</code>, <code>Observation:device</code>, <code>Observation:encounter</code>, <code>Observation:focus</code>, <code>Observation:has-member</code>, <code>Observation:part-of</code>, <code>Observation:patient</code>, <code>Observation:performer</code>, <code>Observation:specimen</code>, <code>Observation:subject</code></td><td><code>AuditEvent:entity</code>, <code>Composition:entry</code>, <code>Composition:subject</code>, <code>Condition:evidence-detail</code>, <code>Encounter:reason-reference</code>, <code>Immunization:reaction</code>, <code>Immunization:reason-reference</code>, <code>Observation:derived-from</code>, <code>Observation:focus</code>, <code>Observation:has-member</code>, <code>Provenance:entity</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Organization1-10">Organization</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-CoreOrganizacionCl.html">CL Organización</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>address-state, address-country, address-city, identifier, address, active, address-use, name, phonetic, _id</td><td><code>*</code>, <code>Organization:endpoint</code>, <code>Organization:partof</code></td><td><code>AuditEvent:agent</code>, <code>AuditEvent:entity</code>, <code>AuditEvent:source</code>, <code>Composition:attester</code>, <code>Composition:entry</code>, <code>Composition:subject</code>, <code>Condition:evidence-detail</code>, <code>Encounter:service-provider</code>, <code>Immunization:manufacturer</code>, <code>Immunization:performer</code>, <code>Location:organization</code>, <code>Medication:manufacturer</code>, <code>Observation:focus</code>, <code>Observation:performer</code>, <code>Organization:partof</code>, <code>Patient:general-practitioner</code>, <code>Patient:organization</code>, <code>PractitionerRole:organization</code>, <code>Provenance:agent</code>, <code>Provenance:entity</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Patient1-11">Patient</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-CorePacienteCl.html">CL Paciente</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>birthdate, address-state, gender, address-country, phonetic, telecom, email, given, identifier, address, general-practitioner, language, address-use, address-city, name, phone, family, _id</td><td><code>*</code>, <code>Patient:general-practitioner</code>, <code>Patient:link</code>, <code>Patient:organization</code></td><td><code>AllergyIntolerance:asserter</code>, <code>AllergyIntolerance:patient</code>, <code>AllergyIntolerance:recorder</code>, <code>AuditEvent:agent</code>, <code>AuditEvent:entity</code>, <code>AuditEvent:patient</code>, <code>AuditEvent:source</code>, <code>Composition:attester</code>, <code>Composition:author</code>, <code>Composition:entry</code>, <code>Composition:patient</code>, <code>Composition:subject</code>, <code>Condition:evidence-detail</code>, <code>Condition:asserter</code>, <code>Condition:patient</code>, <code>Condition:subject</code>, <code>Encounter:patient</code>, <code>Encounter:subject</code>, <code>Immunization:patient</code>, <code>Observation:focus</code>, <code>Observation:patient</code>, <code>Observation:performer</code>, <code>Observation:subject</code>, <code>Patient:link</code>, <code>Provenance:agent</code>, <code>Provenance:entity</code>, <code>Provenance:patient</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Practitioner1-12">Practitioner</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-CorePrestadorCl.html">CL Prestador</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>birthdate, address-state, gender, address-country, phonetic, telecom, email, given, identifier, address, address-use, address-city, name, phone, family, _id</td><td><code>*</code></td><td><code>AllergyIntolerance:asserter</code>, <code>AllergyIntolerance:patient</code>, <code>AllergyIntolerance:recorder</code>, <code>AuditEvent:agent</code>, <code>AuditEvent:entity</code>, <code>AuditEvent:source</code>, <code>Composition:attester</code>, <code>Composition:author</code>, <code>Composition:entry</code>, <code>Composition:subject</code>, <code>Condition:evidence-detail</code>, <code>Condition:asserter</code>, <code>Encounter:participant</code>, <code>Encounter:practitioner</code>, <code>Immunization:performer</code>, <code>Observation:focus</code>, <code>Observation:performer</code>, <code>Patient:general-practitioner</code>, <code>PractitionerRole:practitioner</code>, <code>Provenance:agent</code>, <code>Provenance:entity</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#PractitionerRole1-13">PractitionerRole</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-CoreLocalizacionCl.html">CL Localización</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>date, specialty, role, practitioner, organization, location, active, _id</td><td><code>*</code>, <code>PractitionerRole:endpoint</code>, <code>PractitionerRole:location</code>, <code>PractitionerRole:organization</code>, <code>PractitionerRole:practitioner</code>, <code>PractitionerRole:practitioner</code></td><td><code>AllergyIntolerance:asserter</code>, <code>AllergyIntolerance:recorder</code>, <code>AuditEvent:agent</code>, <code>AuditEvent:entity</code>, <code>AuditEvent:source</code>, <code>Composition:attester</code>, <code>Composition:author</code>, <code>Composition:entry</code>, <code>Composition:subject</code>, <code>Condition:asserter</code>, <code>Condition:evidence-detail</code>, <code>Encounter:participant</code>, <code>Immunization:performer</code>, <code>Observation:focus</code>, <code>Observation:performer</code>, <code>Patient:general-practitioner</code>, <code>Provenance:agent</code>, <code>Provenance:entity</code>, <code>Provenance:target</code></td><td/></tr><tr><td><a href="#Provenance1-14">Provenance</a></td><td>Supported Profiles<br/>  <a href="StructureDefinition-ProvenanceCl.html">CL Provenance</a></td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td class="text-center">y</td><td>agent, agent-type, signature-type, recorded, target, patient, location, agent-role, _id</td><td><code>*</code>, <code>Provenance:agent</code>, <code>Provenance:entity</code>, <code>Provenance:location</code>, <code>Provenance:patient</code>, <code>Provenance:target</code></td><td><code>AuditEvent:entity</code>, <code>AuditEvent:source</code>, <code>Composition:entry</code>, <code>Composition:subject</code>, <code>Condition:evidence-detail</code>, <code>Observation:focus</code>, <code>Provenance:entity</code>, <code>Provenance:target</code></td><td/></tr></tbody></table></div><hr/><div class="panel panel-default"><div class="panel-heading"><h4 id="AllergyIntolerance1-1" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>AllergyIntolerance</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/allergyintolerance.html">AllergyIntolerance</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-CoreAlergiaIntCl.html">CL Alergias e Intolerancias</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/allergyintolerance.html#search">clinical-status</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/allergyintolerance.html#search">patient</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/allergyintolerance.html#search">varification-status</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/allergyintolerance.html#search">severity</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/allergyintolerance.html#search">date</a></td><td><code>date</code></td><td><div><p>Un cliente <strong>DEBERÁ</strong> proporcionar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em>.</p>
+<p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em></p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/allergyintolerance.html#search">manifestation</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/allergyintolerance.html#search">code</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/allergyintolerance.html#search">criticality</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/allergyintolerance.html#search">type</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/allergyintolerance.html#search">onset</a></td><td><code>date</code></td><td><div><p>Un cliente <strong>DEBERÁ</strong> proporcionar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em>.</p>
+<p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em></p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="AuditEvent1-2" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>AuditEvent</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/auditevent.html">AuditEvent</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-AuditEventCl.html">CL Auditoria</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/auditevent.html#search">date</a></td><td><code>date</code></td><td><div><p>Un cliente <strong>DEBERÁ</strong> proporcionar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em>.</p>
+<p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em></p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/auditevent.html#search">type</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/auditevent.html#search">subtype</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/auditevent.html#search">patient</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/auditevent.html#search">action</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/auditevent.html#search">outcome</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/auditevent.html#search">agent</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/auditevent.html#search">address</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/auditevent.html#search">source</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/auditevent.html#search">entity</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Composition1-3" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Composition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/composition.html">Composition</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-DocumentoCl.html">CL Documento</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/composition.html#search">date</a></td><td><code>date</code></td><td><div><p>Un cliente <strong>DEBERÁ</strong> proporcionar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em>.</p>
+<p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em></p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/composition.html#search">subject</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/composition.html#search">type</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/composition.html#search">section</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/composition.html#search">title</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/composition.html#search">attester</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/composition.html#search">author</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/composition.html#search">encounter</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/composition.html#search">entry</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/composition.html#search">identifier</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/composition.html#search">status</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Condition1-4" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Condition</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/condition.html">Condition</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-CoreDiagnosticoCl.html">CL Condición-Diagnóstico</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">onset-date</a></td><td><code>date</code></td><td><div><p>Un cliente <strong>DEBERÁ</strong> proporcionar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em>.</p>
+<p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em></p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">subject</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">patient</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">clinical-status</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">verification-status</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/condition.html#search">code</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Encounter1-5" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Encounter</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/encounter.html">Encounter</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-EncounterCL.html">CL Encuentro Clínico</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">date</a></td><td><code>date</code></td><td><div><p>Un cliente <strong>DEBERÁ</strong> proporcionar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em>.</p>
+<p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em></p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">appointment</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">subject</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">patient</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">participant</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">practitioner</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">diagnosis</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">service-provider</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">status</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">class</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">reason-code</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">type</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">identifier</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/encounter.html#search">length</a></td><td><code>quantity</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor entero o decimal.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Immunization1-6" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Immunization</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/immunization.html">Immunization</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ImmunizationCL.html">CL Inmunización</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/immunization.html#search">reaction-date</a></td><td><code>date</code></td><td><div><p>Un cliente <strong>DEBERÁ</strong> proporcionar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em>.</p>
+<p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em></p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/immunization.html#search">identifier</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/immunization.html#search">vaccine-code</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/immunization.html#search">location</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/immunization.html#search">status</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Location1-7" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Location</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/location.html">Location</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-CoreLocalizacionCl.html">CL Localización</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/location.html#search">address-state</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/location.html#search">type</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/location.html#search">address-country</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/location.html#search">near</a></td><td><code>special</code></td><td><div><p>Buscar ubicaciones donde la posición de la ubicación esté cerca o dentro de una distancia especificada de las coordenadas proporcionadas expresadas como [latitud]|[longitud]|[distancia]|[unidades] (usando el datum WGS84, ver notas).
+Si se omiten las unidades, se debe asumir kilómetros. Si se omite la distancia, el servidor <strong>PUEDE</strong> usar su propia discreción para determinar qué distancias deben considerarse cercanas (y las unidades son irrelevantes).</p>
+<p>Los servidores <strong>PUEDEN</strong> buscar usando varias técnicas que podrían tener diferentes precisiones, dependiendo de la eficiencia de la implementación.</p>
+<p>Requiere que también se proporcione el parámetro de distancia-cercana.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/location.html#search">address-city</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/location.html#search">identifier</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/location.html#search">address</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/location.html#search">organization</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/location.html#search">address-use</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/location.html#search">name</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/location.html#search">status</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Medication1-8" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Medication</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/medication.html">Medication</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-CoreMedicamentoCl.html">CL Medicamento</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/medication.html#search">identifier</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/medication.html#search">code</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/medication.html#search">ingredient</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/medication.html#search">ingredient-code</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/medication.html#search">form</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Observation1-9" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Observation</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/observation.html">Observation</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-CoreObservacionCL.html">CL Observación</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">identifier</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">code</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">date</a></td><td><code>date</code></td><td><div><p>Un cliente <strong>DEBERÁ</strong> proporcionar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em>.</p>
+<p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em></p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">patient</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">performer</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">encounter</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">specimen</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">category</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">subject</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">has-member</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">code-value-concept</a></td><td><code>composite</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar un Código y un parametro de valor codificado.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar la recepción y procesamiento un Código y un parametro de valor codificado</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">component-code-value-concept</a></td><td><code>composite</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar un Código y un parametro de valor codificado.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar la recepción y procesamiento un Código y un parametro de valor codificado, que se encuentra en el componente.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">combo-code-value-concept</a></td><td><code>composite</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar un Código y un parametro de valor codificado.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar la recepción y procesamiento un Código y un parametro de valor codificado, incluyendo si se encuentra en el componente.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">code-value-quantity</a></td><td><code>composite</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar un Código y un parametro de valor de cantidad.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar la recepción y procesamiento un Código y un parametro de valor de cantidad.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">combo-code-value-quantity</a></td><td><code>composite</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar un Código y un parametro de valor de cantidad.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar la recepción y procesamiento un Código y un parametro de valor de cantidad, incluyendo si se encuentra en el componente.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">component-code-value-quantity</a></td><td><code>composite</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar un Código y un parametro de valor de cantidad del componente.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar la recepción y procesamiento un Código y un parametro de valor de cantidad, que se encuentra en el componente.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">code-value-date</a></td><td><code>composite</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar un Código y un parametro de valor fecha/hora.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar la recepción y procesamiento de un Código y un parametro de valor fecha/hora.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">code-value-string</a></td><td><code>composite</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar un Código y un parametro de valor de texto.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar la recepción y procesamiento un Código y un parametro de valor de texto.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">value-string</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">value-quantity</a></td><td><code>quantity</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor entero o decimal.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">combo-value-quantity</a></td><td><code>quantity</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor entero o decimal.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">component-value-quantity</a></td><td><code>quantity</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor entero o decimal.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">value-date</a></td><td><code>date</code></td><td><div><p>Un cliente <strong>DEBERÁ</strong> proporcionar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em>.</p>
+<p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em></p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">combo-code</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">component-code</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">combo-value-concept</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">component-value-concept</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">value-concept</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/observation.html#search">status</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Organization1-10" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Organization</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/organization.html">Organization</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-CoreOrganizacionCl.html">CL Organización</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/organization.html#search">address-state</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/organization.html#search">address-country</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/organization.html#search">address-city</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/organization.html#search">identifier</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/organization.html#search">address</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/organization.html#search">active</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/organization.html#search">address-use</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/organization.html#search">name</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/organization.html#search">phonetic</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Patient1-11" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Patient</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/patient.html">Patient</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-CorePacienteCl.html">CL Paciente</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">birthdate</a></td><td><code>date</code></td><td><div><p>Un cliente <strong>DEBERÁ</strong> proveer una fecha precisa.</p>
+<p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">address-state</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">gender</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">address-country</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">phonetic</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">telecom</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">email</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">given</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">identifier</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">address</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">general-practitioner</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">language</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">address-use</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">address-city</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">name</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">phone</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/patient.html#search">family</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Practitioner1-12" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Practitioner</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/practitioner.html">Practitioner</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-CorePrestadorCl.html">CL Prestador</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">birthdate</a></td><td><code>date</code></td><td><div><p>Un cliente <strong>DEBERÁ</strong> proveer una fecha precisa.</p>
+<p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">address-state</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">gender</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">address-country</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">phonetic</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">telecom</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">email</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">given</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">identifier</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">address</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">address-use</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">address-city</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">name</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">phone</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitioner.html#search">family</a></td><td><code>string</code></td><td><div><p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="PractitionerRole1-13" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>PractitionerRole</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/practitionerrole.html">PractitionerRole</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-CoreLocalizacionCl.html">CL Localización</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitionerrole.html#search">date</a></td><td><code>date</code></td><td><div><p>A client <strong>SHALL</strong> provide a value precise*.</p>
+<p>A server <strong>SHALL</strong> support a value precise*.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitionerrole.html#search">specialty</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitionerrole.html#search">role</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitionerrole.html#search">practitioner</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitionerrole.html#search">organization</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitionerrole.html#search">location</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/practitionerrole.html#search">active</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div><div class="panel panel-default"><div class="panel-heading"><h4 id="Provenance1-14" class="panel-title"><span style="float: right;">Resource Conformance: SHALL </span>Provenance</h4></div><div class="panel-body"><div class="container"><div class="row"><div class="col-lg-4"><span class="lead">Core FHIR Resource</span><br/><a href="http://hl7.org/fhir/R4/provenance.html">Provenance</a></div><div class="col-lg-4"><span class="lead">Reference Policy</span><br/><code>literal</code>, <code>logical</code></div><div class="col-lg-4"><span class="lead">Interaction summary</span><br/><ul><li><strong>SHALL</strong> support <code>search-type</code>, <code>read</code>.</li><li><strong>SHOULD</strong> support <code>vread</code>, <code>history-instance</code>.</li><li><strong>MAY</strong> support <code>create</code>, <code>update</code>, <code>patch</code>, <code>delete</code>, <code>history-type</code>.</li></ul></div></div><p/><div class="row"><div class="col-6"><span class="lead">Supported Profiles</span><p><a href="StructureDefinition-ProvenanceCl.html">CL Provenance</a></p></div></div><p/><div class="row"><div class="col-lg-7"><span class="lead">Search Parameters</span><table class="table table-condensed table-hover"><thead><tr><th>Conformance</th><th>Parameter</th><th>Type</th><th>Documentation</th></tr></thead><tbody><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/provenance.html#search">agent</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/provenance.html#search">agent-type</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/provenance.html#search">signature-type</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/provenance.html#search">recorded</a></td><td><code>date</code></td><td><div><p>Un cliente <strong>DEBERÁ</strong> proporcionar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em>.</p>
+<p>Un servidor <strong>DEBERÁ</strong> soportar un valor preciso hasta el <em>segundo + desplazamiento de tiempo</em></p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/provenance.html#search">target</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/provenance.html#search">patient</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/provenance.html#search">location</a></td><td><code>reference</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de id y <strong>PODRÁ</strong> proporcionar tanto los valores de Tipo como de id.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/provenance.html#search">agent-role</a></td><td><code>token</code></td><td><div><p>El cliente <strong>DEBERÁ</strong> proporcionar al menos un valor de código y <strong>PODRÁ</strong> proporcionar tanto los valores de sistema como de código.</p>
+<p>El servidor <strong>DEBERÁ</strong> soportar ambos.</p>
+</div></td></tr><tr><td><b>SHALL</b></td><td><a href="http://hl7.org/fhir/R4/resource.html#search">_id</a></td><td><code>token</code></td><td><div><p>Id logico de este artefacto</p>
+</div></td></tr></tbody></table></div><div class="col-lg-5"> </div></div></div></div></div></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7chile.cl">HL7 Chile</a>.  Package hl7.fhir.cl.clcore#1.9.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jun 2, 2025 16:43-0400">2025-06-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+             Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Tabla de contenidos</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">Reporte QA</a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://hl7chile.cl/fhir/ig/clcore/history.html">Historial de versiones</a></a>
+ | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="">Issues</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

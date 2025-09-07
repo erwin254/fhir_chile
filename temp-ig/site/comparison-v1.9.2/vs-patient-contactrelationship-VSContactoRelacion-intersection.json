@@ -1,0 +1,9 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "9520447a-14d7-47f0-ad76-2cc7928e8e90-96",
+  "url" : "http://hl7.org/fhir/comparison/ValueSet/9520447a-14d7-47f0-ad76-2cc7928e8e90-96",
+  "name" : "IntersectionPatientContactRelationshipAndVSContactoRelacion",
+  "title" : "Intersection of Patient Contact Relationship  And Códigos de relación del contacto con el paciente",
+  "status" : "active",
+  "date" : "2025-06-02T16:45:11-04:00"
+}

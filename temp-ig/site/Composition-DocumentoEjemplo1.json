@@ -1,0 +1,71 @@
+{
+  "resourceType" : "Composition",
+  "id" : "DocumentoEjemplo1",
+  "meta" : {
+    "profile" : ["https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/DocumentoCl"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Composition DocumentoEjemplo1</b></p><a name=\"DocumentoEjemplo1\"> </a><a name=\"hcDocumentoEjemplo1\"> </a><a name=\"DocumentoEjemplo1-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-DocumentoCl.html\">CL Documento</a></p></div><p><b>identifier</b>: 2b2f3f16-12c4-40b1-97ec-c0e091412960</p><p><b>status</b>: Preliminary</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 11503-0}\">Registro Médico</span></p><p><b>encounter</b>: <a href=\"Encounter-EjemploEncounterCL.html\">Encounter: status = planned; class = Virtual (ActCode#VR); type = Programada; serviceType = Medicina General; period = 2022-06-23 00:00:00-0300 --&gt; 2022-06-23 00:50:00-0300</a></p><p><b>date</b>: 2022-08-07 10:30:00-0300</p><p><b>author</b>: <a href=\"PractitionerRole-EjemploEspecialidadCL2.html\">PractitionerRole: specialty = Medicina Familiar</a></p><p><b>title</b>: Registro Médico de Una Condición al Paciente</p><p><b>custodian</b>: <a href=\"Organization-OrganizacionClEjemplo1.html\">Organization Centro de Salud Familiar Arauco</a></p></div>"
+  },
+  "identifier" : {
+    "value" : "2b2f3f16-12c4-40b1-97ec-c0e091412960"
+  },
+  "status" : "preliminary",
+  "type" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "11503-0",
+      "display" : "Medical records"
+    }],
+    "text" : "Registro Médico"
+  },
+  "subject" : {
+    "reference" : "Patient/PacienteCL"
+  },
+  "encounter" : {
+    "reference" : "Encounter/EjemploEncounterCL"
+  },
+  "date" : "2022-08-07T10:30:00-03:00",
+  "author" : [{
+    "reference" : "PractitionerRole/EjemploEspecialidadCL2"
+  }],
+  "title" : "Registro Médico de Una Condición al Paciente",
+  "custodian" : {
+    "reference" : "Organization/OrganizacionClEjemplo1"
+  },
+  "section" : [{
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "70004-7",
+        "display" : "Diagnostic study note"
+      }],
+      "text" : "Diagnostico Estudio"
+    },
+    "text" : {
+      "status" : "additional",
+      "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Paciente presenta recaída sin confirmar de faringoamigdalitis, se realizará más estudios para confirmar</p></div>"
+    },
+    "entry" : [{
+      "reference" : "Condition/DiagnosticoEj2"
+    }]
+  },
+  {
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "code" : "57852-6",
+        "display" : "Problem list Narrative - Reported"
+      }],
+      "text" : "Listado de problemas"
+    },
+    "text" : {
+      "status" : "additional",
+      "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Adicionalmente el paciente ya poseía un diagnostico prevío de hipertensión</p></div>"
+    },
+    "entry" : [{
+      "reference" : "Condition/DiagnosticoEj"
+    }]
+  }]
+}

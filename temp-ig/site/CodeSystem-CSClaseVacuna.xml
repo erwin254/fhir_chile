@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="CSClaseVacuna"/>
+  <language value="es"/>
+  <text>
+    <status value="generated"/><div xml:lang="es" xmlns="http://www.w3.org/1999/xhtml" lang="es"><p class="res-header-id"><b>Generated Narrative: CodeSystem CSClaseVacuna</b></p><a name="CSClaseVacuna"> </a><a name="hcCSClaseVacuna"> </a><a name="CSClaseVacuna-es-CL"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: es</p></div><p>This case-sensitive code system <code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSClaseVacuna</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap">programatica<a name="CSClaseVacuna-programatica"> </a></td><td>Vacuna Programática</td></tr><tr><td style="white-space:nowrap">internacional<a name="CSClaseVacuna-internacional"> </a></td><td>Vacuna Internacional</td></tr><tr><td style="white-space:nowrap">campaña<a name="CSClaseVacuna-campa.241a"> </a></td><td>Vacunación Campaña</td></tr></table></div>
+  </text>
+  <url value="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSClaseVacuna"/>
+  <version value="1.9.3"/>
+  <name value="CSClaseVacuna"/>
+  <title value="Códigos de clases de Vacuna"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2022-01-18T00:00:00-03:00"/>
+  <publisher value="HL7 Chile"/>
+  <contact>
+    <name value="HL7 Chile"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7chile.cl"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="chair@hl7chile.cl"/>
+    </telecom>
+  </contact>
+  <description value="Códigos de clase de vacuna"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="CL"/>
+      <display value="Chile"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="Usado con el permiso de HL7 International, todos los derechos resevados en los Licencias de HL7 Internacional."/>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="3"/>
+  <concept>
+    <code value="programatica"/>
+    <display value="Vacuna Programática"/>
+  </concept>
+  <concept>
+    <code value="internacional"/>
+    <display value="Vacuna Internacional"/>
+  </concept>
+  <concept>
+    <code value="campaña"/>
+    <display value="Vacunación Campaña"/>
+  </concept>
+</CodeSystem>

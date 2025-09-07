@@ -1,0 +1,36 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "9520447a-14d7-47f0-ad76-2cc7928e8e90-9",
+  "url" : "http://hl7.org/fhir/comparison/CodeSystem/9520447a-14d7-47f0-ad76-2cc7928e8e90-9",
+  "name" : "IntersectionCSCodMadurezAndCSCodMadurez",
+  "title" : "Intersection of Códigos de grado de madurez del artefacto And Códigos de grado de madurez del artefacto",
+  "status" : "active",
+  "date" : "2025-06-02T16:45:11-04:00",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CL",
+      "display" : "Chile"
+    }]
+  }],
+  "concept" : [{
+    "code" : "1",
+    "display" : "1"
+  },
+  {
+    "code" : "2",
+    "display" : "2"
+  },
+  {
+    "code" : "3",
+    "display" : "3"
+  },
+  {
+    "code" : "4",
+    "display" : "4"
+  },
+  {
+    "code" : "N",
+    "display" : "N"
+  }]
+}

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="CSNombreCampana"/>
+  <language value="es"/>
+  <text>
+    <status value="generated"/><div xml:lang="es" xmlns="http://www.w3.org/1999/xhtml" lang="es"><p class="res-header-id"><b>Generated Narrative: CodeSystem CSNombreCampana</b></p><a name="CSNombreCampana"> </a><a name="hcCSNombreCampana"> </a><a name="CSNombreCampana-es-CL"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: es</p></div><p>This case-sensitive code system <code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSNombreCampana</code> defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap">campanSARSCov_2_AstraZ<a name="CSNombreCampana-campanSARSCov_2_AstraZ"> </a></td><td>Campaña SARS-CoV-2 (AstraZeneca)</td></tr><tr><td style="white-space:nowrap">campanSARSCov_2_Cansino<a name="CSNombreCampana-campanSARSCov_2_Cansino"> </a></td><td>Campaña SARS-CoV-2 (CanSino)</td></tr><tr><td style="white-space:nowrap">campanSARSCov_2_Intern<a name="CSNombreCampana-campanSARSCov_2_Intern"> </a></td><td>Campaña SARS-CoV-2 (Internacional)</td></tr><tr><td style="white-space:nowrap">campanSARSCov_2_Janssen<a name="CSNombreCampana-campanSARSCov_2_Janssen"> </a></td><td>Campaña SARS-CoV-2 (Janssen)</td></tr><tr><td style="white-space:nowrap">campanSARSCov_2_Moderna<a name="CSNombreCampana-campanSARSCov_2_Moderna"> </a></td><td>Campaña SARS-CoV-2 (Moderna)</td></tr><tr><td style="white-space:nowrap">campanSARSCov_2_Pfizer<a name="CSNombreCampana-campanSARSCov_2_Pfizer"> </a></td><td>Campaña SARS-CoV-2 (Pfizer)</td></tr><tr><td style="white-space:nowrap">campanSARSCov_2_Sinovac<a name="CSNombreCampana-campanSARSCov_2_Sinovac"> </a></td><td>Campaña SARS-CoV-2 (Sinovac)</td></tr><tr><td style="white-space:nowrap">campanSRP20_40<a name="CSNombreCampana-campanSRP20_40"> </a></td><td>Campaña SRP 20 - 24 años</td></tr><tr><td style="white-space:nowrap">estratCapullo<a name="CSNombreCampana-estratCapullo"> </a></td><td>Estrategia Capullo</td></tr><tr><td style="white-space:nowrap">estratCapullo2013<a name="CSNombreCampana-estratCapullo2013"> </a></td><td>Estrategia Capullo 2013</td></tr><tr><td style="white-space:nowrap">estratMeningocócica<a name="CSNombreCampana-estratMeningoc.243cica"> </a></td><td>Estrategia Meningocócica</td></tr><tr><td style="white-space:nowrap">hepatiA<a name="CSNombreCampana-hepatiA"> </a></td><td>Hepatitis A</td></tr><tr><td style="white-space:nowrap">hepatiA2012<a name="CSNombreCampana-hepatiA2012"> </a></td><td>Hepatitis A 2012</td></tr><tr><td style="white-space:nowrap">hepatiApost_Terr<a name="CSNombreCampana-hepatiApost_Terr"> </a></td><td>Hepatitis A post-terremoto</td></tr><tr><td style="white-space:nowrap">hepatiAar_Tar_Bio<a name="CSNombreCampana-hepatiAar_Tar_Bio"> </a></td><td>Hepatitis A, Arica-Tarapacá-Bíobío</td></tr><tr><td style="white-space:nowrap">hepatiABrote_Conting<a name="CSNombreCampana-hepatiABrote_Conting"> </a></td><td>Hepatitis A,Brote/Contingencia</td></tr><tr><td style="white-space:nowrap">influenza2010<a name="CSNombreCampana-influenza2010"> </a></td><td>Influenza 2010</td></tr><tr><td style="white-space:nowrap">influenza2011<a name="CSNombreCampana-influenza2011"> </a></td><td>Influenza 2011</td></tr><tr><td style="white-space:nowrap">influenza2012<a name="CSNombreCampana-influenza2012"> </a></td><td>Influenza 2012</td></tr><tr><td style="white-space:nowrap">influenza2013<a name="CSNombreCampana-influenza2013"> </a></td><td>Influenza 2013</td></tr><tr><td style="white-space:nowrap">influenza2014<a name="CSNombreCampana-influenza2014"> </a></td><td>Influenza 2014</td></tr><tr><td style="white-space:nowrap">influenza2015<a name="CSNombreCampana-influenza2015"> </a></td><td>Influenza 2015</td></tr><tr><td style="white-space:nowrap">influenza2016<a name="CSNombreCampana-influenza2016"> </a></td><td>Influenza 2016</td></tr><tr><td style="white-space:nowrap">influenza2017<a name="CSNombreCampana-influenza2017"> </a></td><td>Influenza 2017</td></tr><tr><td style="white-space:nowrap">influenza2018<a name="CSNombreCampana-influenza2018"> </a></td><td>Influenza 2018</td></tr><tr><td style="white-space:nowrap">influenza2019<a name="CSNombreCampana-influenza2019"> </a></td><td>Influenza 2019</td></tr><tr><td style="white-space:nowrap">influenza2020<a name="CSNombreCampana-influenza2020"> </a></td><td>Influenza 2020</td></tr><tr><td style="white-space:nowrap">influenza2021<a name="CSNombreCampana-influenza2021"> </a></td><td>Influenza 2021</td></tr><tr><td style="white-space:nowrap">influenza2022<a name="CSNombreCampana-influenza2022"> </a></td><td>Influenza 2022</td></tr><tr><td style="white-space:nowrap">sarampRubeoPaperas<a name="CSNombreCampana-sarampRubeoPaperas"> </a></td><td>Sarampión-Rubeóla-Paperas</td></tr><tr><td style="white-space:nowrap">SRPCampanSeguim2015<a name="CSNombreCampana-SRPCampanSeguim2015"> </a></td><td>SRP - Campaña de Seguimiento - 2015</td></tr><tr><td style="white-space:nowrap">SRPFuncSaludyPuestosFronteriz<a name="CSNombreCampana-SRPFuncSaludyPuestosFronteriz"> </a></td><td>SRP - Funcionarios de salud y Puestos Fronterizos</td></tr><tr><td style="white-space:nowrap">SRPCampanSeguim2020<a name="CSNombreCampana-SRPCampanSeguim2020"> </a></td><td>SRP- Campaña de seguimiento- 2020</td></tr><tr><td style="white-space:nowrap">SRPdelViajero<a name="CSNombreCampana-SRPdelViajero"> </a></td><td>SRP del viajero</td></tr><tr><td style="white-space:nowrap">tosConvul_brote_conting<a name="CSNombreCampana-tosConvul_brote_conting"> </a></td><td>Tos Convulsiva Brote-Contingencia</td></tr><tr><td style="white-space:nowrap">vacunaFiebAmar<a name="CSNombreCampana-vacunaFiebAmar"> </a></td><td>Vacuna Fiebre Amarilla</td></tr></table></div>
+  </text>
+  <url value="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSNombreCampana"/>
+  <version value="1.9.3"/>
+  <name value="CSNombreCampanaCL"/>
+  <title value="Campañas Inmunización"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2022-06-05T00:00:00-03:00"/>
+  <publisher value="HL7 Chile"/>
+  <contact>
+    <name value="HL7 Chile"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7chile.cl"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="chair@hl7chile.cl"/>
+    </telecom>
+  </contact>
+  <description value="Códigos de las campañas de vacunas o inmunizaciones según indicaciones del Ministerio de Salud"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="CL"/>
+      <display value="Chile"/>
+    </coding>
+  </jurisdiction>
+  <copyright value="Usado con el permiso de HL7 International, todos los derechos resevados en los Licencias de HL7 Internacional."/>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="36"/>
+  <concept>
+    <code value="campanSARSCov_2_AstraZ"/>
+    <display value="Campaña SARS-CoV-2 (AstraZeneca)"/>
+  </concept>
+  <concept>
+    <code value="campanSARSCov_2_Cansino"/>
+    <display value="Campaña SARS-CoV-2 (CanSino)"/>
+  </concept>
+  <concept>
+    <code value="campanSARSCov_2_Intern"/>
+    <display value="Campaña SARS-CoV-2 (Internacional)"/>
+  </concept>
+  <concept>
+    <code value="campanSARSCov_2_Janssen"/>
+    <display value="Campaña SARS-CoV-2 (Janssen)"/>
+  </concept>
+  <concept>
+    <code value="campanSARSCov_2_Moderna"/>
+    <display value="Campaña SARS-CoV-2 (Moderna)"/>
+  </concept>
+  <concept>
+    <code value="campanSARSCov_2_Pfizer"/>
+    <display value="Campaña SARS-CoV-2 (Pfizer)"/>
+  </concept>
+  <concept>
+    <code value="campanSARSCov_2_Sinovac"/>
+    <display value="Campaña SARS-CoV-2 (Sinovac)"/>
+  </concept>
+  <concept>
+    <code value="campanSRP20_40"/>
+    <display value="Campaña SRP 20 - 24 años"/>
+  </concept>
+  <concept>
+    <code value="estratCapullo"/>
+    <display value="Estrategia Capullo"/>
+  </concept>
+  <concept>
+    <code value="estratCapullo2013"/>
+    <display value="Estrategia Capullo 2013"/>
+  </concept>
+  <concept>
+    <code value="estratMeningocócica"/>
+    <display value="Estrategia Meningocócica"/>
+  </concept>
+  <concept>
+    <code value="hepatiA"/>
+    <display value="Hepatitis A"/>
+  </concept>
+  <concept>
+    <code value="hepatiA2012"/>
+    <display value="Hepatitis A 2012"/>
+  </concept>
+  <concept>
+    <code value="hepatiApost_Terr"/>
+    <display value="Hepatitis A post-terremoto"/>
+  </concept>
+  <concept>
+    <code value="hepatiAar_Tar_Bio"/>
+    <display value="Hepatitis A, Arica-Tarapacá-Bíobío"/>
+  </concept>
+  <concept>
+    <code value="hepatiABrote_Conting"/>
+    <display value="Hepatitis A,Brote/Contingencia"/>
+  </concept>
+  <concept>
+    <code value="influenza2010"/>
+    <display value="Influenza 2010"/>
+  </concept>
+  <concept>
+    <code value="influenza2011"/>
+    <display value="Influenza 2011"/>
+  </concept>
+  <concept>
+    <code value="influenza2012"/>
+    <display value="Influenza 2012"/>
+  </concept>
+  <concept>
+    <code value="influenza2013"/>
+    <display value="Influenza 2013"/>
+  </concept>
+  <concept>
+    <code value="influenza2014"/>
+    <display value="Influenza 2014"/>
+  </concept>
+  <concept>
+    <code value="influenza2015"/>
+    <display value="Influenza 2015"/>
+  </concept>
+  <concept>
+    <code value="influenza2016"/>
+    <display value="Influenza 2016"/>
+  </concept>
+  <concept>
+    <code value="influenza2017"/>
+    <display value="Influenza 2017"/>
+  </concept>
+  <concept>
+    <code value="influenza2018"/>
+    <display value="Influenza 2018"/>
+  </concept>
+  <concept>
+    <code value="influenza2019"/>
+    <display value="Influenza 2019"/>
+  </concept>
+  <concept>
+    <code value="influenza2020"/>
+    <display value="Influenza 2020"/>
+  </concept>
+  <concept>
+    <code value="influenza2021"/>
+    <display value="Influenza 2021"/>
+  </concept>
+  <concept>
+    <code value="influenza2022"/>
+    <display value="Influenza 2022"/>
+  </concept>
+  <concept>
+    <code value="sarampRubeoPaperas"/>
+    <display value="Sarampión-Rubeóla-Paperas"/>
+  </concept>
+  <concept>
+    <code value="SRPCampanSeguim2015"/>
+    <display value="SRP - Campaña de Seguimiento - 2015"/>
+  </concept>
+  <concept>
+    <code value="SRPFuncSaludyPuestosFronteriz"/>
+    <display value="SRP - Funcionarios de salud y Puestos Fronterizos"/>
+  </concept>
+  <concept>
+    <code value="SRPCampanSeguim2020"/>
+    <display value="SRP- Campaña de seguimiento- 2020"/>
+  </concept>
+  <concept>
+    <code value="SRPdelViajero"/>
+    <display value="SRP del viajero"/>
+  </concept>
+  <concept>
+    <code value="tosConvul_brote_conting"/>
+    <display value="Tos Convulsiva Brote-Contingencia"/>
+  </concept>
+  <concept>
+    <code value="vacunaFiebAmar"/>
+    <display value="Vacuna Fiebre Amarilla"/>
+  </concept>
+</CodeSystem>

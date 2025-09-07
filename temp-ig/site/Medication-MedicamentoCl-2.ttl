@@ -1,0 +1,40 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://hl7chile.cl/fhir/ig/clcore/Medication/MedicamentoCl-2> a fhir:Medication ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MedicamentoCl-2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CoreMedicamentoCl"^^xsd:anyURI ;
+       fhir:link <https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CoreMedicamentoCl>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Medication MedicamentoCl-2</b></p><a name=\"MedicamentoCl-2\"> </a><a name=\"hcMedicamentoCl-2\"> </a><a name=\"MedicamentoCl-2-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-CoreMedicamentoCl.html\">CL Medicamento</a></p></div><p><b>identifier</b>: <code>http://minsal.cl/semantikos/description-id</code>/1703591000167111 (use: official, ), <code>http://minsal.cl/semantikos/concept-id</code>/696681000167108 (use: official, )</p><p><b>code</b>: <span title=\"Codes:\">Hidroclorotiazida 25 mg + Valsartán 160 mg comprimido</span></p><p><b>manufacturer</b>: <a href=\"Organization-EjemploLaboratorio1.html\">Organization Laboratorio ACME de Chile</a></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [ fhir:v "http://minsal.cl/semantikos/description-id"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1703591000167111" ]
+  ] [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [ fhir:v "http://minsal.cl/semantikos/concept-id"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "696681000167108" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:text [ fhir:v "Hidroclorotiazida 25 mg + Valsartán 160 mg comprimido" ]
+  ] ; # 
+  fhir:manufacturer [
+     fhir:link <https://hl7chile.cl/fhir/ig/clcore/Organization/EjemploLaboratorio1> ;
+     fhir:reference [ fhir:v "Organization/EjemploLaboratorio1" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

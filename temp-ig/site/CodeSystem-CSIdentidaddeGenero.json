@@ -1,0 +1,68 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "CSIdentidaddeGenero",
+  "language" : "es",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"es\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem CSIdentidaddeGenero</b></p><a name=\"CSIdentidaddeGenero\"> </a><a name=\"hcCSIdentidaddeGenero\"> </a><a name=\"CSIdentidaddeGenero-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: es</p></div><p>This case-sensitive code system <code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSIdentidaddeGenero</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">1<a name=\"CSIdentidaddeGenero-1\"> </a></td><td>Masculino</td></tr><tr><td style=\"white-space:nowrap\">2<a name=\"CSIdentidaddeGenero-2\"> </a></td><td>Femenina</td></tr><tr><td style=\"white-space:nowrap\">3<a name=\"CSIdentidaddeGenero-3\"> </a></td><td>Transgénero Masculino</td></tr><tr><td style=\"white-space:nowrap\">4<a name=\"CSIdentidaddeGenero-4\"> </a></td><td>Transgénero Femenina</td></tr><tr><td style=\"white-space:nowrap\">5<a name=\"CSIdentidaddeGenero-5\"> </a></td><td>No binarie</td></tr><tr><td style=\"white-space:nowrap\">6<a name=\"CSIdentidaddeGenero-6\"> </a></td><td>Otra</td></tr><tr><td style=\"white-space:nowrap\">7<a name=\"CSIdentidaddeGenero-7\"> </a></td><td>No Revelado</td></tr></table></div>"
+  },
+  "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSIdentidaddeGenero",
+  "version" : "1.9.3",
+  "name" : "CSIdentidaddeGenero",
+  "title" : "Identidad de Genero",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2023-01-15",
+  "publisher" : "HL7 Chile",
+  "contact" : [{
+    "name" : "HL7 Chile",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://hl7chile.cl"
+    },
+    {
+      "system" : "email",
+      "value" : "chair@hl7chile.cl"
+    }]
+  }],
+  "description" : "Identidad de Genero",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CL",
+      "display" : "Chile"
+    }]
+  }],
+  "copyright" : "Usado con el permiso de HL7 International, todos los derechos resevados en los Licencias de HL7 Internacional.",
+  "caseSensitive" : true,
+  "content" : "complete",
+  "count" : 7,
+  "concept" : [{
+    "code" : "1",
+    "display" : "Masculino"
+  },
+  {
+    "code" : "2",
+    "display" : "Femenina"
+  },
+  {
+    "code" : "3",
+    "display" : "Transgénero Masculino"
+  },
+  {
+    "code" : "4",
+    "display" : "Transgénero Femenina"
+  },
+  {
+    "code" : "5",
+    "display" : "No binarie"
+  },
+  {
+    "code" : "6",
+    "display" : "Otra"
+  },
+  {
+    "code" : "7",
+    "display" : "No Revelado"
+  }]
+}

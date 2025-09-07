@@ -1,0 +1,86 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://hl7chile.cl/fhir/ig/clcore/ValueSet/cl-core-vs-signos-vitales> a fhir:ValueSet ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "cl-core-vs-signos-vitales"] ; # 
+  fhir:language [ fhir:v "es"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xml:lang=\"es\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet cl-core-vs-signos-vitales</b></p><a name=\"cl-core-vs-signos-vitales\"> </a><a name=\"hccl-core-vs-signos-vitales\"> </a><a name=\"cl-core-vs-signos-vitales-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: es</p></div><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/59576-9/\">59576-9</a></td><td style=\"color: #cccccc\">Índice de masa corporal: Paciente:Punto temporal:Prctl:Cuantitativo:Per age and sex</td></tr><tr><td><a href=\"https://loinc.org/77606-2/\">77606-2</a></td><td style=\"color: #cccccc\">Peso por longitud: Paciente:Punto temporal:Prctl:Cuantitativo:Per age and sex</td></tr><tr><td><a href=\"https://loinc.org/85354-9/\">85354-9</a></td><td style=\"color: #cccccc\">Panel de presión arterial con todos los niños opcional:Sistema arterial :Punto temporal:-:Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/8480-6/\">8480-6</a></td><td style=\"color: #cccccc\">Sistólica intravascular:Sistema arterial :Punto temporal:Pres:Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/8462-4/\">8462-4</a></td><td style=\"color: #cccccc\">Diastólica intravascular:Sistema arterial :Punto temporal:Pres:Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/39156-5/\">39156-5</a></td><td style=\"color: #cccccc\">Índice de masa corporal: Paciente:Punto temporal:Proporción:Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/8302-2/\">8302-2</a></td><td style=\"color: #cccccc\">Peso corporal: Paciente:Punto temporal:Len:Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/8310-5/\">8310-5</a></td><td style=\"color: #cccccc\">Temperatura corporal: Paciente:Punto temporal:Temperatura:Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/29463-7/\">29463-7</a></td><td style=\"color: #cccccc\">Peso corporal: Paciente:Punto temporal:Masa:Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/9843-4/\">9843-4</a></td><td style=\"color: #cccccc\">Circunferencia occipital-frontal:Cabeza :Punto temporal:Len:Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/8867-4/\">8867-4</a></td><td style=\"color: #cccccc\">Ritmo cardiaco:No especificado :Punto temporal:NRat:Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/59408-5/\">59408-5</a></td><td style=\"color: #cccccc\">Saturación de oxígeno:BldA :Punto temporal:Sr.:Cuantitativo:Pulse oximetry</td></tr><tr><td><a href=\"https://loinc.org/2708-6/\">2708-6</a></td><td style=\"color: #cccccc\">Saturación de oxígeno: Sangre arterial : Punto temporal: Fracción de masa: Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/3151-8/\">3151-8</a></td><td style=\"color: #cccccc\">Oxigeno inhalado:Gas inhl :Punto temporal:VRat:Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/3150-0/\">3150-0</a></td><td style=\"color: #cccccc\">Oxígeno / Gas total:Gas inhl :Punto temporal:VFr:Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/9279-1/\">9279-1</a></td><td style=\"color: #cccccc\">Respiraciones:Sistema respiratorio :Punto temporal:NRat:Cuantitativo:</td></tr><tr><td><a href=\"https://loinc.org/8289-1/\">8289-1</a></td><td style=\"color: #cccccc\">Circunferencia occipital-frontal:Cabeza :Punto temporal:Prctl:Cuantitativo:</td></tr></table></li></ul></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://hl7chile.cl/fhir/ig/clcore/ValueSet/cl-core-vs-signos-vitales"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.9.3"] ; # 
+  fhir:name [ fhir:v "VSSignosVitales"] ; # 
+  fhir:title [ fhir:v "Set de Valores Signos Vitales"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2022-01-18T00:00:00-03:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 Chile"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 Chile" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://hl7chile.cl" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "chair@hl7chile.cl" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Este set de valores LOINC utilizados para identificar los signos vitales"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "CL" ] ;
+       fhir:display [ fhir:v "Chile" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"] ; # 
+  fhir:compose [
+     fhir:include ( [
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:concept ( [
+         fhir:code [ fhir:v "59576-9" ]
+       ] [
+         fhir:code [ fhir:v "77606-2" ]
+       ] [
+         fhir:code [ fhir:v "85354-9" ]
+       ] [
+         fhir:code [ fhir:v "8480-6" ]
+       ] [
+         fhir:code [ fhir:v "8462-4" ]
+       ] [
+         fhir:code [ fhir:v "39156-5" ]
+       ] [
+         fhir:code [ fhir:v "8302-2" ]
+       ] [
+         fhir:code [ fhir:v "8310-5" ]
+       ] [
+         fhir:code [ fhir:v "29463-7" ]
+       ] [
+         fhir:code [ fhir:v "9843-4" ]
+       ] [
+         fhir:code [ fhir:v "8867-4" ]
+       ] [
+         fhir:code [ fhir:v "59408-5" ]
+       ] [
+         fhir:code [ fhir:v "2708-6" ]
+       ] [
+         fhir:code [ fhir:v "3151-8" ]
+       ] [
+         fhir:code [ fhir:v "3150-0" ]
+       ] [
+         fhir:code [ fhir:v "9279-1" ]
+       ] [
+         fhir:code [ fhir:v "8289-1" ]
+       ] )
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

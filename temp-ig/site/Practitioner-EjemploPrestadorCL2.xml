@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Practitioner xmlns="http://hl7.org/fhir">
+  <id value="EjemploPrestadorCL2"/>
+  <meta>
+    <profile value="https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePrestadorCl"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: Practitioner EjemploPrestadorCL2</b></p><a name="EjemploPrestadorCL2"> </a><a name="hcEjemploPrestadorCL2"> </a><a name="EjemploPrestadorCL2-es-CL"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-CorePrestadorCl.html">CL Prestador</a></p></div><p><b>identifier</b>: RUN/17435678-2 (use: official, ), RNPI/43212 (use: official, )</p><p><b>active</b>: true</p><p><b>name</b>: María Luisa Soto (Official)</p><p><b>telecom</b>: ph: 989789698(Mobile), <a href="mailto:DraSoto@mimail.com">DraSoto@mimail.com</a></p><p><b>address</b>: Av la Merced, 662, depto 814 null null null (home)</p><p><b>gender</b>: Female</p><p><b>birthDate</b>: 1988-09-01</p><blockquote><p><b>qualification</b></p><p><b>identifier</b>: cert</p><p><b>code</b>: <span title="Codes:">Profesional Médico Cirujano</span></p></blockquote><blockquote><p><b>qualification</b></p><p><b>identifier</b>: esp</p><p><b>code</b>: <span title="Codes:">Medicina Interna</span></p></blockquote><blockquote><p><b>qualification</b></p><p><b>identifier</b>: subesp</p><p><b>code</b>: <span title="Codes:">Medicina Familiar</span></p></blockquote></div>
+  </text>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSTipoIdentificador"/>
+        <code value="01"/>
+        <display value="RUN"/>
+      </coding>
+    </type>
+    <value value="17435678-2"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSTipoIdentificador"/>
+        <code value="13"/>
+        <display value="RNPI"/>
+      </coding>
+    </type>
+    <value value="43212"/>
+  </identifier>
+  <active value="true"/>
+  <name>
+    <use value="official"/>
+    <family value="Soto">
+      <extension url="https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/SegundoApellido">
+        <valueString value="Gonzalez"/>
+      </extension>
+    </family>
+    <given value="María"/>
+    <given value="Luisa"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="989789698"/>
+    <use value="mobile"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="DraSoto@mimail.com"/>
+    <use value="work"/>
+  </telecom>
+  <address>
+    <use value="home"/>
+    <line value="Av la Merced, 662, depto 814"/>
+    <city>
+      <extension url="https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ComunasCl">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL"/>
+            <code value="13101"/>
+            <display value="Santiago Centro"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+    </city>
+    <district>
+      <extension url="https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCl">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL"/>
+            <code value="131"/>
+            <display value="Santiago"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+    </district>
+    <state>
+      <extension url="https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl">
+        <valueCodeableConcept>
+          <coding>
+            <system value="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL"/>
+            <code value="13"/>
+            <display value="Metropolitana de Santiago"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+    </state>
+    <country>
+      <extension url="https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises">
+        <valueCodeableConcept>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="152"/>
+            <display value="Chile"/>
+          </coding>
+        </valueCodeableConcept>
+      </extension>
+    </country>
+  </address>
+  <gender value="female"/>
+  <birthDate value="1988-09-01"/>
+  <qualification>
+    <identifier>
+      <value value="cert"/>
+    </identifier>
+    <code>
+      <text value="Profesional Médico Cirujano"/>
+    </code>
+  </qualification>
+  <qualification>
+    <identifier>
+      <value value="esp"/>
+    </identifier>
+    <code>
+      <text value="Medicina Interna"/>
+    </code>
+  </qualification>
+  <qualification>
+    <identifier>
+      <value value="subesp"/>
+    </identifier>
+    <code>
+      <text value="Medicina Familiar"/>
+    </code>
+  </qualification>
+</Practitioner>

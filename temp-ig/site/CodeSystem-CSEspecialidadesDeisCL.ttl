@@ -1,0 +1,254 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadesDeisCL> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "CSEspecialidadesDeisCL"] ; # 
+  fhir:language [ fhir:v "es"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xml:lang=\"es\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem CSEspecialidadesDeisCL</b></p><a name=\"CSEspecialidadesDeisCL\"> </a><a name=\"hcCSEspecialidadesDeisCL\"> </a><a name=\"CSEspecialidadesDeisCL-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: es</p></div><p>This case-sensitive code system <code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadesDeisCL</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">1<a name=\"CSEspecialidadesDeisCL-1\"> </a></td><td>Anatomía Patológica</td></tr><tr><td style=\"white-space:nowrap\">2<a name=\"CSEspecialidadesDeisCL-2\"> </a></td><td>Anestesiología</td></tr><tr><td style=\"white-space:nowrap\">3<a name=\"CSEspecialidadesDeisCL-3\"> </a></td><td>Cardiología</td></tr><tr><td style=\"white-space:nowrap\">4<a name=\"CSEspecialidadesDeisCL-4\"> </a></td><td>Cirugía General</td></tr><tr><td style=\"white-space:nowrap\">5<a name=\"CSEspecialidadesDeisCL-5\"> </a></td><td>Cirugía de Cabeza, Cuello y Maxilofacial</td></tr><tr><td style=\"white-space:nowrap\">6<a name=\"CSEspecialidadesDeisCL-6\"> </a></td><td>Cirugía Cardiovascular</td></tr><tr><td style=\"white-space:nowrap\">7<a name=\"CSEspecialidadesDeisCL-7\"> </a></td><td>Cirugía  de Tórax</td></tr><tr><td style=\"white-space:nowrap\">8<a name=\"CSEspecialidadesDeisCL-8\"> </a></td><td>Cirugía Plástica y Reparadora</td></tr><tr><td style=\"white-space:nowrap\">9<a name=\"CSEspecialidadesDeisCL-9\"> </a></td><td>Cirugía Pediátrica</td></tr><tr><td style=\"white-space:nowrap\">10<a name=\"CSEspecialidadesDeisCL-10\"> </a></td><td>Cirugía Vascular Periférica</td></tr><tr><td style=\"white-space:nowrap\">11<a name=\"CSEspecialidadesDeisCL-11\"> </a></td><td>Coloproctología</td></tr><tr><td style=\"white-space:nowrap\">12<a name=\"CSEspecialidadesDeisCL-12\"> </a></td><td>Dermatología</td></tr><tr><td style=\"white-space:nowrap\">13<a name=\"CSEspecialidadesDeisCL-13\"> </a></td><td>Diabetología</td></tr><tr><td style=\"white-space:nowrap\">14<a name=\"CSEspecialidadesDeisCL-14\"> </a></td><td>Endocrinología Adulto</td></tr><tr><td style=\"white-space:nowrap\">15<a name=\"CSEspecialidadesDeisCL-15\"> </a></td><td>Endocrinología Pediatrica</td></tr><tr><td style=\"white-space:nowrap\">16<a name=\"CSEspecialidadesDeisCL-16\"> </a></td><td>Enfermedades Respiratorias del Adulto (Broncopulmonar)</td></tr><tr><td style=\"white-space:nowrap\">17<a name=\"CSEspecialidadesDeisCL-17\"> </a></td><td>Enfermedades Respiratorias Pediátricas(Broncopulmonar Pediátrico)</td></tr><tr><td style=\"white-space:nowrap\">18<a name=\"CSEspecialidadesDeisCL-18\"> </a></td><td>Gastroenterología Adulto</td></tr><tr><td style=\"white-space:nowrap\">19<a name=\"CSEspecialidadesDeisCL-19\"> </a></td><td>Gastroenterología Pediátrica</td></tr><tr><td style=\"white-space:nowrap\">20<a name=\"CSEspecialidadesDeisCL-20\"> </a></td><td>Genética Clínica</td></tr><tr><td style=\"white-space:nowrap\">21<a name=\"CSEspecialidadesDeisCL-21\"> </a></td><td>Geriatría</td></tr><tr><td style=\"white-space:nowrap\">22<a name=\"CSEspecialidadesDeisCL-22\"> </a></td><td>Ginecología Pediátrica y de la Adolescencia</td></tr><tr><td style=\"white-space:nowrap\">23<a name=\"CSEspecialidadesDeisCL-23\"> </a></td><td>Hematología</td></tr><tr><td style=\"white-space:nowrap\">24<a name=\"CSEspecialidadesDeisCL-24\"> </a></td><td>Imagenología</td></tr><tr><td style=\"white-space:nowrap\">25<a name=\"CSEspecialidadesDeisCL-25\"> </a></td><td>Infectología</td></tr><tr><td style=\"white-space:nowrap\">26<a name=\"CSEspecialidadesDeisCL-26\"> </a></td><td>Inmunología</td></tr><tr><td style=\"white-space:nowrap\">27<a name=\"CSEspecialidadesDeisCL-27\"> </a></td><td>Laboratorio Clínico</td></tr><tr><td style=\"white-space:nowrap\">28<a name=\"CSEspecialidadesDeisCL-28\"> </a></td><td>Medicina Familiar</td></tr><tr><td style=\"white-space:nowrap\">29<a name=\"CSEspecialidadesDeisCL-29\"> </a></td><td>Medicina Física y Rehabilitación (Fisiatria Adulto)</td></tr><tr><td style=\"white-space:nowrap\">30<a name=\"CSEspecialidadesDeisCL-30\"> </a></td><td>Medicina Interna</td></tr><tr><td style=\"white-space:nowrap\">31<a name=\"CSEspecialidadesDeisCL-31\"> </a></td><td>Medicina Intensiva Adulto</td></tr><tr><td style=\"white-space:nowrap\">32<a name=\"CSEspecialidadesDeisCL-32\"> </a></td><td>Medicina Intensiva Pediátrica</td></tr><tr><td style=\"white-space:nowrap\">33<a name=\"CSEspecialidadesDeisCL-33\"> </a></td><td>Medicina Legal</td></tr><tr><td style=\"white-space:nowrap\">34<a name=\"CSEspecialidadesDeisCL-34\"> </a></td><td>Medicina Materno Infantil</td></tr><tr><td style=\"white-space:nowrap\">35<a name=\"CSEspecialidadesDeisCL-35\"> </a></td><td>Medicina Nuclear</td></tr><tr><td style=\"white-space:nowrap\">36<a name=\"CSEspecialidadesDeisCL-36\"> </a></td><td>Medicina de Urgencia</td></tr><tr><td style=\"white-space:nowrap\">37<a name=\"CSEspecialidadesDeisCL-37\"> </a></td><td>Nefrología Adulto</td></tr><tr><td style=\"white-space:nowrap\">38<a name=\"CSEspecialidadesDeisCL-38\"> </a></td><td>Nefrología Pediátrico</td></tr><tr><td style=\"white-space:nowrap\">39<a name=\"CSEspecialidadesDeisCL-39\"> </a></td><td>Neonatología</td></tr><tr><td style=\"white-space:nowrap\">40<a name=\"CSEspecialidadesDeisCL-40\"> </a></td><td>Neurocirugía</td></tr><tr><td style=\"white-space:nowrap\">41<a name=\"CSEspecialidadesDeisCL-41\"> </a></td><td>Neurología Adulto</td></tr><tr><td style=\"white-space:nowrap\">42<a name=\"CSEspecialidadesDeisCL-42\"> </a></td><td>Neurología Pediátrica</td></tr><tr><td style=\"white-space:nowrap\">43<a name=\"CSEspecialidadesDeisCL-43\"> </a></td><td>Obstetricia y Ginecología</td></tr><tr><td style=\"white-space:nowrap\">44<a name=\"CSEspecialidadesDeisCL-44\"> </a></td><td>Oftalmología</td></tr><tr><td style=\"white-space:nowrap\">45<a name=\"CSEspecialidadesDeisCL-45\"> </a></td><td>Oncología Médica</td></tr><tr><td style=\"white-space:nowrap\">46<a name=\"CSEspecialidadesDeisCL-46\"> </a></td><td>Otorrinolaringología</td></tr><tr><td style=\"white-space:nowrap\">47<a name=\"CSEspecialidadesDeisCL-47\"> </a></td><td>Pediatría</td></tr><tr><td style=\"white-space:nowrap\">48<a name=\"CSEspecialidadesDeisCL-48\"> </a></td><td>Psiquiatría Adulto</td></tr><tr><td style=\"white-space:nowrap\">49<a name=\"CSEspecialidadesDeisCL-49\"> </a></td><td>Psiquiatría Pediátrica y de la Adolescencia</td></tr><tr><td style=\"white-space:nowrap\">50<a name=\"CSEspecialidadesDeisCL-50\"> </a></td><td>Radioterapia Oncológica</td></tr><tr><td style=\"white-space:nowrap\">51<a name=\"CSEspecialidadesDeisCL-51\"> </a></td><td>Reumatología</td></tr><tr><td style=\"white-space:nowrap\">52<a name=\"CSEspecialidadesDeisCL-52\"> </a></td><td>Salud Pública</td></tr><tr><td style=\"white-space:nowrap\">53<a name=\"CSEspecialidadesDeisCL-53\"> </a></td><td>Traumatología y Ortopedia</td></tr><tr><td style=\"white-space:nowrap\">54<a name=\"CSEspecialidadesDeisCL-54\"> </a></td><td>Urología</td></tr><tr><td style=\"white-space:nowrap\">55<a name=\"CSEspecialidadesDeisCL-55\"> </a></td><td>Cardiología Pediátrica</td></tr><tr><td style=\"white-space:nowrap\">56<a name=\"CSEspecialidadesDeisCL-56\"> </a></td><td>Cirugía Digestiva</td></tr><tr><td style=\"white-space:nowrap\">57<a name=\"CSEspecialidadesDeisCL-57\"> </a></td><td>Cirugía Plástica y Reparadora Pediátrica</td></tr><tr><td style=\"white-space:nowrap\">58<a name=\"CSEspecialidadesDeisCL-58\"> </a></td><td>Ginecología</td></tr><tr><td style=\"white-space:nowrap\">59<a name=\"CSEspecialidadesDeisCL-59\"> </a></td><td>Hemato-Oncología Pediátrica</td></tr><tr><td style=\"white-space:nowrap\">60<a name=\"CSEspecialidadesDeisCL-60\"> </a></td><td>Infectología Pediátrica</td></tr><tr><td style=\"white-space:nowrap\">61<a name=\"CSEspecialidadesDeisCL-61\"> </a></td><td>Medicina Familiar del Niño</td></tr><tr><td style=\"white-space:nowrap\">62<a name=\"CSEspecialidadesDeisCL-62\"> </a></td><td>Medicina Física y Rehabilitación Pediátrica (Fisiatría Pediátrica)</td></tr><tr><td style=\"white-space:nowrap\">63<a name=\"CSEspecialidadesDeisCL-63\"> </a></td><td>Nutriólogo</td></tr><tr><td style=\"white-space:nowrap\">64<a name=\"CSEspecialidadesDeisCL-64\"> </a></td><td>Nutriólogo Pediátrico</td></tr><tr><td style=\"white-space:nowrap\">65<a name=\"CSEspecialidadesDeisCL-65\"> </a></td><td>Reumatología Pediátrica</td></tr><tr><td style=\"white-space:nowrap\">66<a name=\"CSEspecialidadesDeisCL-66\"> </a></td><td>Obstetricia</td></tr><tr><td style=\"white-space:nowrap\">67<a name=\"CSEspecialidadesDeisCL-67\"> </a></td><td>Traumatología y Ortopedia Pediátrica</td></tr><tr><td style=\"white-space:nowrap\">68<a name=\"CSEspecialidadesDeisCL-68\"> </a></td><td>Urología Pediátrica</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadesDeisCL"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.9.3"] ; # 
+  fhir:name [ fhir:v "CSEspecialidadesDeisCL"] ; # 
+  fhir:title [ fhir:v "Códigos de Especialidades"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v false] ; # 
+  fhir:date [ fhir:v "2022-01-18T00:00:00-03:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 Chile"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 Chile" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://hl7chile.cl" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "chair@hl7chile.cl" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Códigos de especialidades médicas descritas según DEIS"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "CL" ] ;
+       fhir:display [ fhir:v "Chile" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "Usado con el permiso de HL7 International, todos los derechos resevados en los Licencias de HL7 Internacional."] ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "68"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "1" ] ;
+     fhir:display [ fhir:v "Anatomía Patológica" ]
+  ] [
+     fhir:code [ fhir:v "2" ] ;
+     fhir:display [ fhir:v "Anestesiología" ]
+  ] [
+     fhir:code [ fhir:v "3" ] ;
+     fhir:display [ fhir:v "Cardiología" ]
+  ] [
+     fhir:code [ fhir:v "4" ] ;
+     fhir:display [ fhir:v "Cirugía General" ]
+  ] [
+     fhir:code [ fhir:v "5" ] ;
+     fhir:display [ fhir:v "Cirugía de Cabeza, Cuello y Maxilofacial" ]
+  ] [
+     fhir:code [ fhir:v "6" ] ;
+     fhir:display [ fhir:v "Cirugía Cardiovascular" ]
+  ] [
+     fhir:code [ fhir:v "7" ] ;
+     fhir:display [ fhir:v "Cirugía  de Tórax" ]
+  ] [
+     fhir:code [ fhir:v "8" ] ;
+     fhir:display [ fhir:v "Cirugía Plástica y Reparadora" ]
+  ] [
+     fhir:code [ fhir:v "9" ] ;
+     fhir:display [ fhir:v "Cirugía Pediátrica" ]
+  ] [
+     fhir:code [ fhir:v "10" ] ;
+     fhir:display [ fhir:v "Cirugía Vascular Periférica" ]
+  ] [
+     fhir:code [ fhir:v "11" ] ;
+     fhir:display [ fhir:v "Coloproctología" ]
+  ] [
+     fhir:code [ fhir:v "12" ] ;
+     fhir:display [ fhir:v "Dermatología" ]
+  ] [
+     fhir:code [ fhir:v "13" ] ;
+     fhir:display [ fhir:v "Diabetología" ]
+  ] [
+     fhir:code [ fhir:v "14" ] ;
+     fhir:display [ fhir:v "Endocrinología Adulto" ]
+  ] [
+     fhir:code [ fhir:v "15" ] ;
+     fhir:display [ fhir:v "Endocrinología Pediatrica" ]
+  ] [
+     fhir:code [ fhir:v "16" ] ;
+     fhir:display [ fhir:v "Enfermedades Respiratorias del Adulto (Broncopulmonar)" ]
+  ] [
+     fhir:code [ fhir:v "17" ] ;
+     fhir:display [ fhir:v "Enfermedades Respiratorias Pediátricas(Broncopulmonar Pediátrico)" ]
+  ] [
+     fhir:code [ fhir:v "18" ] ;
+     fhir:display [ fhir:v "Gastroenterología Adulto" ]
+  ] [
+     fhir:code [ fhir:v "19" ] ;
+     fhir:display [ fhir:v "Gastroenterología Pediátrica" ]
+  ] [
+     fhir:code [ fhir:v "20" ] ;
+     fhir:display [ fhir:v "Genética Clínica" ]
+  ] [
+     fhir:code [ fhir:v "21" ] ;
+     fhir:display [ fhir:v "Geriatría" ]
+  ] [
+     fhir:code [ fhir:v "22" ] ;
+     fhir:display [ fhir:v "Ginecología Pediátrica y de la Adolescencia" ]
+  ] [
+     fhir:code [ fhir:v "23" ] ;
+     fhir:display [ fhir:v "Hematología" ]
+  ] [
+     fhir:code [ fhir:v "24" ] ;
+     fhir:display [ fhir:v "Imagenología" ]
+  ] [
+     fhir:code [ fhir:v "25" ] ;
+     fhir:display [ fhir:v "Infectología" ]
+  ] [
+     fhir:code [ fhir:v "26" ] ;
+     fhir:display [ fhir:v "Inmunología" ]
+  ] [
+     fhir:code [ fhir:v "27" ] ;
+     fhir:display [ fhir:v "Laboratorio Clínico" ]
+  ] [
+     fhir:code [ fhir:v "28" ] ;
+     fhir:display [ fhir:v "Medicina Familiar" ]
+  ] [
+     fhir:code [ fhir:v "29" ] ;
+     fhir:display [ fhir:v "Medicina Física y Rehabilitación (Fisiatria Adulto)" ]
+  ] [
+     fhir:code [ fhir:v "30" ] ;
+     fhir:display [ fhir:v "Medicina Interna" ]
+  ] [
+     fhir:code [ fhir:v "31" ] ;
+     fhir:display [ fhir:v "Medicina Intensiva Adulto" ]
+  ] [
+     fhir:code [ fhir:v "32" ] ;
+     fhir:display [ fhir:v "Medicina Intensiva Pediátrica" ]
+  ] [
+     fhir:code [ fhir:v "33" ] ;
+     fhir:display [ fhir:v "Medicina Legal" ]
+  ] [
+     fhir:code [ fhir:v "34" ] ;
+     fhir:display [ fhir:v "Medicina Materno Infantil" ]
+  ] [
+     fhir:code [ fhir:v "35" ] ;
+     fhir:display [ fhir:v "Medicina Nuclear" ]
+  ] [
+     fhir:code [ fhir:v "36" ] ;
+     fhir:display [ fhir:v "Medicina de Urgencia" ]
+  ] [
+     fhir:code [ fhir:v "37" ] ;
+     fhir:display [ fhir:v "Nefrología Adulto" ]
+  ] [
+     fhir:code [ fhir:v "38" ] ;
+     fhir:display [ fhir:v "Nefrología Pediátrico" ]
+  ] [
+     fhir:code [ fhir:v "39" ] ;
+     fhir:display [ fhir:v "Neonatología" ]
+  ] [
+     fhir:code [ fhir:v "40" ] ;
+     fhir:display [ fhir:v "Neurocirugía" ]
+  ] [
+     fhir:code [ fhir:v "41" ] ;
+     fhir:display [ fhir:v "Neurología Adulto" ]
+  ] [
+     fhir:code [ fhir:v "42" ] ;
+     fhir:display [ fhir:v "Neurología Pediátrica" ]
+  ] [
+     fhir:code [ fhir:v "43" ] ;
+     fhir:display [ fhir:v "Obstetricia y Ginecología" ]
+  ] [
+     fhir:code [ fhir:v "44" ] ;
+     fhir:display [ fhir:v "Oftalmología" ]
+  ] [
+     fhir:code [ fhir:v "45" ] ;
+     fhir:display [ fhir:v "Oncología Médica" ]
+  ] [
+     fhir:code [ fhir:v "46" ] ;
+     fhir:display [ fhir:v "Otorrinolaringología" ]
+  ] [
+     fhir:code [ fhir:v "47" ] ;
+     fhir:display [ fhir:v "Pediatría" ]
+  ] [
+     fhir:code [ fhir:v "48" ] ;
+     fhir:display [ fhir:v "Psiquiatría Adulto" ]
+  ] [
+     fhir:code [ fhir:v "49" ] ;
+     fhir:display [ fhir:v "Psiquiatría Pediátrica y de la Adolescencia" ]
+  ] [
+     fhir:code [ fhir:v "50" ] ;
+     fhir:display [ fhir:v "Radioterapia Oncológica" ]
+  ] [
+     fhir:code [ fhir:v "51" ] ;
+     fhir:display [ fhir:v "Reumatología" ]
+  ] [
+     fhir:code [ fhir:v "52" ] ;
+     fhir:display [ fhir:v "Salud Pública" ]
+  ] [
+     fhir:code [ fhir:v "53" ] ;
+     fhir:display [ fhir:v "Traumatología y Ortopedia" ]
+  ] [
+     fhir:code [ fhir:v "54" ] ;
+     fhir:display [ fhir:v "Urología" ]
+  ] [
+     fhir:code [ fhir:v "55" ] ;
+     fhir:display [ fhir:v "Cardiología Pediátrica" ]
+  ] [
+     fhir:code [ fhir:v "56" ] ;
+     fhir:display [ fhir:v "Cirugía Digestiva" ]
+  ] [
+     fhir:code [ fhir:v "57" ] ;
+     fhir:display [ fhir:v "Cirugía Plástica y Reparadora Pediátrica" ]
+  ] [
+     fhir:code [ fhir:v "58" ] ;
+     fhir:display [ fhir:v "Ginecología" ]
+  ] [
+     fhir:code [ fhir:v "59" ] ;
+     fhir:display [ fhir:v "Hemato-Oncología Pediátrica" ]
+  ] [
+     fhir:code [ fhir:v "60" ] ;
+     fhir:display [ fhir:v "Infectología Pediátrica" ]
+  ] [
+     fhir:code [ fhir:v "61" ] ;
+     fhir:display [ fhir:v "Medicina Familiar del Niño" ]
+  ] [
+     fhir:code [ fhir:v "62" ] ;
+     fhir:display [ fhir:v "Medicina Física y Rehabilitación Pediátrica (Fisiatría Pediátrica)" ]
+  ] [
+     fhir:code [ fhir:v "63" ] ;
+     fhir:display [ fhir:v "Nutriólogo" ]
+  ] [
+     fhir:code [ fhir:v "64" ] ;
+     fhir:display [ fhir:v "Nutriólogo Pediátrico" ]
+  ] [
+     fhir:code [ fhir:v "65" ] ;
+     fhir:display [ fhir:v "Reumatología Pediátrica" ]
+  ] [
+     fhir:code [ fhir:v "66" ] ;
+     fhir:display [ fhir:v "Obstetricia" ]
+  ] [
+     fhir:code [ fhir:v "67" ] ;
+     fhir:display [ fhir:v "Traumatología y Ortopedia Pediátrica" ]
+  ] [
+     fhir:code [ fhir:v "68" ] ;
+     fhir:display [ fhir:v "Urología Pediátrica" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

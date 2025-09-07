@@ -1,0 +1,28 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "9520447a-14d7-47f0-ad76-2cc7928e8e90-3",
+  "url" : "http://hl7.org/fhir/comparison/CodeSystem/9520447a-14d7-47f0-ad76-2cc7928e8e90-3",
+  "name" : "IntersectionCSClaseVacunaAndCSClaseVacuna",
+  "title" : "Intersection of Códigos de clases de Vacuna And Códigos de clases de Vacuna",
+  "status" : "active",
+  "date" : "2025-06-02T16:45:11-04:00",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CL",
+      "display" : "Chile"
+    }]
+  }],
+  "concept" : [{
+    "code" : "programatica",
+    "display" : "Vacuna Programática"
+  },
+  {
+    "code" : "internacional",
+    "display" : "Vacuna Internacional"
+  },
+  {
+    "code" : "campaña",
+    "display" : "Vacunación Campaña"
+  }]
+}

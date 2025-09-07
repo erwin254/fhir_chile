@@ -1,0 +1,195 @@
+{
+  "resourceType" : "Patient",
+  "id" : "PacienteCL",
+  "meta" : {
+    "profile" : ["https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CorePacienteCl"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Patient PacienteCL</b></p><a name=\"PacienteCL\"> </a><a name=\"hcPacienteCL\"> </a><a name=\"PacienteCL-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-CorePacienteCl.html\">CL Paciente</a></p></div><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\">Xime  Female, DoB: 1983-03-24 ( Chile: 15.236.327-k\u00a0(use:\u00a0official,\u00a0))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Record is active\">Active:</td><td colspan=\"3\">true</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Alternate names (see the one above)\">Alt. Name:</td><td colspan=\"3\">Marietta María Ximena Rosales (Official)</td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Detail</td><td colspan=\"3\"><ul><li>ph: 943561833(Mobile)</li><li><a href=\"mailto:mariRosal@mimail.com\">mariRosal@mimail.com</a></li><li>Av Los Chirimoyos, 32, casa 4 null null null (home)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Language spoken\">Language:</td><td colspan=\"3\"><span title=\"Codes:{urn:ietf:bcp:47 es-CL}\">Spanish (Chile)</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Nominated Contact: Next-of-Kin\">Next-of-Kin:</td><td colspan=\"3\"><ul><li>Juana Josefa Calleja (Official)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Patient Links\">Links:</td><td colspan=\"3\"><ul><li>General Practitioner: <a href=\"Organization-OrganizacionClEjemplo1.html\">Organization Centro de Salud Familiar Arauco</a></li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Sexo Biologico del paciente\"><a href=\"StructureDefinition-SexoBiologico.html\">Sexo Biologico del paciente</a></td><td colspan=\"3\"><span title=\"Codes:{http://hl7.org/fhir/administrative-gender male}\">Male</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Identidad De Género\"><a href=\"StructureDefinition-IdentidadDeGenero.html\">Identidad De Género</a></td><td colspan=\"3\"><span title=\"Codes:{https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSIdentidaddeGenero 1}\">Masculino</span></td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/IdentidadDeGenero",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSIdentidaddeGenero",
+        "code" : "1",
+        "display" : "Masculino"
+      }]
+    }
+  },
+  {
+    "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/SexoBiologico",
+    "valueCodeableConcept" : {
+      "coding" : [{
+        "system" : "http://hl7.org/fhir/administrative-gender",
+        "code" : "male",
+        "display" : "Male"
+      }]
+    }
+  }],
+  "identifier" : [{
+    "use" : "official",
+    "type" : {
+      "extension" : [{
+        "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "152",
+            "display" : "Chile"
+          }]
+        }
+      }],
+      "coding" : [{
+        "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoDNI",
+        "code" : "NNCHL",
+        "display" : "Chile"
+      }]
+    },
+    "system" : "http://regcivil.cl/Validacion/RUN",
+    "value" : "15.236.327-k"
+  }],
+  "active" : true,
+  "name" : [{
+    "use" : "official",
+    "family" : "Rosales",
+    "_family" : {
+      "extension" : [{
+        "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/SegundoApellido",
+        "valueString" : "Bosh"
+      }]
+    },
+    "given" : ["Marietta",
+    "María",
+    "Ximena"]
+  },
+  {
+    "use" : "usual",
+    "given" : ["Xime"]
+  }],
+  "telecom" : [{
+    "system" : "phone",
+    "value" : "943561833",
+    "use" : "mobile"
+  },
+  {
+    "system" : "email",
+    "value" : "mariRosal@mimail.com",
+    "use" : "work"
+  }],
+  "gender" : "female",
+  "birthDate" : "1983-03-24",
+  "address" : [{
+    "use" : "home",
+    "line" : ["Av Los Chirimoyos, 32, casa 4"],
+    "_city" : {
+      "extension" : [{
+        "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ComunasCl",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL",
+            "code" : "05602",
+            "display" : "Algarrobo"
+          }]
+        }
+      }]
+    },
+    "_district" : {
+      "extension" : [{
+        "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/ProvinciasCl",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL",
+            "code" : "056",
+            "display" : "San Antonio"
+          }]
+        }
+      }]
+    },
+    "_state" : {
+      "extension" : [{
+        "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/RegionesCl",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL",
+            "code" : "05",
+            "display" : "Valparaíso"
+          }]
+        }
+      }]
+    },
+    "_country" : {
+      "extension" : [{
+        "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CodigoPaises",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "152",
+            "display" : "Chile"
+          }]
+        }
+      }]
+    }
+  }],
+  "contact" : [{
+    "extension" : [{
+      "extension" : [{
+        "url" : "tutId",
+        "valueIdentifier" : {
+          "type" : {
+            "coding" : [{
+              "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoDNI",
+              "code" : "NNCHL",
+              "display" : "Chile"
+            }]
+          },
+          "system" : "http://regcivil.cl/Validacion/RUN",
+          "value" : "8987321-7"
+        }
+      },
+      {
+        "url" : "docProc",
+        "valueCodeableConcept" : {
+          "coding" : [{
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "152",
+            "display" : "Chile"
+          }]
+        }
+      }],
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/IdContacto"
+    }],
+    "relationship" : [{
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0131",
+        "code" : "N",
+        "display" : "Next-of-Kin"
+      }]
+    }],
+    "name" : {
+      "use" : "official",
+      "family" : "Calleja",
+      "_family" : {
+        "extension" : [{
+          "url" : "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/SegundoApellido",
+          "valueString" : "Morales"
+        }]
+      },
+      "given" : ["Juana",
+      "Josefa"]
+    }
+  }],
+  "communication" : [{
+    "language" : {
+      "coding" : [{
+        "system" : "urn:ietf:bcp:47",
+        "code" : "es-CL",
+        "display" : "Spanish (Chile)"
+      }]
+    }
+  }],
+  "generalPractitioner" : [{
+    "reference" : "Organization/OrganizacionClEjemplo1"
+  }]
+}

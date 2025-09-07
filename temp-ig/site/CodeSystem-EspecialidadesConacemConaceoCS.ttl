@@ -1,0 +1,122 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://hl7chile.cl/fhir/ig/clcore/CodeSystem/EspecialidadesConacemConaceoCS> a fhir:CodeSystem ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "EspecialidadesConacemConaceoCS"] ; # 
+  fhir:language [ fhir:v "es"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xml:lang=\"es\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es\"><p class=\"res-header-id\"><b>Generated Narrative: CodeSystem EspecialidadesConacemConaceoCS</b></p><a name=\"EspecialidadesConacemConaceoCS\"> </a><a name=\"hcEspecialidadesConacemConaceoCS\"> </a><a name=\"EspecialidadesConacemConaceoCS-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: es</p></div><p>This case-sensitive code system <code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/EspecialidadesConacemConaceoCS</code> defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">1<a name=\"EspecialidadesConacemConaceoCS-1\"> </a></td><td>Adolescencia</td></tr><tr><td style=\"white-space:nowrap\">14<a name=\"EspecialidadesConacemConaceoCS-14\"> </a></td><td>Dermatología y Venerología</td></tr><tr><td style=\"white-space:nowrap\">16<a name=\"EspecialidadesConacemConaceoCS-16\"> </a></td><td>Endocrinología</td></tr><tr><td style=\"white-space:nowrap\">18<a name=\"EspecialidadesConacemConaceoCS-18\"> </a></td><td>Enfermedades Respiratorias</td></tr><tr><td style=\"white-space:nowrap\">19<a name=\"EspecialidadesConacemConaceoCS-19\"> </a></td><td>Enfermedades Respiratorias Pediátricas</td></tr><tr><td style=\"white-space:nowrap\">20<a name=\"EspecialidadesConacemConaceoCS-20\"> </a></td><td>Gastroenterología</td></tr><tr><td style=\"white-space:nowrap\">24<a name=\"EspecialidadesConacemConaceoCS-24\"> </a></td><td>Ginecología Oncológica</td></tr><tr><td style=\"white-space:nowrap\">30<a name=\"EspecialidadesConacemConaceoCS-30\"> </a></td><td>Inmunología Clínica</td></tr><tr><td style=\"white-space:nowrap\">32<a name=\"EspecialidadesConacemConaceoCS-32\"> </a></td><td>Mastología</td></tr><tr><td style=\"white-space:nowrap\">34<a name=\"EspecialidadesConacemConaceoCS-34\"> </a></td><td>Medicina Física y Rehabilitación</td></tr><tr><td style=\"white-space:nowrap\">35<a name=\"EspecialidadesConacemConaceoCS-35\"> </a></td><td>Medicina Intensiva</td></tr><tr><td style=\"white-space:nowrap\">39<a name=\"EspecialidadesConacemConaceoCS-39\"> </a></td><td>Medicina Materno Fetal</td></tr><tr><td style=\"white-space:nowrap\">41<a name=\"EspecialidadesConacemConaceoCS-41\"> </a></td><td>Medicina Paliativa Del Adulto</td></tr><tr><td style=\"white-space:nowrap\">42<a name=\"EspecialidadesConacemConaceoCS-42\"> </a></td><td>Medicina Reproductiva</td></tr><tr><td style=\"white-space:nowrap\">43<a name=\"EspecialidadesConacemConaceoCS-43\"> </a></td><td>Nefrología</td></tr><tr><td style=\"white-space:nowrap\">44<a name=\"EspecialidadesConacemConaceoCS-44\"> </a></td><td>Nefrología Pediátrica</td></tr><tr><td style=\"white-space:nowrap\">47<a name=\"EspecialidadesConacemConaceoCS-47\"> </a></td><td>Neurología</td></tr><tr><td style=\"white-space:nowrap\">49<a name=\"EspecialidadesConacemConaceoCS-49\"> </a></td><td>Neurorradiología</td></tr><tr><td style=\"white-space:nowrap\">50<a name=\"EspecialidadesConacemConaceoCS-50\"> </a></td><td>Nutrición Clínica del Adulto</td></tr><tr><td style=\"white-space:nowrap\">51<a name=\"EspecialidadesConacemConaceoCS-51\"> </a></td><td>Nutrición Clínica Pediátrica</td></tr><tr><td style=\"white-space:nowrap\">58<a name=\"EspecialidadesConacemConaceoCS-58\"> </a></td><td>Psiquiatría</td></tr><tr><td style=\"white-space:nowrap\">59<a name=\"EspecialidadesConacemConaceoCS-59\"> </a></td><td>Psiquiatría Infantil y de la Adolescencia</td></tr><tr><td style=\"white-space:nowrap\">3<a name=\"EspecialidadesConacemConaceoCS-3\"> </a></td><td>Imagenología Maxilofacial</td></tr><tr><td style=\"white-space:nowrap\">8<a name=\"EspecialidadesConacemConaceoCS-8\"> </a></td><td>Patología Oral y Maxilofacial</td></tr></table></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:url [ fhir:v "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/EspecialidadesConacemConaceoCS"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "1.9.3"] ; # 
+  fhir:name [ fhir:v "EspecialidadesConacemConaceoCS"] ; # 
+  fhir:title [ fhir:v "Códigos de Especialidades de CONACEM y CONACEO"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v true] ; # 
+  fhir:date [ fhir:v "2025-06-02T16:42:31-04:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "HL7 Chile"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "HL7 Chile" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://hl7chile.cl" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "chair@hl7chile.cl" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Códigos a usar para las Especialidades provenientes de La Corporación Nacional Autónoma de Certificación de Especialidades Médicas (CONACEM) y de La Corporación Nacional Autónoma de Certificación de Especialidades Odontológicas (CONACEO) de Chile"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "CL" ] ;
+       fhir:display [ fhir:v "Chile" ]
+     ] )
+  ] ) ; # 
+  fhir:copyright [ fhir:v "Usado con el permiso de HL7 International, todos los derechos resevados en los Licencias de HL7 Internacional."] ; # 
+  fhir:caseSensitive [ fhir:v true] ; # 
+  fhir:content [ fhir:v "complete"] ; # 
+  fhir:count [ fhir:v "24"^^xsd:nonNegativeInteger] ; # 
+  fhir:concept ( [
+     fhir:code [ fhir:v "1" ] ;
+     fhir:display [ fhir:v "Adolescencia" ]
+  ] [
+     fhir:code [ fhir:v "14" ] ;
+     fhir:display [ fhir:v "Dermatología y Venerología" ]
+  ] [
+     fhir:code [ fhir:v "16" ] ;
+     fhir:display [ fhir:v "Endocrinología" ]
+  ] [
+     fhir:code [ fhir:v "18" ] ;
+     fhir:display [ fhir:v "Enfermedades Respiratorias" ]
+  ] [
+     fhir:code [ fhir:v "19" ] ;
+     fhir:display [ fhir:v "Enfermedades Respiratorias Pediátricas" ]
+  ] [
+     fhir:code [ fhir:v "20" ] ;
+     fhir:display [ fhir:v "Gastroenterología" ]
+  ] [
+     fhir:code [ fhir:v "24" ] ;
+     fhir:display [ fhir:v "Ginecología Oncológica" ]
+  ] [
+     fhir:code [ fhir:v "30" ] ;
+     fhir:display [ fhir:v "Inmunología Clínica" ]
+  ] [
+     fhir:code [ fhir:v "32" ] ;
+     fhir:display [ fhir:v "Mastología" ]
+  ] [
+     fhir:code [ fhir:v "34" ] ;
+     fhir:display [ fhir:v "Medicina Física y Rehabilitación" ]
+  ] [
+     fhir:code [ fhir:v "35" ] ;
+     fhir:display [ fhir:v "Medicina Intensiva" ]
+  ] [
+     fhir:code [ fhir:v "39" ] ;
+     fhir:display [ fhir:v "Medicina Materno Fetal" ]
+  ] [
+     fhir:code [ fhir:v "41" ] ;
+     fhir:display [ fhir:v "Medicina Paliativa Del Adulto" ]
+  ] [
+     fhir:code [ fhir:v "42" ] ;
+     fhir:display [ fhir:v "Medicina Reproductiva" ]
+  ] [
+     fhir:code [ fhir:v "43" ] ;
+     fhir:display [ fhir:v "Nefrología" ]
+  ] [
+     fhir:code [ fhir:v "44" ] ;
+     fhir:display [ fhir:v "Nefrología Pediátrica" ]
+  ] [
+     fhir:code [ fhir:v "47" ] ;
+     fhir:display [ fhir:v "Neurología" ]
+  ] [
+     fhir:code [ fhir:v "49" ] ;
+     fhir:display [ fhir:v "Neurorradiología" ]
+  ] [
+     fhir:code [ fhir:v "50" ] ;
+     fhir:display [ fhir:v "Nutrición Clínica del Adulto" ]
+  ] [
+     fhir:code [ fhir:v "51" ] ;
+     fhir:display [ fhir:v "Nutrición Clínica Pediátrica" ]
+  ] [
+     fhir:code [ fhir:v "58" ] ;
+     fhir:display [ fhir:v "Psiquiatría" ]
+  ] [
+     fhir:code [ fhir:v "59" ] ;
+     fhir:display [ fhir:v "Psiquiatría Infantil y de la Adolescencia" ]
+  ] [
+     fhir:code [ fhir:v "3" ] ;
+     fhir:display [ fhir:v "Imagenología Maxilofacial" ]
+  ] [
+     fhir:code [ fhir:v "8" ] ;
+     fhir:display [ fhir:v "Patología Oral y Maxilofacial" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

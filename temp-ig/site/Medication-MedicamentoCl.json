@@ -1,0 +1,27 @@
+{
+  "resourceType" : "Medication",
+  "id" : "MedicamentoCl",
+  "meta" : {
+    "profile" : ["https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CoreMedicamentoCl"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Medication MedicamentoCl</b></p><a name=\"MedicamentoCl\"> </a><a name=\"hcMedicamentoCl\"> </a><a name=\"MedicamentoCl-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-CoreMedicamentoCl.html\">CL Medicamento</a></p></div><p><b>identifier</b>: <code>http://minsal.cl/semantikos/description-id</code>/1991971000167110\u00a0(use:\u00a0official,\u00a0), <code>http://minsal.cl/semantikos/concept-id</code>/840851000167103\u00a0(use:\u00a0official,\u00a0)</p><p><b>code</b>: <span title=\"Codes:\">Tareg - D 160 / 25 comprimido recubierto (Novartis)</span></p><p><b>manufacturer</b>: <a href=\"Organization-EjemploLaboratorio1.html\">Organization Laboratorio ACME de Chile</a></p></div>"
+  },
+  "identifier" : [{
+    "use" : "official",
+    "system" : "http://minsal.cl/semantikos/description-id",
+    "value" : "1991971000167110"
+  },
+  {
+    "use" : "official",
+    "system" : "http://minsal.cl/semantikos/concept-id",
+    "value" : "840851000167103"
+  }],
+  "code" : {
+    "text" : "Tareg - D 160 / 25 comprimido recubierto (Novartis)"
+  },
+  "manufacturer" : {
+    "reference" : "Organization/EjemploLaboratorio1"
+  }
+}

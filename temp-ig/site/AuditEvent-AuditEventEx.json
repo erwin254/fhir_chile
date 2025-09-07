@@ -1,0 +1,56 @@
+{
+  "resourceType" : "AuditEvent",
+  "id" : "AuditEventEx",
+  "meta" : {
+    "profile" : ["https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/AuditEventCl"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: AuditEvent AuditEventEx</b></p><a name=\"AuditEventEx\"> </a><a name=\"hcAuditEventEx\"> </a><a name=\"AuditEventEx-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-AuditEventCl.html\">CL Auditoria</a></p></div><p><b>type</b>: <a href=\"http://terminology.hl7.org/6.4.0/CodeSystem-audit-event-type.html#audit-event-type-rest\">Audit Event ID rest</a>: Restful Operation</p><p><b>subtype</b>: <a href=\"http://hl7.org/fhir/R4/codesystem-restful-interaction.html#restful-interaction-search\">FHIR Restful Interactions search</a>: search</p><p><b>action</b>: Execute</p><p><b>recorded</b>: 2021-08-22 23:42:24+0000</p><p><b>outcome</b>: Success</p><blockquote><p><b>agent</b></p><p><b>type</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/extra-security-role-type humanuser}\">Usuario Humano</span></p><p><b>who</b>: Identifier: 95</p><p><b>altId</b>: 601847123</p><p><b>name</b>: Grahame Grieve</p><p><b>requestor</b>: true</p><h3>Networks</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Address</b></td><td><b>Type</b></td></tr><tr><td style=\"display: none\">*</td><td>Workstation1.ehr.familyclinic.com</td><td>Machine Name</td></tr></table></blockquote><h3>Sources</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Observer</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Practitioner-EjemploPrestadorCL.html\">Practitioner Johanna Rosa Silva (official)</a></td></tr></table><h3>Entities</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>What</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Organization-OrganizacionClEjemplo1.html\">Organization Centro de Salud Familiar Arauco</a></td></tr></table></div>"
+  },
+  "type" : {
+    "system" : "http://terminology.hl7.org/CodeSystem/audit-event-type",
+    "code" : "rest",
+    "display" : "Restful Operation"
+  },
+  "subtype" : [{
+    "system" : "http://hl7.org/fhir/restful-interaction",
+    "code" : "search",
+    "display" : "search"
+  }],
+  "action" : "E",
+  "recorded" : "2021-08-22T23:42:24Z",
+  "outcome" : "0",
+  "agent" : [{
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/extra-security-role-type",
+        "code" : "humanuser",
+        "display" : "human user"
+      }],
+      "text" : "Usuario Humano"
+    },
+    "who" : {
+      "identifier" : {
+        "value" : "95"
+      }
+    },
+    "altId" : "601847123",
+    "name" : "Grahame Grieve",
+    "requestor" : true,
+    "network" : {
+      "address" : "Workstation1.ehr.familyclinic.com",
+      "type" : "1"
+    }
+  }],
+  "source" : {
+    "observer" : {
+      "reference" : "Practitioner/EjemploPrestadorCL"
+    }
+  },
+  "entity" : [{
+    "what" : {
+      "reference" : "Organization/OrganizacionClEjemplo1"
+    }
+  }]
+}

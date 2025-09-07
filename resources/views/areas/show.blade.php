@@ -5,17 +5,15 @@
 @section('content')
 <div class="hero mb-6">
     <div class="card">
-        <div class="text-center mb-4">
-            <div style="font-size: 4rem; color: {{ $area->color }}; margin-bottom: 1rem;">
+        <div class="card-body text-center">
+            <div class="mb-4" style="font-size: 4rem; color: {{ $area->color }};">
                 <i class="{{ $area->icon }}"></i>
             </div>
-            <h1 style="color: {{ $area->color }}; margin-bottom: 1rem;">{{ $area->name }}</h1>
-            <p style="font-size: 1.1rem; color: #64748b;">{{ $area->description }}</p>
-        </div>
-        
-        <div class="text-center">
+            <h1 class="mb-3" style="color: {{ $area->color }};">{{ $area->name }}</h1>
+            <p class="mb-4" style="font-size: 1.1rem; color: #64748b;">{{ $area->description }}</p>
+            
             <a href="{{ route('home') }}" class="btn btn-secondary">
-                <i class="fas fa-arrow-left"></i> Volver al Inicio
+                <i class="fas fa-arrow-left me-2"></i> Volver al Inicio
             </a>
         </div>
     </div>
@@ -27,58 +25,56 @@
             @php
                 $progress = $moduleProgress && isset($moduleProgress[$module->id]) ? $moduleProgress[$module->id] : null;
             @endphp
-            <div class="card" style="position: relative;">
+            <div class="card position-relative">
                 <!-- Badge de completado -->
                 @if($progress && $progress['is_completed'])
-                    <div style="position: absolute; top: 1rem; right: 1rem; background: #10b981; color: white; padding: 0.5rem; border-radius: 50%; font-size: 1.2rem; z-index: 10;">
+                    <div class="position-absolute top-0 end-0 m-3 bg-success text-white rounded-circle p-2" style="z-index: 10;">
                         <i class="fas fa-check"></i>
                     </div>
                 @endif
 
-                <div class="mb-4">
-                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                        <div style="font-size: 2rem; color: {{ $area->color }}; margin-right: 1rem; position: relative;">
+                <div class="card-body">
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="me-3 position-relative" style="font-size: 2rem; color: {{ $area->color }};">
                             <i class="{{ $module->icon }}"></i>
                             @if($progress && $progress['is_completed'])
-                                <div style="position: absolute; top: -0.5rem; right: -0.5rem; background: #10b981; color: white; border-radius: 50%; width: 1.5rem; height: 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 0.8rem;">
+                                <div class="position-absolute top-0 end-0 bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 1.5rem; height: 1.5rem; font-size: 0.8rem; transform: translate(50%, -50%);">
                                     <i class="fas fa-check"></i>
                                 </div>
                             @endif
                         </div>
-                        <div style="flex: 1;">
-                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <h3 style="color: {{ $area->color }}; margin: 0;">{{ $module->name }}</h3>
+                        <div class="flex-grow-1">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <h3 class="mb-0" style="color: {{ $area->color }};">{{ $module->name }}</h3>
                                 @if($progress)
-                                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <div class="d-flex align-items-center gap-2">
                                         @if($progress['status'] === 'completed')
-                                            <span style="background: #10b981; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem; font-weight: 500;">
-                                                <i class="fas fa-check"></i> Completado
+                                            <span class="badge bg-success">
+                                                <i class="fas fa-check me-1"></i> Completado
                                             </span>
                                         @elseif($progress['status'] === 'in_progress')
-                                            <span style="background: #f59e0b; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem; font-weight: 500;">
-                                                <i class="fas fa-play"></i> En Progreso
+                                            <span class="badge bg-warning">
+                                                <i class="fas fa-play me-1"></i> En Progreso
                                             </span>
                                         @else
-                                            <span style="background: #6b7280; color: white; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem; font-weight: 500;">
-                                                <i class="fas fa-clock"></i> No Iniciado
+                                            <span class="badge bg-secondary">
+                                                <i class="fas fa-clock me-1"></i> No Iniciado
                                             </span>
                                         @endif
                                     </div>
                                 @endif
                             </div>
-                            <p style="color: #64748b; font-size: 0.9rem; margin: 0;">{{ $module->description }}</p>
+                            <p class="text-muted mb-3">{{ $module->description }}</p>
                             
                             @if($progress)
-                                <div style="margin-top: 0.75rem;">
-                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-                                        <span style="font-size: 0.875rem; color: #64748b;">
-                                            Progreso del Módulo
-                                        </span>
-                                        <span style="font-size: 0.875rem; color: #64748b; font-weight: 500;">
+                                <div class="mt-3">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="text-muted small">Progreso del Módulo</span>
+                                        <span class="text-muted small fw-semibold">
                                             {{ $progress['completed_lessons'] }}/{{ $progress['total_lessons'] }} lecciones
                                         </span>
                                     </div>
-                                    <div class="progress" style="height: 8px; background: #e5e7eb; border-radius: 4px; overflow: hidden;">
+                                    <div class="progress">
                                         <div class="progress-bar" 
                                              style="width: {{ $progress['progress_percentage'] }}%; 
                                                     background: {{ $progress['is_completed'] ? '#10b981' : '#3b82f6' }}; 
@@ -89,115 +85,119 @@
                             @endif
                         </div>
                     </div>
-                </div>
 
-                @if($module->objectives)
-                    <div class="mb-4">
-                        <h4 style="color: #1e293b; margin-bottom: 0.5rem;">
-                            <i class="fas fa-bullseye"></i> Objetivos de Aprendizaje
-                        </h4>
-                        <div style="background: #f8fafc; padding: 1rem; border-radius: 0.5rem; border-left: 4px solid {{ $area->color }};">
-                            <p style="white-space: pre-line; margin: 0;">{{ $module->objectives }}</p>
+                    @if($module->objectives)
+                        <div class="mb-4">
+                            <h4 class="mb-3" style="color: #1e293b;">
+                                <i class="fas fa-bullseye me-2"></i> Objetivos de Aprendizaje
+                            </h4>
+                            <div class="p-3 rounded-3" style="background: #f8fafc; border-left: 4px solid {{ $area->color }};">
+                                <p class="mb-0" style="white-space: pre-line; line-height: 1.6;">{{ $module->objectives }}</p>
+                            </div>
                         </div>
-                    </div>
-                @endif
+                    @endif
 
-                @if($module->activeLessons->count() > 0)
-                    <div class="mb-4">
-                        <h4 style="color: #1e293b; margin-bottom: 1rem;">
-                            <i class="fas fa-list"></i> Lecciones ({{ $module->activeLessons->count() }})
-                        </h4>
-                        
-                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                            @foreach($module->activeLessons as $lesson)
-                                <div style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; background: #f8fafc; border-radius: 0.5rem; border: 1px solid #e2e8f0;">
-                                    <div style="flex: 1;">
-                                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                                            <div style="font-size: 1.2rem; color: {{ $area->color }}; margin-right: 0.75rem;">
-                                                <i class="fas fa-play-circle"></i>
-                                            </div>
-                                            <div>
-                                                <h5 style="margin: 0; color: #1e293b;">{{ $lesson->title }}</h5>
-                                                <p style="margin: 0; color: #64748b; font-size: 0.875rem;">
-                                                    <i class="fas fa-clock"></i> {{ $lesson->estimated_duration }} min
-                                                </p>
-                                            </div>
-                                        </div>
-                                        
-                                        @if($lesson->fhirResource)
-                                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                                <span style="background: #e0e7ff; color: #3730a3; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem; font-weight: 500;">
-                                                    {{ $lesson->fhirResource->resource_type }}
-                                                </span>
-                                                <span style="color: #64748b; font-size: 0.875rem;">
-                                                    {{ $lesson->fhirResource->name }}
-                                                </span>
-                                            </div>
-                                        @endif
-                                    </div>
-                                    
-                                    <div style="display: flex; align-items: center; gap: 1rem;">
-                                        @if($userProgress && isset($userProgress[$lesson->id]))
-                                            @php $progress = $userProgress[$lesson->id]; @endphp
-                                            <div style="text-align: right;">
-                                                <div style="font-size: 0.875rem; color: #64748b; margin-bottom: 0.25rem;">
-                                                    {{ $progress->progress_percentage }}% completado
+                    @if($module->activeLessons->count() > 0)
+                        <div class="mb-4">
+                            <h4 class="mb-3" style="color: #1e293b;">
+                                <i class="fas fa-list me-2"></i> Lecciones ({{ $module->activeLessons->count() }})
+                            </h4>
+                            
+                            <div class="d-flex flex-column gap-3">
+                                @foreach($module->activeLessons as $lesson)
+                                    <div class="d-flex align-items-center justify-content-between p-3 rounded-3 border" style="background: #f8fafc;">
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="me-3" style="font-size: 1.2rem; color: {{ $area->color }};">
+                                                    <i class="fas fa-play-circle"></i>
                                                 </div>
-                                                <div class="progress" style="width: 100px;">
-                                                    <div class="progress-bar" style="width: {{ $progress->progress_percentage }}%"></div>
+                                                <div>
+                                                    <h5 class="mb-1" style="color: #1e293b;">{{ $lesson->title }}</h5>
+                                                    <p class="mb-0 text-muted small">
+                                                        <i class="fas fa-clock me-1"></i> {{ $lesson->estimated_duration }} min
+                                                    </p>
                                                 </div>
                                             </div>
                                             
-                                            @if($progress->status === 'completed')
-                                                <div style="color: #10b981; font-size: 1.5rem;">
-                                                    <i class="fas fa-check-circle"></i>
-                                                </div>
-                                            @elseif($progress->status === 'in_progress')
-                                                <div style="color: #f59e0b; font-size: 1.5rem;">
-                                                    <i class="fas fa-play-circle"></i>
+                                            @if($lesson->fhirResource)
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <span class="badge bg-primary">
+                                                        {{ $lesson->fhirResource->resource_type }}
+                                                    </span>
+                                                    <span class="text-muted small">
+                                                        {{ $lesson->fhirResource->name }}
+                                                    </span>
                                                 </div>
                                             @endif
-                                        @endif
+                                        </div>
                                         
-                                        <a href="{{ route('lessons.show', $lesson->slug) }}" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">
-                                            @if($userProgress && isset($userProgress[$lesson->id]) && $userProgress[$lesson->id]->status === 'completed')
-                                                <i class="fas fa-redo"></i> Repasar
-                                            @else
-                                                <i class="fas fa-play"></i> Iniciar
+                                        <div class="d-flex align-items-center gap-3">
+                                            @if($userProgress && isset($userProgress[$lesson->id]))
+                                                @php $progress = $userProgress[$lesson->id]; @endphp
+                                                <div class="text-end">
+                                                    <div class="text-muted small mb-1">
+                                                        {{ $progress->progress_percentage }}% completado
+                                                    </div>
+                                                    <div class="progress" style="width: 100px;">
+                                                        <div class="progress-bar" style="width: {{ $progress->progress_percentage }}%"></div>
+                                                    </div>
+                                                </div>
+                                                
+                                                @if($progress->status === 'completed')
+                                                    <div class="text-success" style="font-size: 1.5rem;">
+                                                        <i class="fas fa-check-circle"></i>
+                                                    </div>
+                                                @elseif($progress->status === 'in_progress')
+                                                    <div class="text-warning" style="font-size: 1.5rem;">
+                                                        <i class="fas fa-play-circle"></i>
+                                                    </div>
+                                                @endif
                                             @endif
-                                        </a>
+                                            
+                                            <a href="{{ route('lessons.show', $lesson->slug) }}" class="btn btn-primary btn-sm">
+                                                @if($userProgress && isset($userProgress[$lesson->id]) && $userProgress[$lesson->id]->status === 'completed')
+                                                    <i class="fas fa-redo me-1"></i> Repasar
+                                                @else
+                                                    <i class="fas fa-play me-1"></i> Iniciar
+                                                @endif
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
-                @endif
+                    @endif
 
-                <div class="text-center">
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-book-open"></i> Ver Módulo Completo
-                    </a>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-book-open me-2"></i> Ver Módulo Completo
+                        </a>
+                    </div>
                 </div>
             </div>
         @endforeach
     </div>
 @else
     <div class="card text-center">
-        <h2 class="mb-4">No hay módulos disponibles</h2>
-        <p>Los módulos para esta área se están desarrollando. Vuelve pronto.</p>
+        <div class="card-body">
+            <h2 class="mb-3">No hay módulos disponibles</h2>
+            <p class="text-muted">Los módulos para esta área se están desarrollando. Vuelve pronto.</p>
+        </div>
     </div>
 @endif
 
 <div class="mt-6">
     <div class="card">
-        <h3 class="mb-4 text-center">
-            <i class="fas fa-info-circle" style="color: {{ $area->color }};"></i>
-            Sobre {{ $area->name }}
-        </h3>
-        <p class="text-center" style="color: #64748b;">
-            Los módulos en esta área están diseñados para cubrir todo el flujo de atención en {{ strtolower($area->name) }}, 
-            desde el ingreso hasta el egreso del paciente, utilizando recursos FHIR del Core Chileno.
-        </p>
+        <div class="card-body text-center">
+            <h3 class="mb-3">
+                <i class="fas fa-info-circle me-2" style="color: {{ $area->color }};"></i>
+                Sobre {{ $area->name }}
+            </h3>
+            <p class="text-muted mb-0">
+                Los módulos en esta área están diseñados para cubrir todo el flujo de atención en {{ strtolower($area->name) }}, 
+                desde el ingreso hasta el egreso del paciente, utilizando recursos FHIR del Core Chileno.
+            </p>
+        </div>
     </div>
 </div>
 @endsection

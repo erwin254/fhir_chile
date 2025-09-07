@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PractitionerRole xmlns="http://hl7.org/fhir">
+  <id value="EjemploEspecialidadCL2"/>
+  <meta>
+    <profile value="https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CoreRolClinicoCl"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: PractitionerRole EjemploEspecialidadCL2</b></p><a name="EjemploEspecialidadCL2"> </a><a name="hcEjemploEspecialidadCL2"> </a><a name="EjemploEspecialidadCL2-es-CL"> </a><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px"/><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-CoreRolClinicoCl.html">CL RolClinico</a></p></div><p><b>active</b>: true</p><p><b>practitioner</b>: <a href="Practitioner-EjemploPrestadorCL2.html">Practitioner María Luisa Soto (official)</a></p><p><b>organization</b>: <a href="Organization-OrganizacionClEjemplo1.html">Organization Centro de Salud Familiar Arauco</a></p><p><b>specialty</b>: <span title="Codes:{https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadesDeisCL 28}">Medicina Familiar</span></p></div>
+  </text>
+  <active value="true"/>
+  <practitioner>
+    <reference value="Practitioner/EjemploPrestadorCL2"/>
+  </practitioner>
+  <organization>
+    <reference value="Organization/OrganizacionClEjemplo1"/>
+  </organization>
+  <specialty>
+    <coding>
+      <system value="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadesDeisCL"/>
+      <code value="28"/>
+      <display value="Medicina Familiar"/>
+    </coding>
+    <text value="Medicina Familiar"/>
+  </specialty>
+</PractitionerRole>

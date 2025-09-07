@@ -1,0 +1,164 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSClaseVacuna",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSClaseVacuna",
+      "title" : "Códigos de clases de Vacuna",
+      "description" : "Códigos de clase de vacuna"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodComunasCL",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSCodComunasCL",
+      "title" : "Códigos de Comunas en Chile",
+      "description" : "Códigos de Comunas para Chile según Códigos Únicos Territoriales Actualizados, por Decreto exento No 817 del Ministerio del Interior"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodMadurez",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSCodMadurez",
+      "title" : "Códigos de grado de madurez del artefacto",
+      "description" : "Códigos de grado de madurez del artefacto"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSCodProvinciasCL",
+      "title" : "Códigos de Provincias en Chile",
+      "description" : "Códigos de Provincias para Chile según Códigos Únicos Territoriales Actualizados, por Decreto exento No 817 del Ministerio del Interior"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodRegionCL",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSCodRegionCL",
+      "title" : "Códigos de Regiones en Chile",
+      "description" : "Códigos de Regiones para Chile según Códigos Únicos Territoriales Actualizados, por Decreto exento No 817 del Ministerio del Interior"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoDNI",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSCodigoDNI",
+      "title" : "Códigos de Documentos DNI para LATAM y el Caribe",
+      "description" : "Códigos para los DNI de países de America Latina y el Caribe según indicaciones de VS HL7 de V3"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoServicio",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSCodServicioCL",
+      "title" : "Tipos de Servicios Remotos",
+      "description" : "Códigos para los Servicios realizados en un encuentro remoto según indicaciones del Ministerio de Salud"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoVacunas",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSTiposVacunaCL",
+      "title" : "Códigos de Vacunas RNI",
+      "description" : "Códigos de las vacunas o inmunizaciones según indicaciones del Ministerio de Salud"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadFarma",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSEspecialidadFarma",
+      "title" : "Especialidad Farmacia",
+      "description" : "Especialidad de Farmacia"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadOdontologica",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSEspecialidadOdontologica",
+      "title" : "Especialidad Odontologica",
+      "description" : "Especialidad de Odontologica"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSEspecialidadesDeisCL",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSEspecialidadesDeisCL",
+      "title" : "Códigos de Especialidades",
+      "description" : "Códigos de especialidades médicas descritas según DEIS"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSIdentidaddeGenero",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSIdentidaddeGenero",
+      "title" : "Identidad de Genero",
+      "description" : "Identidad de Genero"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSNombreCampana",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSNombreCampanaCL",
+      "title" : "Campañas Inmunización",
+      "description" : "Códigos de las campañas de vacunas o inmunizaciones según indicaciones del Ministerio de Salud"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSOtrosContactos",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSOtrosContactos",
+      "title" : "Códigos de otros contactos del paciente",
+      "description" : "Códigos de contactos adicionales usados en Chile para paciente"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSRazonNOTinm",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSRazonNOinmunizacionCL",
+      "title" : "Razones no Inmunización",
+      "description" : "Códigos de las razones por la cual el registro de inmunización no pudo realizarse según indicaciones del Ministerio de Salud"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSSexoListadoDeis",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSSexoListadoDeis",
+      "title" : "Sexo Listado Deis",
+      "description" : "Sexo Listado Deis"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSTipoIdentificador",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSTipoIdentificador",
+      "title" : "Tipo Identificador",
+      "description" : "Tipo Identificador"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSTiposEncuentroCL",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSTiposEncuentroCL",
+      "title" : "Tipos de Encuentro",
+      "description" : "Códigos de Encuentros según MINSAL"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/EspecialidadesConacemConaceoCS",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "EspecialidadesConacemConaceoCS",
+      "title" : "Códigos de Especialidades de CONACEM y CONACEO",
+      "description" : "Códigos a usar para las Especialidades provenientes de La Corporación Nacional Autónoma de Certificación de Especialidades Médicas (CONACEM) y de La Corporación Nacional Autónoma de Certificación de Especialidades Odontológicas (CONACEO) de Chile"
+    },
+    {
+      "url" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/csrazonnoencuentro",
+      "version" : "1.9.3",
+      "status" : "active",
+      "name" : "CSrazonnoencuentro",
+      "title" : "Razón Encuentro Remoto no Realizado",
+      "description" : "Códigos de las razones por la cual un encuentro remoto no pudo realizarse según indicaciones del Ministerio de Salud"
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <title>HL7.FHIR.CL.CLCORE\Códigos de Provincias en Chile - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="http://hl7.org/fhir" />
+
+    <link href="fhir.css" rel="stylesheet" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet" />
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet" />
+    <link href="assets/css/pygments-manni.css" rel="stylesheet" />
+    <link href="assets/css/jquery-ui.css" rel="stylesheet" />
+    <link href="assets/css/prism.css" rel="stylesheet" /> <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/hl7chile.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-HLBNC861DJ" async>
+</script>
+
+    <script type="text/javascript" src="fhir-table-scripts.js">
+    </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png" />
+    <link rel="shortcut icon" href="assets/ico/favicon.png" />
+</head>
+
+<!-- JORGE MANSILLA -->
+<!-- Google tag (gtag.js) -->
+<!-- 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KDP1SHWXWT"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-KDP1SHWXWT');
+</script>
+-->
+<!-- Franco: Nota Para Mansilla Revisa este script genera errores al subir en Build -->
+
+
+
+<body onload="document.body.style.opacity='1'">
+    
+    <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">
+        h2 {
+            --heading-prefix:"6.40"
+        }
+        
+        h3,
+        h4,
+        h5,
+        h6 {
+            --heading-prefix:"6.40"
+        }
+    </style>
+    <div id="segment-header" class="segment">
+        <!-- segment-header -->
+        <div class="container">
+            <!-- container -->
+            <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="hl7chile-logo" no-external="true" href="http://hl7chile.cl">
+        <img height="71" alt="Visitar HL7 Chile" src="assets/images/hl7chile-logo.png" />
+    </a>
+</div>
+<div id="family-nav">
+    <a id="hl7chile-logo" no-external="true" href="https://www.hl7.org/"><img height="60" alt="Visitar HL7 FHIR Internacional" src="assets/images/LOGO_FHIR.svg" /> </a>
+</div>
+
+<!--
+<div id="hl7-search">
+  <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+</div>
+--> 
+            <div id="ig-status">
+                <p><span style="font-size:12pt;font-weight:bold">Guía de Implementación &#39;&#39;cl core&#39;&#39; FHIR R4, (Versión Evolutiva)</span>
+                    <br/>
+                    <span style="display:inline-block;">1.9.3 - trial-use
+
+
+
+  <img alt="Chile flag" src="assets/images/chl.svg" height="16" title="Chile"/>
+ 
+                    </span>
+                </p>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">
+        <!-- segment-navbar -->
+        <div id="stripe"> </div>
+        <div class="container">
+            <!-- container -->
+            <!-- HEADER CONTENT -->
+
+            <nav class="navbar navbar-inverse">
+                <!--status-bar-->
+                <div class="container">
+                    <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+                    <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+                    <div class="nav-collapse collapse navbar-inverse-collapse">
+                        <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Inicio</a>
+  </li>
+  <li>
+    <a href="Alcances-Objetivos.html">Objetivos</a>
+  </li>
+  <li>
+    <a href="Notas-MS.html">Must Support</a>
+  </li>
+  <li>
+    <a href="Aspectos-Generales.html">Generalidades</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">CapabilityStatement
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-cl-core-server.html">CapabilityStatement Servidor</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-cl-core-client.html">CapabilityStatement Cliente</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artefactos</a>
+  </li>
+  <li>
+    <a href="changes.html">Historial de cambios</a>
+  </li>
+</ul>
+                    </div>
+                    <!-- /.nav-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+            <!-- /.navbar -->
+            <!-- /HEADER CONTENT -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /segment-navbar -->
+    <!--status-bar-->
+    
+    <div id="segment-breadcrumb" class="segment">
+        <!-- segment-breadcrumb -->
+        <div class="container">
+            <!-- container -->
+            <ul class="breadcrumb">
+                <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Códigos de Provincias en Chile</b></li> 
+            </ul>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">
+        <!-- segment-content -->
+        <div class="container">
+            <!-- container -->
+            <div class="row">
+                <div class="inner-wrapper">
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publication Build: This will be filled in by the publication tooling</p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ValueSet-VSCodigosProvinciasCL.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ValueSet-VSCodigosProvinciasCL.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">ValueSet: Códigos de Provincias en Chile
+
+  </h2>
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://hl7chile.cl/fhir/ig/clcore/ValueSet/VSCodigosProvinciasCL<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://hl7chile.cl/fhir/ig/clcore/ValueSet/VSCodigosProvinciasCL"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">1.9.3<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://hl7chile.cl/fhir/ig/clcore/ValueSet/VSCodigosProvinciasCL|1.9.3"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+            as of 2022-01-18
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">VSCodigosProvinciasCL</span></td>
+    </tr>
+
+
+
+
+    <tr>
+      <td colspan="5"><p><em>Copyright/Legal</em>: Usado con el permiso de HL7 International, todos los derechos resevados en los Licencias de HL7 Internacional.</p>
+</td>
+    </tr>
+
+  </table>
+
+<p>
+<p>Códigos de Provincias para Chile según Códigos Únicos Territoriales Actualizados, por Decreto exento No 817 del Ministerio del Interior</p>
+
+</p>
+
+
+  <p>
+    <b>References</b>
+  </p>
+  
+<ul>
+ <li><a href="StructureDefinition-ProvinciasCl.html">Códigos para Provincias en Chile</a></li>
+</ul>
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <a name="definition"> </a>
+
+<!-- Content Logical Definition heading in the fragment -->
+  <h3>Logical Definition (CLD)</h3>
+<div xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es"><p class="res-header-id"></p><a name="VSCodigosProvinciasCL"> </a><a name="hcVSCodigosProvinciasCL"> </a><a name="VSCodigosProvinciasCL-es-CL"> </a>
+<div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: es</p></div>
+<ul><li>Include all codes defined in <a href="CodeSystem-CSCodProvinciasCL.html"><code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</code></a></li></ul></div>
+
+  <p>&#160;</p>
+  <a name="expansion"> </a>
+  <h3 id="expansion">Expansion</h3>
+
+  <div xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es"><p class="res-header-id"/><p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion performed internally based on <a href="CodeSystem-CSCodProvinciasCL.html">codesystem Códigos de Provincias en Chile v1.9.3 (CodeSystem)</a></p><p>This value set contains 56 concepts</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>System</b></td><td><b>Display (es)</b> - Spanish (es)</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-122"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-122">122</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Antártica Chilena</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-021"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-021">021</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Antofagasta</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-082"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-082">082</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Arauco</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-151"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-151">151</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Arica</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-112"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-112">112</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Aysén</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-083"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-083">083</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Biobío</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-061"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-061">061</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Cachapoal</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-113"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-113">113</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Capitán Prat</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-062"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-062">062</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Cardenal Caro</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-072"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-072">072</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Cauquenes</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-091"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-091">091</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Cautín</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-133"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-133">133</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Chacabuco</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-032"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-032">032</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Chañaral</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-102"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-102">102</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Chiloé</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-042"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-042">042</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Choapa</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-111"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-111">111</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Coihaique</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-063"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-063">063</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Colchagua</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-081"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-081">081</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Concepción</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-031"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-031">031</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Copiapó</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-132"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-132">132</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Cordillera</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-073"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-073">073</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Curicó</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-161"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-161">161</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Diguillín</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-022"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-022">022</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>El Loa</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-041"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-041">041</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Elqui</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-114"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-114">114</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>General Carrera</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-033"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-033">033</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Huasco</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-011"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-011">011</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Iquique</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-052"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-052">052</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Isla de Pascua</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-162"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-162">162</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Itata</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-043"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-043">043</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Limarí</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-074"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-074">074</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Linares</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-101"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-101">101</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Llanquihue</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-053"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-053">053</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Los Andes</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-121"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-121">121</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Magallanes</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-134"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-134">134</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Maipo</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-092"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-092">092</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Malleco</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-058"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-058">058</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Marga Marga</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-135"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-135">135</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Melipilla</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-103"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-103">103</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Osorno</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-104"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-104">104</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Palena</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-152"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-152">152</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Parinacota</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-054"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-054">054</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Petorca</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-163"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-163">163</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Punilla</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-055"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-055">055</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Quillota</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-142"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-142">142</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Ranco</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-056"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-056">056</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>San Antonio</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-057"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-057">057</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>San Felipe de Aconcagua</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-131"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-131">131</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Santiago</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-136"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-136">136</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Talagante</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-071"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-071">071</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Talca</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-014"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-014">014</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Tamarugal</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-123"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-123">123</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Tierra del Fuego</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-023"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-023">023</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Tocopilla</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-124"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-124">124</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>última Esperanza</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-141"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-141">141</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Valdivia</td></tr><tr><td style="white-space:nowrap"><a name="x-https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL-051"> </a>  <a href="CodeSystem-CSCodProvinciasCL.html#CSCodProvinciasCL-051">051</a></td><td>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodProvinciasCL</td><td>Valparaíso</td></tr></table></div>
+
+  <hr/>
+  <p>
+    Explanation of the columns that may appear on this page:
+  </p>
+  <table class="grid">
+    <tr>
+      <td>Level</td>
+      <td>A few code lists that FHIR defines are hierarchical - each code is assigned a level.
+          In this scheme, some codes are under other codes, and imply that the code they are under also applies</td>
+    </tr>
+    <tr>
+      <td>System</td>
+      <td>The source of the definition of the code (when the value set draws in codes defined elsewhere)</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>The code (used as the code in the resource instance)</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>The display (used in the <i>display</i> element of a <a href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a>). If there is no display, implementers should not simply display the code, but map the concept into their application</td>
+    </tr>
+    <tr>
+      <td>Definition</td>
+      <td>An explanation of the meaning of the concept</td>
+    </tr>
+    <tr>
+      <td>Comments</td>
+      <td>Additional notes about how to use the code</td>
+    </tr>
+  </table>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7chile.cl">HL7 Chile</a>.  Package hl7.fhir.cl.clcore#1.9.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jun 2, 2025 16:43-0400">2025-06-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+             Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Tabla de contenidos</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">Reporte QA</a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://hl7chile.cl/fhir/ig/clcore/history.html">Historial de versiones</a></a>
+ | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="">Issues</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

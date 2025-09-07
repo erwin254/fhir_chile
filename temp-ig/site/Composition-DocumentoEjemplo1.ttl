@@ -1,0 +1,93 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://hl7chile.cl/fhir/ig/clcore/Composition/DocumentoEjemplo1> a fhir:Composition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DocumentoEjemplo1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/DocumentoCl"^^xsd:anyURI ;
+       fhir:link <https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/DocumentoCl>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Composition DocumentoEjemplo1</b></p><a name=\"DocumentoEjemplo1\"> </a><a name=\"hcDocumentoEjemplo1\"> </a><a name=\"DocumentoEjemplo1-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-DocumentoCl.html\">CL Documento</a></p></div><p><b>identifier</b>: 2b2f3f16-12c4-40b1-97ec-c0e091412960</p><p><b>status</b>: Preliminary</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 11503-0}\">Registro Médico</span></p><p><b>encounter</b>: <a href=\"Encounter-EjemploEncounterCL.html\">Encounter: status = planned; class = Virtual (ActCode#VR); type = Programada; serviceType = Medicina General; period = 2022-06-23 00:00:00-0300 --&gt; 2022-06-23 00:50:00-0300</a></p><p><b>date</b>: 2022-08-07 10:30:00-0300</p><p><b>author</b>: <a href=\"PractitionerRole-EjemploEspecialidadCL2.html\">PractitionerRole: specialty = Medicina Familiar</a></p><p><b>title</b>: Registro Médico de Una Condición al Paciente</p><p><b>custodian</b>: <a href=\"Organization-OrganizacionClEjemplo1.html\">Organization Centro de Salud Familiar Arauco</a></p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:identifier [
+     fhir:value [ fhir:v "2b2f3f16-12c4-40b1-97ec-c0e091412960" ]
+  ] ; # 
+  fhir:status [ fhir:v "preliminary"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:11503-0 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "11503-0" ] ;
+       fhir:display [ fhir:v "Medical records" ]
+     ] ) ;
+     fhir:text [ fhir:v "Registro Médico" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://hl7chile.cl/fhir/ig/clcore/Patient/PacienteCL> ;
+     fhir:reference [ fhir:v "Patient/PacienteCL" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:link <https://hl7chile.cl/fhir/ig/clcore/Encounter/EjemploEncounterCL> ;
+     fhir:reference [ fhir:v "Encounter/EjemploEncounterCL" ]
+  ] ; # 
+  fhir:date [ fhir:v "2022-08-07T10:30:00-03:00"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:link <https://hl7chile.cl/fhir/ig/clcore/PractitionerRole/EjemploEspecialidadCL2> ;
+     fhir:reference [ fhir:v "PractitionerRole/EjemploEspecialidadCL2" ]
+  ] ) ; # 
+  fhir:title [ fhir:v "Registro Médico de Una Condición al Paciente"] ; # 
+  fhir:custodian [
+     fhir:link <https://hl7chile.cl/fhir/ig/clcore/Organization/OrganizacionClEjemplo1> ;
+     fhir:reference [ fhir:v "Organization/OrganizacionClEjemplo1" ]
+  ] ; # 
+  fhir:section ( [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:70004-7 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "70004-7" ] ;
+         fhir:display [ fhir:v "Diagnostic study note" ]
+       ] ) ;
+       fhir:text [ fhir:v "Diagnostico Estudio" ]
+     ] ;
+     fhir:text [
+       fhir:status [ fhir:v "additional" ] ;
+       fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Paciente presenta recaída sin confirmar de faringoamigdalitis, se realizará más estudios para confirmar</p></div>"^^rdf:XMLLiteral
+     ] ;
+     fhir:entry ( [
+       fhir:link <https://hl7chile.cl/fhir/ig/clcore/Condition/DiagnosticoEj2> ;
+       fhir:reference [ fhir:v "Condition/DiagnosticoEj2" ]
+     ] )
+  ] [
+     fhir:code [
+       fhir:coding ( [
+         a loinc:57852-6 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "57852-6" ] ;
+         fhir:display [ fhir:v "Problem list Narrative - Reported" ]
+       ] ) ;
+       fhir:text [ fhir:v "Listado de problemas" ]
+     ] ;
+     fhir:text [
+       fhir:status [ fhir:v "additional" ] ;
+       fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Adicionalmente el paciente ya poseía un diagnostico prevío de hipertensión</p></div>"^^rdf:XMLLiteral
+     ] ;
+     fhir:entry ( [
+       fhir:link <https://hl7chile.cl/fhir/ig/clcore/Condition/DiagnosticoEj> ;
+       fhir:reference [ fhir:v "Condition/DiagnosticoEj" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

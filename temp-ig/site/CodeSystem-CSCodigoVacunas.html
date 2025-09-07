@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <title>HL7.FHIR.CL.CLCORE\Códigos de Vacunas RNI - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="http://hl7.org/fhir" />
+
+    <link href="fhir.css" rel="stylesheet" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet" />
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet" />
+    <link href="assets/css/pygments-manni.css" rel="stylesheet" />
+    <link href="assets/css/jquery-ui.css" rel="stylesheet" />
+    <link href="assets/css/prism.css" rel="stylesheet" /> <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/hl7chile.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-HLBNC861DJ" async>
+</script>
+
+    <script type="text/javascript" src="fhir-table-scripts.js">
+    </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png" />
+    <link rel="shortcut icon" href="assets/ico/favicon.png" />
+</head>
+
+<!-- JORGE MANSILLA -->
+<!-- Google tag (gtag.js) -->
+<!-- 
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KDP1SHWXWT"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-KDP1SHWXWT');
+</script>
+-->
+<!-- Franco: Nota Para Mansilla Revisa este script genera errores al subir en Build -->
+
+
+
+<body onload="document.body.style.opacity='1'">
+    
+    <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">
+        h2 {
+            --heading-prefix:"6.65"
+        }
+        
+        h3,
+        h4,
+        h5,
+        h6 {
+            --heading-prefix:"6.65"
+        }
+    </style>
+    <div id="segment-header" class="segment">
+        <!-- segment-header -->
+        <div class="container">
+            <!-- container -->
+            <!-- Placeholder for child template header declarations -->
+
+<div id="project-nav">
+    <a id="hl7chile-logo" no-external="true" href="http://hl7chile.cl">
+        <img height="71" alt="Visitar HL7 Chile" src="assets/images/hl7chile-logo.png" />
+    </a>
+</div>
+<div id="family-nav">
+    <a id="hl7chile-logo" no-external="true" href="https://www.hl7.org/"><img height="60" alt="Visitar HL7 FHIR Internacional" src="assets/images/LOGO_FHIR.svg" /> </a>
+</div>
+
+<!--
+<div id="hl7-search">
+  <a id="hl7-search-lnk" no-external="true" href="searchform.html"><img alt="Search FHIR" src="assets/images/search.png"/></a>
+</div>
+--> 
+            <div id="ig-status">
+                <p><span style="font-size:12pt;font-weight:bold">Guía de Implementación &#39;&#39;cl core&#39;&#39; FHIR R4, (Versión Evolutiva)</span>
+                    <br/>
+                    <span style="display:inline-block;">1.9.3 - trial-use
+
+
+
+  <img alt="Chile flag" src="assets/images/chl.svg" height="16" title="Chile"/>
+ 
+                    </span>
+                </p>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">
+        <!-- segment-navbar -->
+        <div id="stripe"> </div>
+        <div class="container">
+            <!-- container -->
+            <!-- HEADER CONTENT -->
+
+            <nav class="navbar navbar-inverse">
+                <!--status-bar-->
+                <div class="container">
+                    <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+                    <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+                    <div class="nav-collapse collapse navbar-inverse-collapse">
+                        <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Inicio</a>
+  </li>
+  <li>
+    <a href="Alcances-Objetivos.html">Objetivos</a>
+  </li>
+  <li>
+    <a href="Notas-MS.html">Must Support</a>
+  </li>
+  <li>
+    <a href="Aspectos-Generales.html">Generalidades</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">CapabilityStatement
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="CapabilityStatement-cl-core-server.html">CapabilityStatement Servidor</a>
+      </li>
+      <li>
+        <a href="CapabilityStatement-cl-core-client.html">CapabilityStatement Cliente</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="artifacts.html">Artefactos</a>
+  </li>
+  <li>
+    <a href="changes.html">Historial de cambios</a>
+  </li>
+</ul>
+                    </div>
+                    <!-- /.nav-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+            <!-- /.navbar -->
+            <!-- /HEADER CONTENT -->
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /segment-navbar -->
+    <!--status-bar-->
+    
+    <div id="segment-breadcrumb" class="segment">
+        <!-- segment-breadcrumb -->
+        <div class="container">
+            <!-- container -->
+            <ul class="breadcrumb">
+                <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Códigos de Vacunas RNI</b></li> 
+            </ul>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">
+        <!-- segment-content -->
+        <div class="container">
+            <!-- container -->
+            <div class="row">
+                <div class="inner-wrapper">
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">Publication Build: This will be filled in by the publication tooling</p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="CodeSystem-CSCodigoVacunas.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="CodeSystem-CSCodigoVacunas.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+  <a name="root"> </a>
+  <h2 id="root">CodeSystem: Códigos de Vacunas RNI
+
+  </h2>
+
+  <table class="colsi">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoVacunas<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoVacunas"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">1.9.3<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoVacunas|1.9.3"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="4">
+        
+          Active
+          
+            as of 2022-06-05
+          
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">CSTiposVacunaCL</span></td>
+    </tr>
+
+
+
+
+    <tr>
+      <td colspan="5"><p><em>Copyright/Legal</em>: Usado con el permiso de HL7 International, todos los derechos resevados en los Licencias de HL7 Internacional.</p>
+</td>
+    </tr>
+
+  </table>
+
+<p>
+<p>Códigos de las vacunas o inmunizaciones según indicaciones del Ministerio de Salud</p>
+
+</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <p>
+  This Code system is referenced in the content logical definition of the following value sets:
+  </p>
+
+  
+<ul>
+ <li><a href="ValueSet-VSTiposVacunas.html">VSTiposVacunasCL</a></li>
+</ul>
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es"><p class="res-header-id"></p><a name="CSCodigoVacunas"> </a><a name="hcCSCodigoVacunas"> </a><a name="CSCodigoVacunas-es-CL"> </a>
+<div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Language: es</p></div><p>This case-sensitive code system <code>https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoVacunas</code> defines the following codes:</p>
+<table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr>
+<tr><td style="white-space:nowrap">actacelPriv<a name="CSCodigoVacunas-actacelPriv"> </a></td>
+<td>Actacel (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">antirr<a name="CSCodigoVacunas-antirr"> </a></td>
+<td>Antirrábica</td></tr>
+<tr><td style="white-space:nowrap">antirrPriv<a name="CSCodigoVacunas-antirrPriv"> </a></td>
+<td>Antirrábica (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">antitifoInyPriv<a name="CSCodigoVacunas-antitifoInyPriv"> </a></td>
+<td>Antitifoidea inyectable (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">bcgMat<a name="CSCodigoVacunas-bcgMat"> </a></td>
+<td>BCG MATERNIDAD</td></tr>
+<tr><td style="white-space:nowrap">bcg_mat<a name="CSCodigoVacunas-bcg_mat"> </a></td>
+<td>BCG_maternidad</td></tr>
+<tr><td style="white-space:nowrap">fiebreAmar<a name="CSCodigoVacunas-fiebreAmar"> </a></td>
+<td>Fiebre Amarilla</td></tr>
+<tr><td style="white-space:nowrap">hep_A<a name="CSCodigoVacunas-hep_A"> </a></td>
+<td>Hepatítis A</td></tr>
+<tr><td style="white-space:nowrap">hep_A_adult<a name="CSCodigoVacunas-hep_A_adult"> </a></td>
+<td>Hepatitis A adulto</td></tr>
+<tr><td style="white-space:nowrap">hep_A_adultPriv<a name="CSCodigoVacunas-hep_A_adultPriv"> </a></td>
+<td>Hepatitis A adulto (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">hep_A_ped<a name="CSCodigoVacunas-hep_A_ped"> </a></td>
+<td>Hepatitis A pediátrica</td></tr>
+<tr><td style="white-space:nowrap">hep_A_pedPriv<a name="CSCodigoVacunas-hep_A_pedPriv"> </a></td>
+<td>Hepatitis A pediátrica (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">hep_A-B_adultPriv<a name="CSCodigoVacunas-hep_A-B_adultPriv"> </a></td>
+<td>Hepatitis A-B adulto (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">hep_A-B_pedPriv<a name="CSCodigoVacunas-hep_A-B_pedPriv"> </a></td>
+<td>Hepatitis A-B pediátrica (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">hep_B_adult<a name="CSCodigoVacunas-hep_B_adult"> </a></td>
+<td>Hepatitis B adulto</td></tr>
+<tr><td style="white-space:nowrap">hep_B_adultPriv<a name="CSCodigoVacunas-hep_B_adultPriv"> </a></td>
+<td>Hepatitis B adulto (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">hep_B_dializAdult<a name="CSCodigoVacunas-hep_B_dializAdult"> </a></td>
+<td>Hepatitis B dializados adulto</td></tr>
+<tr><td style="white-space:nowrap">hep_B_dializPed<a name="CSCodigoVacunas-hep_B_dializPed"> </a></td>
+<td>Hepatitis B dializados pediátrica</td></tr>
+<tr><td style="white-space:nowrap">hep_B_ped<a name="CSCodigoVacunas-hep_B_ped"> </a></td>
+<td>Hepatitis B pediátrica</td></tr>
+<tr><td style="white-space:nowrap">hep_B_pedPriv<a name="CSCodigoVacunas-hep_B_pedPriv"> </a></td>
+<td>Hepatitis B pediátrica (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">hep_B_maternidad<a name="CSCodigoVacunas-hep_B_maternidad"> </a></td>
+<td>Hepatitis B_maternidad</td></tr>
+<tr><td style="white-space:nowrap">herpesZPriv<a name="CSCodigoVacunas-herpesZPriv"> </a></td>
+<td>Herpes Zoster (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">hexavalent<a name="CSCodigoVacunas-hexavalent"> </a></td>
+<td>Hexavalente</td></tr>
+<tr><td style="white-space:nowrap">hezavalentPriv<a name="CSCodigoVacunas-hezavalentPriv"> </a></td>
+<td>Hexavalente (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">inmAntitetanic<a name="CSCodigoVacunas-inmAntitetanic"> </a></td>
+<td>INMUNOGLOBULINA ANTITETANICA</td></tr>
+<tr><td style="white-space:nowrap">inmAntiVaricela<a name="CSCodigoVacunas-inmAntiVaricela"> </a></td>
+<td>Inmunoglobulina anti varicela</td></tr>
+<tr><td style="white-space:nowrap">inmAntirrabica<a name="CSCodigoVacunas-inmAntirrabica"> </a></td>
+<td>Inmunoglobulina antirrábica</td></tr>
+<tr><td style="white-space:nowrap">inmAntirrabicaPriv<a name="CSCodigoVacunas-inmAntirrabicaPriv"> </a></td>
+<td>Inmunoglobulina antirrábica (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">inmAntitetanica<a name="CSCodigoVacunas-inmAntitetanica"> </a></td>
+<td>Inmunoglobulina Antitetánica</td></tr>
+<tr><td style="white-space:nowrap">inmEstandarH_A<a name="CSCodigoVacunas-inmEstandarH_A"> </a></td>
+<td>Inmunoglobulina estandar (Hep. A)</td></tr>
+<tr><td style="white-space:nowrap">inmEstandarSaramp<a name="CSCodigoVacunas-inmEstandarSaramp"> </a></td>
+<td>Inmunoglobulina estandar (Sarampión)</td></tr>
+<tr><td style="white-space:nowrap">inmEstandarVaric<a name="CSCodigoVacunas-inmEstandarVaric"> </a></td>
+<td>Inmunoglobulina estandar (Varicela)</td></tr>
+<tr><td style="white-space:nowrap">inmHepat_B<a name="CSCodigoVacunas-inmHepat_B"> </a></td>
+<td>Inmunoglobulina Hepatitis B</td></tr>
+<tr><td style="white-space:nowrap">neumococicaConj10V<a name="CSCodigoVacunas-neumococicaConj10V"> </a></td>
+<td>Neumocócica conjugada 10V</td></tr>
+<tr><td style="white-space:nowrap">neomococicaConj10VPriv<a name="CSCodigoVacunas-neomococicaConj10VPriv"> </a></td>
+<td>Neumocócica conjugada 10V (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">neumococicaConj13V<a name="CSCodigoVacunas-neumococicaConj13V"> </a></td>
+<td>Neumocócica conjugada 13V</td></tr>
+<tr><td style="white-space:nowrap">neumococicaConj13VPriv<a name="CSCodigoVacunas-neumococicaConj13VPriv"> </a></td>
+<td>Neumocócica conjugada 13V (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">neumococicaPolisac23V<a name="CSCodigoVacunas-neumococicaPolisac23V"> </a></td>
+<td>Neumocócica polisacárida 23V</td></tr>
+<tr><td style="white-space:nowrap">neumococicaPolisac23VPriv<a name="CSCodigoVacunas-neumococicaPolisac23VPriv"> </a></td>
+<td>Neumocócica polisacárida 23V (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">pentavalente<a name="CSCodigoVacunas-pentavalente"> </a></td>
+<td>Pentavalente</td></tr>
+<tr><td style="white-space:nowrap">polioInactIny<a name="CSCodigoVacunas-polioInactIny"> </a></td>
+<td>Polio inactivada inyectable</td></tr>
+<tr><td style="white-space:nowrap">polioInactInyPriv<a name="CSCodigoVacunas-polioInactInyPriv"> </a></td>
+<td>Polio inactivada inyectable (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">polioOralBival_boPV<a name="CSCodigoVacunas-polioOralBival_boPV"> </a></td>
+<td>Polio oral bivalente (bOPV)</td></tr>
+<tr><td style="white-space:nowrap">polioOralTrival<a name="CSCodigoVacunas-polioOralTrival"> </a></td>
+<td>Polio oral trivalente</td></tr>
+<tr><td style="white-space:nowrap">rotavirus<a name="CSCodigoVacunas-rotavirus"> </a></td>
+<td>Rotavirus</td></tr>
+<tr><td style="white-space:nowrap">rotavirusPriv<a name="CSCodigoVacunas-rotavirusPriv"> </a></td>
+<td>Rotavirus (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">saramp_rube_paper<a name="CSCodigoVacunas-saramp_rube_paper"> </a></td>
+<td>Sarampión-Rubeóla-Paperas</td></tr>
+<tr><td style="white-space:nowrap">toxoideDTPriv<a name="CSCodigoVacunas-toxoideDTPriv"> </a></td>
+<td>Toxoide DT (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">toxoideDTEscol<a name="CSCodigoVacunas-toxoideDTEscol"> </a></td>
+<td>TOXOIDE DT ESCOLAR</td></tr>
+<tr><td style="white-space:nowrap">toxoideDTProfil<a name="CSCodigoVacunas-toxoideDTProfil"> </a></td>
+<td>TOXOIDE DT PROFILAXIS</td></tr>
+<tr><td style="white-space:nowrap">vacunaAntiten<a name="CSCodigoVacunas-vacunaAntiten"> </a></td>
+<td>VACUNA ANTITETÁNICA</td></tr>
+<tr><td style="white-space:nowrap">vacunaAntitenPriv<a name="CSCodigoVacunas-vacunaAntitenPriv"> </a></td>
+<td>Vacuna Antitetánica (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">vacunaBCG<a name="CSCodigoVacunas-vacunaBCG"> </a></td>
+<td>VACUNA BCG</td></tr>
+<tr><td style="white-space:nowrap">vacunaBexsero<a name="CSCodigoVacunas-vacunaBexsero"> </a></td>
+<td>VACUNA BEXSERO</td></tr>
+<tr><td style="white-space:nowrap">vacunaBexseroPriv<a name="CSCodigoVacunas-vacunaBexseroPriv"> </a></td>
+<td>VACUNA BEXSERO (Sector privado)</td></tr>
+<tr><td style="white-space:nowrap">vacunaDPT<a name="CSCodigoVacunas-vacunaDPT"> </a></td>
+<td>VACUNA DPT</td></tr>
+<tr><td style="white-space:nowrap">vacunadpTaPriv<a name="CSCodigoVacunas-vacunadpTaPriv"> </a></td>
+<td>Vacuna dpTa (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">vacunadtPa<a name="CSCodigoVacunas-vacunadtPa"> </a></td>
+<td>Vacuna dTpa</td></tr>
+<tr><td style="white-space:nowrap">vacunaHepat_AyB<a name="CSCodigoVacunas-vacunaHepat_AyB"> </a></td>
+<td>VACUNA HEPATITIS A Y B</td></tr>
+<tr><td style="white-space:nowrap">vacunaHIB<a name="CSCodigoVacunas-vacunaHIB"> </a></td>
+<td>VACUNA HIB</td></tr>
+<tr><td style="white-space:nowrap">vacunaHIBPriv<a name="CSCodigoVacunas-vacunaHIBPriv"> </a></td>
+<td>Vacuna HIB (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">vacunaInfluTrival<a name="CSCodigoVacunas-vacunaInfluTrival"> </a></td>
+<td>VACUNA INFLUENZA TRIVALENTE</td></tr>
+<tr><td style="white-space:nowrap">vacunaMenacPriv<a name="CSCodigoVacunas-vacunaMenacPriv"> </a></td>
+<td>VACUNA MENACTRA (Sector privado)</td></tr>
+<tr><td style="white-space:nowrap">vacunaMenveo<a name="CSCodigoVacunas-vacunaMenveo"> </a></td>
+<td>VACUNA MENVEO</td></tr>
+<tr><td style="white-space:nowrap">vacunaMenveoPriv<a name="CSCodigoVacunas-vacunaMenveoPriv"> </a></td>
+<td>VACUNA MENVEO (Sector privado)</td></tr>
+<tr><td style="white-space:nowrap">vacunaNeumoco7V<a name="CSCodigoVacunas-vacunaNeumoco7V"> </a></td>
+<td>VACUNA NEUMOCOCICA 7 V</td></tr>
+<tr><td style="white-space:nowrap">vacunaNimenrix<a name="CSCodigoVacunas-vacunaNimenrix"> </a></td>
+<td>VACUNA NIMENRIX</td></tr>
+<tr><td style="white-space:nowrap">vacunaNimenrixPriv<a name="CSCodigoVacunas-vacunaNimenrixPriv"> </a></td>
+<td>VACUNA NIMENRIX (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">vacunaPoliomielInact<a name="CSCodigoVacunas-vacunaPoliomielInact"> </a></td>
+<td>VACUNA POLIOMIELITIS INACTIVADA</td></tr>
+<tr><td style="white-space:nowrap">vacunaSRPt3VMonodos<a name="CSCodigoVacunas-vacunaSRPt3VMonodos"> </a></td>
+<td>VACUNA SRP (TRES VIRICA) MONODOSIS</td></tr>
+<tr><td style="white-space:nowrap">vacunaSRP3VMultidos<a name="CSCodigoVacunas-vacunaSRP3VMultidos"> </a></td>
+<td>VACUNA SRP (TRES VIRICA) MULTIDOSIS</td></tr>
+<tr><td style="white-space:nowrap">vacunaSRPTrivMonodos<a name="CSCodigoVacunas-vacunaSRPTrivMonodos"> </a></td>
+<td>Vacuna SRP (trivirica) Monodosis</td></tr>
+<tr><td style="white-space:nowrap">vacunaSRPTrivMultidos<a name="CSCodigoVacunas-vacunaSRPTrivMultidos"> </a></td>
+<td>Vacuna SRP (trivirica) Multidosis</td></tr>
+<tr><td style="white-space:nowrap">varicela<a name="CSCodigoVacunas-varicela"> </a></td>
+<td>Varicela</td></tr>
+<tr><td style="white-space:nowrap">varicelaPriv<a name="CSCodigoVacunas-varicelaPriv"> </a></td>
+<td>Varicela (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">VPHBivalPriv<a name="CSCodigoVacunas-VPHBivalPriv"> </a></td>
+<td>VPH Bivalente (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">VPHNonavalPriv<a name="CSCodigoVacunas-VPHNonavalPriv"> </a></td>
+<td>VPH Nonavalente (sector privado)</td></tr>
+<tr><td style="white-space:nowrap">VPHTetraval<a name="CSCodigoVacunas-VPHTetraval"> </a></td>
+<td>VPH Tetravalente</td></tr>
+<tr><td style="white-space:nowrap">VPHTretavalPriv<a name="CSCodigoVacunas-VPHTretavalPriv"> </a></td>
+<td>VPH Tetravalente (sector privado)</td></tr></table></div>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2024+ <a style="color:var(--footer-hyperlink-text-color)" href="http://hl7chile.cl">HL7 Chile</a>.  Package hl7.fhir.cl.clcore#1.9.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jun 2, 2025 16:43-0400">2025-06-02</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+             Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Tabla de contenidos</a> |
+<a style="color: var(--footer-hyperlink-text-color)" href="qa.html">Reporte QA</a> |
+<a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://hl7chile.cl/fhir/ig/clcore/history.html">Historial de versiones</a></a>
+ | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="">Issues</a>
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

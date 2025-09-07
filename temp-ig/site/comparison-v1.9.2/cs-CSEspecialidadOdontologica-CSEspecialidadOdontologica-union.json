@@ -1,0 +1,72 @@
+{
+  "resourceType" : "CodeSystem",
+  "id" : "9520447a-14d7-47f0-ad76-2cc7928e8e90-29",
+  "url" : "http://hl7.org/fhir/comparison/CodeSystem/9520447a-14d7-47f0-ad76-2cc7928e8e90-29",
+  "name" : "UnionCSEspecialidadOdontologicaAndCSEspecialidadOdontologica",
+  "title" : "Union of Especialidad Odontologica And Especialidad Odontologica",
+  "status" : "active",
+  "date" : "2025-06-02T16:45:11-04:00",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CL",
+      "display" : "Chile"
+    }]
+  }],
+  "concept" : [{
+    "code" : "1",
+    "display" : "Cirugía y Traumatología Buco Maxilofacial"
+  },
+  {
+    "code" : "2",
+    "display" : "Cirugía Bucal"
+  },
+  {
+    "code" : "3",
+    "display" : "Endodoncia"
+  },
+  {
+    "code" : "4",
+    "display" : "Imagenología Oral y Maxilofacial"
+  },
+  {
+    "code" : "5",
+    "display" : "Implantología Buco Maxilofacial"
+  },
+  {
+    "code" : "6",
+    "display" : "Odontología legal"
+  },
+  {
+    "code" : "7",
+    "display" : "Odontopediatría"
+  },
+  {
+    "code" : "8",
+    "display" : "Ortodoncia y Ortopedia Dento Máxilo Facial"
+  },
+  {
+    "code" : "9",
+    "display" : "Patología Oral"
+  },
+  {
+    "code" : "10",
+    "display" : "Periodoncia"
+  },
+  {
+    "code" : "11",
+    "display" : "Rehabilitación Oral"
+  },
+  {
+    "code" : "12",
+    "display" : "Salud Pública"
+  },
+  {
+    "code" : "13",
+    "display" : "Somato-Prótesis"
+  },
+  {
+    "code" : "14",
+    "display" : "Trastornos Temporomandibulares Y Dolor Orofacial"
+  }]
+}

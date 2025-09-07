@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://hl7chile.cl/fhir/ig/clcore/Condition/DiagnosticoEj2> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DiagnosticoEj2"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CoreDiagnosticoCl"^^xsd:anyURI ;
+       fhir:link <https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/CoreDiagnosticoCl>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Condition DiagnosticoEj2</b></p><a name=\"DiagnosticoEj2\"> </a><a name=\"hcDiagnosticoEj2\"> </a><a name=\"DiagnosticoEj2-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-CoreDiagnosticoCl.html\">CL Condición-Diagnóstico</a></p></div><p><b>clinicalStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-clinical relapse}\">Recaída</span></p><p><b>verificationStatus</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-ver-status unconfirmed}\">Sin Confirmar</span></p><p><b>category</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/condition-category encounter-diagnosis}\">Diagnostico del Encuentro</span></p><p><b>code</b>: <span title=\"Codes:{http://snomed.info/sct 878818001}\">faringoamigdalitis</span></p><p><b>subject</b>: <a href=\"Patient-PacienteCL.html\">Xime  Female, DoB: 1983-03-24 ( Chile: 15.236.327-k (use: official, ))</a></p><p><b>onset</b>: 2022-08-07</p></div>"^^rdf:XMLLiteral
+  ] ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "relapse" ] ;
+       fhir:display [ fhir:v "Relapse" ]
+     ] ) ;
+     fhir:text [ fhir:v "Recaída" ]
+  ] ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-ver-status"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "unconfirmed" ] ;
+       fhir:display [ fhir:v "Unconfirmed" ]
+     ] ) ;
+     fhir:text [ fhir:v "Sin Confirmar" ]
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "encounter-diagnosis" ] ;
+       fhir:display [ fhir:v "Encounter Diagnosis" ]
+     ] ) ;
+     fhir:text [ fhir:v "Diagnostico del Encuentro" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a sct:878818001 ;
+       fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "878818001" ] ;
+       fhir:display [ fhir:v "Pharyngotonsillitis" ]
+     ] ) ;
+     fhir:text [ fhir:v "faringoamigdalitis" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://hl7chile.cl/fhir/ig/clcore/Patient/PacienteCL> ;
+     fhir:reference [ fhir:v "Patient/PacienteCL" ]
+  ] ; # 
+  fhir:onset [
+     a fhir:dateTime ;
+     fhir:v "2022-08-07"^^xsd:date
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

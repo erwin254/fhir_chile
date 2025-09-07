@@ -1,0 +1,42 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "VSCodigoslenguaje",
+  "language" : "es",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xml:lang=\"es\" xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"es\"><p class=\"res-header-id\"><b>Generated Narrative: ValueSet VSCodigoslenguaje</b></p><a name=\"VSCodigoslenguaje\"> </a><a name=\"hcVSCodigoslenguaje\"> </a><a name=\"VSCodigoslenguaje-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Language: es</p></div><ul><li>Include all codes defined in <a href=\"http://terminology.hl7.org/6.4.0/CodeSystem-v3-ietf3066.html\"><code>urn:ietf:bcp:47</code></a></li></ul></div>"
+  },
+  "url" : "https://hl7chile.cl/fhir/ig/clcore/ValueSet/VSCodigoslenguaje",
+  "version" : "1.9.3",
+  "name" : "VSCodigoslenguaje",
+  "title" : "Codigos Lenguaje",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2022-06-10T00:00:00-03:00",
+  "publisher" : "HL7 Chile",
+  "contact" : [{
+    "name" : "HL7 Chile",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://hl7chile.cl"
+    },
+    {
+      "system" : "email",
+      "value" : "chair@hl7chile.cl"
+    }]
+  }],
+  "description" : "Códigos de leguaje",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "CL",
+      "display" : "Chile"
+    }]
+  }],
+  "copyright" : "Usado con el permiso de HL7 International, todos los derechos resevados en los Licencias de HL7 Internacional.",
+  "compose" : {
+    "include" : [{
+      "system" : "urn:ietf:bcp:47"
+    }]
+  }
+}

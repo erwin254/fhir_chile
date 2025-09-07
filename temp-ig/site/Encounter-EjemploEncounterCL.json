@@ -1,0 +1,61 @@
+{
+  "resourceType" : "Encounter",
+  "id" : "EjemploEncounterCL",
+  "meta" : {
+    "profile" : ["https://hl7chile.cl/fhir/ig/clcore/StructureDefinition/EncounterCL"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: Encounter EjemploEncounterCL</b></p><a name=\"EjemploEncounterCL\"> </a><a name=\"hcEjemploEncounterCL\"> </a><a name=\"EjemploEncounterCL-es-CL\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-EncounterCL.html\">CL Encuentro Clínico</a></p></div><p><b>status</b>: Planned</p><p><b>class</b>: <a href=\"http://terminology.hl7.org/6.4.0/CodeSystem-v3-ActCode.html#v3-ActCode-VR\">ActCode VR</a>: Virtual</p><p><b>type</b>: <span title=\"Codes:{https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSTiposEncuentroCL PR}\">Programada</span></p><p><b>serviceType</b>: <span title=\"Codes:{https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoServicio medGen}\">Medicina General</span></p><p><b>subject</b>: <a href=\"Patient-PacienteCL.html\">Xime  Female, DoB: 1983-03-24 ( Chile: 15.236.327-k\u00a0(use:\u00a0official,\u00a0))</a></p><h3>Participants</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Type</b></td><td><b>Individual</b></td></tr><tr><td style=\"display: none\">*</td><td><span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-ParticipationType ATND}\">Atendedor</span></td><td><a href=\"PractitionerRole-EjemploEspecialidadCL2.html\">PractitionerRole: specialty = Medicina Familiar</a></td></tr></table><p><b>period</b>: 2022-06-23 00:00:00-0300 --&gt; 2022-06-23 00:50:00-0300</p><h3>Diagnoses</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Condition</b></td></tr><tr><td style=\"display: none\">*</td><td><a href=\"Condition-DiagnosticoEj2.html\">Condition Pharyngotonsillitis</a></td></tr></table><p><b>serviceProvider</b>: <a href=\"Organization-OrganizacionClEjemplo1.html\">Organization Centro de Salud Familiar Arauco</a></p></div>"
+  },
+  "status" : "planned",
+  "class" : {
+    "system" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code" : "VR",
+    "display" : "Virtual"
+  },
+  "type" : [{
+    "coding" : [{
+      "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSTiposEncuentroCL",
+      "code" : "PR",
+      "display" : "Programada"
+    }],
+    "text" : "Programada"
+  }],
+  "serviceType" : {
+    "coding" : [{
+      "system" : "https://hl7chile.cl/fhir/ig/clcore/CodeSystem/CSCodigoServicio",
+      "code" : "medGen",
+      "display" : "Medicina General"
+    }],
+    "text" : "Medicina General"
+  },
+  "subject" : {
+    "reference" : "Patient/PacienteCL"
+  },
+  "participant" : [{
+    "type" : [{
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+        "code" : "ATND",
+        "display" : "attender"
+      }],
+      "text" : "Atendedor"
+    }],
+    "individual" : {
+      "reference" : "PractitionerRole/EjemploEspecialidadCL2"
+    }
+  }],
+  "period" : {
+    "start" : "2022-06-23T00:00:00-03:00",
+    "end" : "2022-06-23T00:50:00-03:00"
+  },
+  "diagnosis" : [{
+    "condition" : {
+      "reference" : "Condition/DiagnosticoEj2"
+    }
+  }],
+  "serviceProvider" : {
+    "reference" : "Organization/OrganizacionClEjemplo1"
+  }
+}
