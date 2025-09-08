@@ -1,0 +1,66 @@
+version: "3.9"
+
+services:
+  # NGINX PROXY SERVICE #
+  laravel-fhir-chile-nginx:
+    image: nginx:latest
+    container_name: laravel-nginx
+    command: '/bin/sh -c ''while :; do sleep 8h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
+    restart: unless-stopped
+    ports:
+      - "8082:80"
+    volumes:
+      - ./:/var/www/html/webapp:rw
+      - ./infrastructure/nginx/nginx.local.conf:/etc/nginx/nginx.conf:ro
+    environment:
+      TZ: "America/Santiago"
+    depends_on:
+      - laravel-fhir-chile-php-fpm
+    healthcheck:
+      test: curl --fail -I http://localhost || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    logging:
+      driver: json-file
+      options:
+        max-size: "100mb"
+    networks:
+      - public-network
+
+  # laravel PHP FPM #
+  laravel-fhir-chile-php-fpm:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    image: laravel-fhir-chile-php-fpm:8.3.25
+    container_name: laravel-php-fpm
+    restart: unless-stopped
+    hostname: laravel-php-fpm
+    working_dir: /var/www/html/webapp
+    volumes:
+      - ./:/var/www/html/webapp:rw
+      - ./infrastructure/php-fpm/php-variables.conf:/usr/local/etc/php-fpm.d/www.conf:ro
+    environment:
+      TZ: "America/Santiago"
+    command:
+      - /bin/sh
+      - -c
+      - |
+        composer update
+        chown -R 82:82 storage bootstrap/cache || true
+        /usr/local/bin/php --version
+        /usr/local/sbin/php-fpm
+    expose:
+      - "9000"
+    logging:
+      driver: json-file
+      options:
+        max-size: "100mb"
+    networks:
+      - public-network
+
+networks:
+  public-network:
+    name: public-network
+    driver: bridge

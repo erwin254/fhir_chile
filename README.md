@@ -11,14 +11,17 @@ Proporcionar una plataforma de aprendizaje práctica para profesionales de la sa
 La plataforma está organizada en tres grandes áreas médicas:
 
 ### 1. Hospitalizado
+
 - **Ingreso Hospitalario**: Proceso de admisión, evaluación inicial y asignación de cama
 - **Egreso Hospitalario**: Alta médica, plan de cuidados y seguimiento
 
 ### 2. Urgencia
+
 - **Triage de Urgencia**: Clasificación de pacientes según nivel de prioridad
 - **Atención de Emergencias**: Manejo de casos críticos
 
 ### 3. Centro Médico
+
 - **Consulta Ambulatoria**: Anamnesis, examen físico y plan de tratamiento
 - **Seguimiento Ambulatorio**: Control de pacientes crónicos
 
@@ -40,25 +43,30 @@ La plataforma está organizada en tres grandes áreas médicas:
 ## 🛠️ Instalación
 
 ### 1. Clonar el repositorio
+
 ```bash
 git clone https://github.com/tu-usuario/fhir-elearning-chile.git
 cd fhir-elearning-chile
 ```
 
 ### 2. Instalar dependencias
+
 ```bash
 composer install
 npm install
 ```
 
 ### 3. Configurar el entorno
+
 ```bash
 cp .env.example .env
 php artisan key:generate
 ```
 
 ### 4. Configurar la base de datos
+
 Editar el archivo `.env` con los datos de tu base de datos:
+
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -69,17 +77,30 @@ DB_PASSWORD=tu_password
 ```
 
 ### 5. Ejecutar migraciones y seeders
+
 ```bash
 php artisan migrate
 php artisan db:seed
 ```
 
+### 5.1 Ejecutar con docker
+
+```bash
+# Ejecutar con docker-compose
+docker-compose up --build -d
+# Ejecutar migraciones y seeders dentro del contenedor
+docker-compose exec laravel-fhir-chile-php-fpm php artisan migrate
+docker-compose exec laravel-fhir-chile-php-fpm php artisan db:seed
+```
+
 ### 6. Compilar assets
+
 ```bash
 npm run dev
 ```
 
 ### 7. Iniciar el servidor
+
 ```bash
 php artisan serve
 ```
@@ -113,6 +134,7 @@ routes/
 ## 🔧 Configuración FHIR
 
 ### Servidor FHIR
+
 La aplicación está configurada para conectarse con un servidor FHIR. Puedes cambiar la URL en el archivo `.env`:
 
 ```env
@@ -120,32 +142,39 @@ FHIR_SERVER_URL=https://hapi.fhir.org/baseR4
 ```
 
 ### Core Chileno
+
 La aplicación utiliza el Core Chileno de HL7 Chile como referencia:
+
 - **URL**: https://hl7chile.cl/fhir/ig/clcore/ImplementationGuide/hl7.fhir.cl.clcore
 - **Versión**: 1.0.0
 
 ## 📖 Uso de la Plataforma
 
 ### 1. Registro e Inicio de Sesión
+
 - Los usuarios pueden registrarse gratuitamente
 - El sistema mantiene el progreso de cada usuario
 
 ### 2. Navegación por Áreas
+
 - Selecciona un área médica (Hospitalizado, Urgencia, Centro Médico)
 - Explora los módulos disponibles en cada área
 
 ### 3. Aprendizaje por Lecciones
+
 - Cada lección se enfoca en un recurso FHIR específico
 - Incluye teoría, ejemplos prácticos y evaluaciones
 - El progreso se guarda automáticamente
 
 ### 4. Validación de Recursos
+
 - Utiliza las herramientas de validación para verificar recursos FHIR
 - Aprende sobre los requisitos del Core Chileno
 
 ## 🧪 Recursos FHIR Incluidos
 
 ### Recursos Básicos
+
 - **Patient**: Información demográfica con identificadores chilenos (RUT)
 - **Encounter**: Encuentros médicos con códigos locales
 - **Observation**: Observaciones clínicas con terminologías chilenas
@@ -153,6 +182,7 @@ La aplicación utiliza el Core Chileno de HL7 Chile como referencia:
 - **Practitioner**: Profesionales de la salud chilenos
 
 ### Ejemplos Específicos
+
 - Pacientes con RUT chileno
 - Direcciones con códigos postales chilenos
 - Códigos de diagnóstico locales
