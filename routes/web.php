@@ -47,3 +47,10 @@ Route::post('/fhir/search', [FhirController::class, 'searchResources'])->name('f
 Route::get('/fhir/{resourceType}/{id}', [FhirController::class, 'getResource'])->name('fhir.get');
 Route::post('/fhir/create', [FhirController::class, 'createResource'])->name('fhir.create');
 
+// Ruta para sitemap dinámico
+Route::get('/robots/sitemap', function () {
+    return response()->view('robots.sitemap', [
+        'base_url' => config('app.url')
+    ])->header('Content-Type', 'text/xml');
+})->name('robots.sitemap');
+

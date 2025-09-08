@@ -15,7 +15,7 @@ class ArtifactBrowserController extends Controller
 
     public function __construct()
     {
-        $this->artifactsBaseUrl = config('fhir.artifacts_url', 'http://fhir.mk/public/fhir/artifacts');
+        $this->artifactsBaseUrl = config('fhir.artifacts_url', config('app.url') . '/fhir/artifacts');
         $this->artifactsPath = base_path('node_modules/hl7.fhir.cl.clcore');
         $this->useLocalFallback = config('fhir.use_local_fallback', true);
     }

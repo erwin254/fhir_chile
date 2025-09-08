@@ -23,4 +23,4 @@ Disallow: /*.tmp
 # Permitir acceso solo al directorio public
 Allow: /public/
 
-Sitemap: http://fhir.mk/public/sitemap.xml
+Sitemap: /robots/sitemap

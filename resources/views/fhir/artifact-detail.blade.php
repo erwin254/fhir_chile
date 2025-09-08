@@ -48,9 +48,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
-                                <strong>Ver en fhir.mk:</strong><br>
-                                <a href="http://fhir.mk/public/fhir/artifacts/{{ $artifact['id'] }}" target="_blank" class="text-break small">
-                                    http://fhir.mk/public/fhir/artifacts/{{ $artifact['id'] }}
+                                <strong>Ver:</strong><br>
+                                <a href="{{ config('fhir.artifacts_url') }}/{{ $artifact['id'] }}" target="_blank" class="text-break small">
+                                    {{ config('fhir.artifacts_url') }}/{{ $artifact['id'] }}
                                 </a>
                             </div>
                         </div>
@@ -148,9 +148,9 @@
                         <!-- URLs Tab -->
                         <div class="tab-pane fade" id="urls" role="tabpanel">
                             <div class="mb-3">
-                                <strong>Ver en fhir.mk:</strong><br>
-                                <a href="http://fhir.mk/public/fhir/artifacts/{{ $artifact['id'] }}" target="_blank" class="text-break small">
-                                    http://fhir.mk/public/fhir/artifacts/{{ $artifact['id'] }}
+                                <strong>Ver:</strong><br>
+                                <a href="{{ config('fhir.artifacts_url') }}/{{ $artifact['id'] }}" target="_blank" class="text-break small">
+                                    {{ config('fhir.artifacts_url') }}/{{ $artifact['id'] }}
                                 </a>
                             </div>
                         </div>
@@ -301,10 +301,7 @@ function loadOverview() {
     overview += '<div class="mt-4">';
     overview += '<h6>Enlaces</h6>';
     overview += '<ul class="list-unstyled">';
-    overview += `<li><strong>Ver en fhir.mk:</strong> <a href="http://fhir.mk/public/fhir/artifacts/${artifact.id}" target="_blank">http://fhir.mk/public/fhir/artifacts/${artifact.id}</a></li>`;
-    if (artifact.url) {
-        overview += `<li><strong>URL Original:</strong> <a href="${artifact.url}" target="_blank">${artifact.url}</a></li>`;
-    }
+    overview += `<li><strong>Ver:</strong> <a href="{{ config('fhir.artifacts_url') }}/${artifact.id}" target="_blank">{{ config('fhir.artifacts_url') }}/${artifact.id}</a></li>`;
     overview += '</ul>';
     overview += '</div>';
     

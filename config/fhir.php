@@ -14,7 +14,7 @@ return [
     
     'chile_core_url' => env('FHIR_CHILE_CORE_URL', 'https://hl7chile.cl/fhir/ig/clcore/ImplementationGuide/hl7.fhir.cl.clcore'),
     
-    'artifacts_url' => env('FHIR_ARTIFACTS_URL', 'http://fhir.mk/public/fhir/artifacts'),
+    'artifacts_url' => env('FHIR_ARTIFACTS_URL', env('APP_URL') . '/fhir/artifacts'),
     
     'use_local_fallback' => env('FHIR_USE_LOCAL_FALLBACK', true),
     
